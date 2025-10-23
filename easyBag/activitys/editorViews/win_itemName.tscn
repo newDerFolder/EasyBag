@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cer0n5yjtchl3"]
+
+[ext_resource type="Script" uid="uid://depyf8u0upx7u" path="res://easyBag/activitys/editorViews/win_item_name.gd" id="1_o7q3m"]
+
+[node name="WinItemName" type="ConfirmationDialog"]
+oversampling_override = 1.0
+title = "item name"
+initial_position = 3
+size = Vector2i(200, 150)
+current_screen = 0
+visible = true
+script = ExtResource("1_o7q3m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 101.0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "input item name"
+
+[node name="l_idCantEmpty" type="Label" parent="VBoxContainer"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+text = "id cant empty,"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "change id also"
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]
+[connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

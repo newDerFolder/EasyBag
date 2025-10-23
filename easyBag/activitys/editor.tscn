@@ -1,0 +1,306 @@
+[gd_scene load_steps=14 format=3 uid="uid://j7nxg7edughx"]
+
+[ext_resource type="Texture2D" uid="uid://chsc482qwow1s" path="res://easyBag/sc/folder.png" id="1_0ixa7"]
+[ext_resource type="Script" uid="uid://do8u4noklje41" path="res://easyBag/activitys/editor.gd" id="1_4igan"]
+[ext_resource type="Texture2D" uid="uid://dqf1ly73fr35d" path="res://easyBag/sc/apple.png" id="2_gtwr1"]
+[ext_resource type="Texture2D" uid="uid://drulwrkkeoo34" path="res://easyBag/sc/bg_easyBagOneText.png" id="2_xaqjm"]
+[ext_resource type="Texture2D" uid="uid://biflxwrwvdvk3" path="res://easyBag/sc/book.png" id="3_j7txf"]
+[ext_resource type="Texture2D" uid="uid://c2xdo83pu4hjq" path="res://easyBag/sc/easyBagIcon.png" id="4_46431"]
+[ext_resource type="Texture2D" uid="uid://dx2kdyktg1ada" path="res://easyBag/sc/ballTwo.png" id="6_4igan"]
+[ext_resource type="PackedScene" uid="uid://ckeqkndnketh4" path="res://easyBag/activitys/editorViews/findItem.tscn" id="10_cpuwq"]
+
+[sub_resource type="GDScript" id="GDScript_cpuwq"]
+script/source = "extends TextureRect
+
+func change():
+	pass
+func changeUi():
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_j7txf"]
+script/source = "extends PanelContainer
+
+@onready var mainNode=$\"..\"
+@onready var toolbar_itemPop=$hb/item.get_popup()
+@onready var toolbar_filePop=$hb/file.get_popup()
+
+func _ready() -> void:
+	toolbar_itemPop.index_pressed.connect(_toolbar_ItemIndex)
+	toolbar_filePop.index_pressed.connect(_toolbar_fileIndex)
+
+func change():
+	if mainNode.kind==\"codex\":
+		$hb/kindIcon.texture=load(\"res://easyBag/sc/book.png\")
+		$hb/fileBagKind.text=\"(codex物品目录)\"
+	elif mainNode.kind==\"drop\":
+		$hb/kindIcon.texture=load(\"res://easyBag/sc/book.png\")
+		$hb/fileBagKind.text=\"(drop掉落池)\"
+	elif mainNode.kind==\"bag\":
+		$hb/kindIcon.texture=load(\"res://easyBag/sc/book.png\")
+		$hb/fileBagKind.text=\"(bag背包容器)\"
+func changeUi():
+	if mainNode.filePath.get_file()==\"\":
+		$hb/fileName.text=\"newEasybagFile\"
+	else:
+		$hb/fileName.text=mainNode.filePath.get_file()
+
+func _toolbar_ItemIndex(index):
+	match index:
+		0:
+			var id=\"item\"+str(mainNode.itemData.size())
+			mainNode.itemData[id]=EasyBag.codexItem(id)
+			$\"../items\".addItemToId(id)
+		1:
+			pass
+func _toolbar_fileIndex(index):
+	match index:
+		0:
+			mainNode.beNewFile()
+		1:
+			var file_dialog = FileDialog.new()
+			add_child(file_dialog)
+			# 设置对话框的模式（例如，打开文件）
+			file_dialog.file_mode = 0
+			# 设置对话框的标题
+			file_dialog.title = \"选择文件\"
+			
+			file_dialog.current_dir =mainNode.filePath.get_base_dir()
+
+			# 设置允许的文件类型（可选）
+			file_dialog.filters = [
+				\"*.json ; JSON工程文件\",]
+			# 连接信号
+			file_dialog.connect(\"file_selected\", Callable(self, \"_on_toolbar_fileOpen_selected\"))
+			# 显示对话框
+			file_dialog.popup_centered()
+		2:
+			var file_dialog = FileDialog.new()
+			add_child(file_dialog)
+			# 设置对话框的模式（例如，打开文件）
+			file_dialog.file_mode = 4
+			# 设置对话框的标题
+			file_dialog.title = \"选择文件\"
+			
+			#file_dialog.current_dir = mainNode.filePath.get_basename()+mainNode.get_extension()
+			file_dialog.current_path= mainNode.filePath.get_basename()
+
+			# 设置允许的文件类型（可选）
+			#file_dialog.filters = [
+				#\"*.json ; JSON工程文件\",]
+			# 连接信号
+			file_dialog.connect(\"file_selected\", Callable(self, \"_on_toolbar_fileSave_selected\"))
+			# 显示对话框
+			file_dialog.popup_centered()
+# 回调函数：当用户选择文件时触发
+func _on_toolbar_fileOpen_selected(path: String):
+	mainNode.loadFile(path)
+
+func _on_toolbar_fileSave_selected(path: String):
+	var kind=mainNode.kind
+	var saveData=mainNode.itemData
+	EasyBag.saveFile(kind,saveData,path)
+
+
+func _on_kind_icon_mouse_entered() -> void:
+	$hb/fileBagKind.visible=true
+	pass # Replace with function body.
+func _on_kind_icon_mouse_exited() -> void:
+	$hb/fileBagKind.visible=false
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_4igan"]
+script/source = "extends ScrollContainer
+
+@onready var gc=$GridContainer
+@onready var mainNode=$\"..\"
+
+func change():
+	for i in gc.get_children():
+		i.queue_free()
+	
+	for d in mainNode.itemData:
+		var good=preload(\"res://easyBag/activitys/editorViews/goodTtem.tscn\").instantiate()
+		print(d)
+		good.mainNode=mainNode
+		good.id=d
+		gc.add_child(good)
+
+func changeUi():
+	$GridContainer.size=size
+	gc.columns=mainNode.itemGColumns
+	gc.size=size
+	for i in gc.get_children():
+		i.changeUi()
+
+func fold_description():
+	for i in gc.get_children():
+		i.fold_description()
+
+func addItemToId(id):
+	var good=preload(\"res://easyBag/activitys/editorViews/goodTtem.tscn\").instantiate()
+	print(mainNode.itemData[id])
+	good.mainNode=mainNode
+	good.id=id
+	gc.add_child(good)
+"
+
+[sub_resource type="GDScript" id="GDScript_h0mw0"]
+script/source = "extends ScrollContainer
+
+func _ready() -> void:
+	$FindItem.mainNode=$\"..\"
+
+func change():
+	pass
+func changeUi():
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_xaqjm"]
+script/source = "extends Label
+
+
+func change():
+	pass
+func changeUi():
+	pass
+"
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4igan")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_xaqjm")
+script = SubResource("GDScript_cpuwq")
+
+[node name="toolbar" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 42.0
+script = SubResource("GDScript_j7txf")
+
+[node name="hb" type="HFlowContainer" parent="toolbar"]
+layout_mode = 2
+
+[node name="kindIcon" type="TextureRect" parent="toolbar/hb"]
+layout_mode = 2
+texture = ExtResource("3_j7txf")
+expand_mode = 3
+
+[node name="fileBagKind" type="Label" parent="toolbar/hb"]
+visible = false
+layout_mode = 2
+
+[node name="fileName" type="Label" parent="toolbar/hb"]
+layout_mode = 2
+text = "未命名文件"
+
+[node name="VSeparator3" type="VSeparator" parent="toolbar/hb"]
+layout_mode = 2
+
+[node name="file" type="MenuButton" parent="toolbar/hb"]
+layout_mode = 2
+text = "文件"
+icon = ExtResource("1_0ixa7")
+item_count = 3
+popup/item_0/text = "new"
+popup/item_0/id = 0
+popup/item_1/text = "open"
+popup/item_1/id = 1
+popup/item_2/text = "save"
+popup/item_2/id = 2
+
+[node name="VSeparator" type="VSeparator" parent="toolbar/hb"]
+layout_mode = 2
+
+[node name="item" type="MenuButton" parent="toolbar/hb"]
+layout_mode = 2
+text = "物品"
+icon = ExtResource("2_gtwr1")
+item_count = 2
+popup/item_0/text = "add good"
+popup/item_0/id = 0
+popup/item_1/text = "edit good"
+popup/item_1/id = 1
+
+[node name="VSeparator2" type="VSeparator" parent="toolbar/hb"]
+layout_mode = 2
+
+[node name="attribute" type="MenuButton" parent="toolbar/hb"]
+layout_mode = 2
+text = "属性"
+icon = ExtResource("6_4igan")
+item_count = 2
+popup/item_0/text = "tags"
+popup/item_0/id = 0
+popup/item_1/text = "attributes"
+popup/item_1/id = 1
+
+[node name="VSeparator5" type="VSeparator" parent="toolbar/hb"]
+layout_mode = 2
+
+[node name="easyBag" type="MenuButton" parent="toolbar/hb"]
+layout_mode = 2
+text = "easyBag-v0.1"
+icon = ExtResource("4_46431")
+
+[node name="VSeparator4" type="VSeparator" parent="toolbar/hb"]
+layout_mode = 2
+
+[node name="cb_editMode" type="CheckButton" parent="toolbar/hb"]
+layout_mode = 2
+text = "编辑模式"
+
+[node name="items" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 1280.0
+offset_bottom = 650.0
+horizontal_scroll_mode = 0
+script = SubResource("GDScript_4igan")
+
+[node name="GridContainer" type="GridContainer" parent="items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rightSidebar" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -246.0
+grow_horizontal = 0
+grow_vertical = 2
+script = SubResource("GDScript_h0mw0")
+
+[node name="FindItem" parent="rightSidebar" instance=ExtResource("10_cpuwq")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.5372549, 0.8352941, 0.4, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 64.0
+grow_vertical = 0
+text = "EasyBag-testVer"
+script = SubResource("GDScript_xaqjm")
+
+[connection signal="mouse_entered" from="toolbar/hb/kindIcon" to="toolbar" method="_on_kind_icon_mouse_entered"]
+[connection signal="mouse_exited" from="toolbar/hb/kindIcon" to="toolbar" method="_on_kind_icon_mouse_exited"]
+[connection signal="pressed" from="toolbar/hb/cb_editMode" to="." method="_on_cb_edit_mode_pressed"]

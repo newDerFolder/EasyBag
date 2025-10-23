@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckeqkndnketh4"]
+
+[ext_resource type="Texture2D" uid="uid://cb8eckpy626dl" path="res://easyBag/sc/find.png" id="1_j56n2"]
+[ext_resource type="Script" uid="uid://b6hahxap6csvl" path="res://easyBag/activitys/editorViews/find_item.gd" id="1_xpaxt"]
+[ext_resource type="Texture2D" uid="uid://t41bxwuj3vl8" path="res://easyBag/sc/gridOne.png" id="2_4naej"]
+[ext_resource type="Texture2D" uid="uid://b28oiml7ya735" path="res://easyBag/sc/gridTwo.png" id="3_y25yo"]
+[ext_resource type="Texture2D" uid="uid://ds6lnj00tyv2e" path="res://easyBag/sc/gridFour.png" id="4_y25yo"]
+[ext_resource type="Texture2D" uid="uid://umie4m64wqj2" path="res://easyBag/sc/gridEaght.png" id="5_8j7m3"]
+
+[sub_resource type="GDScript" id="GDScript_8j7m3"]
+script/source = "extends FoldableContainer
+
+func change():
+	$HFlowContainer/sp_gridColumns.value=$\"../..\".mainNode.itemGColumns
+"
+
+[node name="FindItem" type="PanelContainer"]
+offset_right = 250.0
+offset_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xpaxt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="mode" type="FoldableContainer" parent="VBoxContainer"]
+layout_mode = 2
+title = "mode"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/mode"]
+layout_mode = 2
+
+[node name="​exclude​" type="CheckBox" parent="VBoxContainer/mode/HFlowContainer"]
+layout_mode = 2
+text = "排除"
+
+[node name="and" type="CheckBox" parent="VBoxContainer/mode/HFlowContainer"]
+layout_mode = 2
+text = "且"
+
+[node name="or" type="CheckBox" parent="VBoxContainer/mode/HFlowContainer"]
+layout_mode = 2
+text = "或"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="view" type="FoldableContainer" parent="VBoxContainer"]
+layout_mode = 2
+title = "view"
+script = SubResource("GDScript_8j7m3")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/view"]
+layout_mode = 2
+
+[node name="sp_gridColumns" type="SpinBox" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+min_value = 1.0
+max_value = 25.0
+value = 1.0
+rounded = true
+
+[node name="colunm1" type="TextureButton" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4naej")
+
+[node name="colunm2" type="TextureButton" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_y25yo")
+
+[node name="colunm4" type="TextureButton" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_y25yo")
+
+[node name="colunm8" type="TextureButton" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_8j7m3")
+
+[node name="btn_foldDes" type="Button" parent="VBoxContainer/view/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "fold descriptions"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="text" type="FoldableContainer" parent="VBoxContainer"]
+layout_mode = 2
+title = "text"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/text"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/text/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "find by text"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/text/HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_j56n2")
+
+[connection signal="value_changed" from="VBoxContainer/view/HFlowContainer/sp_gridColumns" to="." method="_on_sp_grid_columns_value_changed"]
+[connection signal="pressed" from="VBoxContainer/view/HFlowContainer/colunm1" to="." method="_on_colunm_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/view/HFlowContainer/colunm2" to="." method="_on_colunm_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/view/HFlowContainer/colunm4" to="." method="_on_colunm_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/view/HFlowContainer/colunm8" to="." method="_on_colunm_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/view/HFlowContainer/btn_foldDes" to="." method="_on_btn_fold_des_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvgc0hpne7wke"]
+
+[ext_resource type="Texture2D" uid="uid://b3ht2b2u22kgm" path="res://easyBag/sc/editIconPan.png" id="1_8cotv"]
+[ext_resource type="Script" uid="uid://cd1igfutq4jpt" path="res://easyBag/activitys/editorViews/win_item_icon.gd" id="1_m86ps"]
+
+[node name="WinItemIcon" type="ConfirmationDialog"]
+oversampling_override = 1.0
+title = "item icon"
+initial_position = 3
+size = Vector2i(300, 100)
+current_screen = 0
+visible = true
+script = ExtResource("1_m86ps")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 51.0
+
+[node name="LineEdit" type="LineEdit" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "icon path"
+
+[node name="TextureButton" type="TextureButton" parent="HFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_8cotv")
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]
+[connection signal="text_changed" from="HFlowContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="HFlowContainer/TextureButton" to="." method="_on_texture_button_pressed"]

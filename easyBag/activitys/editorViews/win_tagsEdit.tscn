@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c82xqwrblitvj"]
+
+[ext_resource type="Script" uid="uid://b4g88ukaivt1r" path="res://easyBag/activitys/editorViews/win_tags_edit.gd" id="1_biarl"]
+
+[node name="WinTagsEdit" type="Window"]
+oversampling_override = 1.0
+title = "Tags edit"
+initial_position = 3
+size = Vector2i(600, 400)
+current_screen = 0
+script = ExtResource("1_biarl")
+
+[node name="tagsList" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
