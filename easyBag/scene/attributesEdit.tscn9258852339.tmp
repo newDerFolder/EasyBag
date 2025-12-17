@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5q8q2tr6387"]
+
+[sub_resource type="GDScript" id="GDScript_og2cn"]
+script/source = "extends SplitContainer
+
+var mainNode
+var undisabledEdit=false
+
+func change():
+	for i in $ScrollContainer/VBoxContainer.get_children():
+		i.change()
+
+func _ready() -> void:
+	pass
+
+func reloadItem():
+	for i in $ScrollContainer/VBoxContainer.get_children():
+		i.queue_free()
+	for i in mainNode.attributesData:
+		var arr_item=load(\"res://easyBag/scene/attributeItem.tscn\").instantiate()
+		arr_item.mainNode=mainNode
+		arr_item.editorNode=self
+		arr_item.id=mainNode.attributesData[i][\"name\"]
+		$ScrollContainer/VBoxContainer.add_child(arr_item)
+		arr_item.change()
+
+func addNewItem():
+	var newName=\"attribute\"+str(mainNode.attributesData.size)
+	mainNode.attributesData[newName]=
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	undisabledEdit=toggled_on
+	change()
+	pass # Replace with function body.
+
+
+func _on_add_new_pressed() -> void:
+	pass # Replace with function body.
+"
+
+[node name="AttributesEdit" type="SplitContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 800
+script = SubResource("GDScript_og2cn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FlowContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="FlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FlowContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="FlowContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+title = "新建属性"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer"]
+layout_mode = 2
+
+[node name="addNew" type="Button" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer"]
+layout_mode = 2
+text = "创建新属性"
+
+[node name="Button2" type="Button" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer"]
+layout_mode = 2
+text = "创建Tag的附属新属性"
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="FlowContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+title = "编辑属性"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer2"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer"]
+layout_mode = 2
+text = "允许编辑属性"
+
+[node name="CheckBox" type="CheckBox" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer"]
+layout_mode = 2
+button_pressed = true
+text = "重命名静态属性名称后遍历Codex并更改"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer"]
+modulate = Color(1, 1, 1, 0.64705884)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "!请注意，请勿轻易更改已被实例到非Codex中的动态属性名称，这可能导致项目报错并且难以修改，如出现这种问题请立即将名称改回"
+fit_content = true
+
+[node name="FoldableContainer3" type="FoldableContainer" parent="FlowContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+title = "根据Tag查找"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer3"]
+layout_mode = 2
+
+[connection signal="pressed" from="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer/addNew" to="." method="_on_add_new_pressed"]
+[connection signal="toggled" from="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer/CheckButton" to="." method="_on_check_button_toggled"]

@@ -1,0 +1,291 @@
+[gd_scene load_steps=3 format=3 uid="uid://cela0ftgtckjw"]
+
+[ext_resource type="Texture2D" uid="uid://drulwrkkeoo34" path="res://easyBag/sc/bg_easyBagOneText.png" id="1_6subl"]
+[ext_resource type="Texture2D" uid="uid://biflxwrwvdvk3" path="res://easyBag/sc/book.png" id="2_14fwe"]
+
+[node name="CreateNewFile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6subl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Create New File"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+title = "基本"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Codex"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EasyBag在最基础的类型，定义了项目中所有物品的静态数据资源与动态数据的起始值。绝大多数EasyBag中的实例都应该使用物品对应的id从Codexx中获取静态属性与资源"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer2/GridContainer"]
+layout_mode = 2
+text = "create"
+
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Bag"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "定义物品容器，通常应该直接实例化类，而不是在可视化编辑器中创建。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/PanelContainer5/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="FoldableContainer3" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+title = "规则"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3"]
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "LootPool"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "定义物品概率掉落，通常用于敌人的战利品掉落。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer3/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Craft"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "定义以物品合成物品的配方，当然也可以引入非EasyBag的因素。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer4/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Shop"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "定义以物品或非EasyBag数据来交换物品，相较于Craft可设定购买上限与补货又或者是折扣，这通常用于如《我的世界》中玩家与村民交易。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3/VBoxContainer/PanelContainer5/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+title = "安全"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "BlockchainCenter"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "单一数据值的核心分发器，通过密钥来确保重要数据的唯一性(如点券等)，网络游戏中请确保器只被服务器所使用。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer6/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Blockchain"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "访问BlockchainCenter来验证物品数据，通常用于珍贵的虚拟财产或不希望被玩家轻易修改的游戏数据(如点券)。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer7/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"
+
+[node name="PanelContainer8" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14fwe")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "Bazaar"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "物品之间的市场性交易，可设定物品的价格上下限以及交易冷却公示期等，网络游戏中请确保其只被服务器直接使用。"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2/VBoxContainer/PanelContainer8/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "create"

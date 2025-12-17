@@ -24,10 +24,12 @@ script/source = "extends PanelContainer
 @onready var mainNode=$\"..\"
 @onready var toolbar_itemPop=$hb/item.get_popup()
 @onready var toolbar_filePop=$hb/file.get_popup()
+@onready var toolbar_attributePop=$hb/attribute.get_popup()
 
 func _ready() -> void:
 	toolbar_itemPop.index_pressed.connect(_toolbar_ItemIndex)
 	toolbar_filePop.index_pressed.connect(_toolbar_fileIndex)
+	toolbar_attributePop.index_pressed.connect(_toolbar_attributeIndex)
 
 func change():
 	if mainNode.kind==\"codex\":
@@ -56,7 +58,8 @@ func _toolbar_ItemIndex(index):
 func _toolbar_fileIndex(index):
 	match index:
 		0:
-			mainNode.beNewFile()
+			var win=load(\"res://easyBag/windows/win_CrateNewFile.tscn\").instantiate()
+			mainNode.add_child(win)
 		1:
 			var file_dialog = FileDialog.new()
 			add_child(file_dialog)
@@ -92,6 +95,14 @@ func _toolbar_fileIndex(index):
 			file_dialog.connect(\"file_selected\", Callable(self, \"_on_toolbar_fileSave_selected\"))
 			# 显示对话框
 			file_dialog.popup_centered()
+
+func _toolbar_attributeIndex(index):
+	match index:
+		1:
+			var win=load(\"res://easyBag/windows/win_editAttribute.tscn\").instantiate()
+			win.mainNode=mainNode
+			mainNode.add_child(win)
+
 # 回调函数：当用户选择文件时触发
 func _on_toolbar_fileOpen_selected(path: String):
 	mainNode.loadFile(path)
@@ -229,9 +240,9 @@ layout_mode = 2
 text = "物品"
 icon = ExtResource("2_gtwr1")
 item_count = 2
-popup/item_0/text = "add good"
+popup/item_0/text = "add item"
 popup/item_0/id = 0
-popup/item_1/text = "edit good"
+popup/item_1/text = "edit item"
 popup/item_1/id = 1
 
 [node name="VSeparator2" type="VSeparator" parent="toolbar/hb"]
@@ -254,6 +265,13 @@ layout_mode = 2
 layout_mode = 2
 text = "easyBag-v0.1"
 icon = ExtResource("4_46431")
+item_count = 3
+popup/item_0/text = "技巧"
+popup/item_0/id = 0
+popup/item_1/text = "学习"
+popup/item_1/id = 1
+popup/item_2/text = "关于"
+popup/item_2/id = 2
 
 [node name="VSeparator4" type="VSeparator" parent="toolbar/hb"]
 layout_mode = 2

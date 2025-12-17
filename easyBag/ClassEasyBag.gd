@@ -1,6 +1,11 @@
 @tool
+@icon("res://easyBag/sc/easyBagIcon.png")
 extends Node
 class_name EasyBag
+
+
+static func get_newCodexItemDict()->Dictionary:
+	return {"name":"new","iconPath":"","kind":"int","val":0,"static":true,"fromTag":"","description":"一个新属性"}
 
 
 static func findItemByName(dict:Dictionary,find:String)->Array:
@@ -94,3 +99,31 @@ static func loadFile(path):
 		dict["kind"]=data["kind"]
 		dict["path"]=path
 	return dict
+
+static func loadEasybagData():
+	var path="res://easyBag/data/easybag.json"
+	if not FileAccess.file_exists(path):
+		print("easyBag file not found.")
+		return null
+	var file = FileAccess.open(path, FileAccess.READ)  # 打开文件以读取
+	var json_string = file.get_as_text()  # 读取 JSON 数据
+	file.close()  # 关闭文件
+	
+	var json = JSON.new()
+	var error = json.parse(json_string)  # 解析 JSON 数据
+	if error != OK:
+		print("easyBag:Failed to parse JSON: ", error)
+		return null
+	var data = json.get_data()
+	var dict:Dictionary=data
+	return dict
+static func saveEasybagData(saveData:Dictionary):
+	var path="res://easyBag/data/easybag.json"
+	var data = saveData
+	var json = JSON.new()
+	var json_string = json.stringify(data)# 将字典序列化为 JSON 字符串
+	var file = FileAccess.open(path, FileAccess.WRITE)  # 打开文件以写入
+	print(json_string)
+	file.store_line(json_string)  # 写入 JSON 数据
+	file.close()  # 关闭文件
+	print("easyBag file saved to: ", path)
