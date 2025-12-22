@@ -32,14 +32,14 @@ offset_bottom = 202.0
 size_flags_horizontal = 3
 script = ExtResource("1_dgg24")
 
-[node name="GridContainer" type="FlowContainer" parent="."]
+[node name="GridContainer" type="HFlowContainer" parent="."]
 layout_mode = 2
 script = SubResource("GDScript_eqsdp")
 
 [node name="itemIcon" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
 texture = ExtResource("2_eqsdp")
-expand_mode = 2
+expand_mode = 3
 
 [node name="editIcon" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -61,26 +61,24 @@ texture_normal = ExtResource("3_eqsdp")
 [node name="VSeparator" type="VSeparator" parent="GridContainer"]
 layout_mode = 2
 
-[node name="tags" type="RichTextLabel" parent="GridContainer"]
+[node name="tags" type="HFlowContainer" parent="GridContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-text = "tags"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+
+[node name="editTags" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_eqsdp")
 
 [node name="VSeparator2" type="VSeparator" parent="GridContainer"]
 layout_mode = 2
 
-[node name="maxStack" type="RichTextLabel" parent="GridContainer"]
+[node name="attributes" type="HFlowContainer" parent="GridContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-text = "maxStack"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+
+[node name="editAttributes" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_eqsdp")
 
 [node name="FoldableContainer" type="FoldableContainer" parent="GridContainer"]
 layout_mode = 2
@@ -107,4 +105,5 @@ texture_normal = ExtResource("3_eqsdp")
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="GridContainer/editIcon" to="." method="_on_edit_icon_pressed"]
 [connection signal="pressed" from="GridContainer/editName" to="." method="_on_edit_name_pressed"]
+[connection signal="pressed" from="GridContainer/editTags" to="." method="_on_edit_tags_pressed"]
 [connection signal="pressed" from="GridContainer/FoldableContainer/FlowContainer/editDescription" to="." method="_on_edit_description_pressed"]

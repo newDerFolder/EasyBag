@@ -8,7 +8,7 @@ var itemGColumns=1
 var itemScale=1
 
 var tagsData={"basicItem":{"name":"basicItem","iconPath":"","extends":"","inherentAttribute":["maxStack"],"description":""},
-"food":{"name":"food","iconPath":"","extends":"basicItem","inherentAttribute":[],"description":""}}
+"food":{"name":"food","iconPath":"res://easyBag/sc/apple.png","extends":"basicItem","inherentAttribute":[],"description":""}}
 var attributesData={"maxStack":{"name":"maxStack","iconPath":"res://easyBag/sc/iconStack.png","kind":"int","val":64,"static":true,"fromTag":"basicItem","description":"影响一个物品储存格中最多存储该物品的数量上限"},
 "hp":{"name":"hp","iconPath":"res://easyBag/sc/hpIcon.png","kind":"int","val":100,"static":true,"fromTag":"","description":"角色的生命值，耗尽则代表死亡，防具中通常来表示能够提升的血量上限"}}
 

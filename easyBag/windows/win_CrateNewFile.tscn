@@ -7,6 +7,15 @@ script/source = "extends AcceptDialog
 
 func changeUi():
 	pass
+
+
+func _on_canceled() -> void:
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_confirmed() -> void:
+	pass # Replace with function body.
 "
 
 [node name="WinCrateNewFile" type="AcceptDialog"]
@@ -20,5 +29,8 @@ script = SubResource("GDScript_yayyx")
 [node name="CreateNewFile" parent="." instance=ExtResource("1_yayyx")]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 792.0
-offset_bottom = 601.0
+offset_right = -8.0
+offset_bottom = -49.0
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]

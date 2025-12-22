@@ -31,6 +31,13 @@ func change():
 	$GridContainer/itemName.text=get_data("name")
 	$GridContainer/itemIcon.texture=load(get_data("iconPath"))
 	$GridContainer/FoldableContainer/FlowContainer/itemdescription.text=get_data("description")
+	for i in $GridContainer/tags.get_children():
+		i.queue_free()
+	for i in mainNode.itemData[id]["tags"]:
+		var tagTtem=load("res://easyBag/scene/TagItemView.tscn").instantiate()
+		tagTtem.id=i
+		tagTtem.mainNode=mainNode
+		$GridContainer/tags.add_child(tagTtem)
 
 func _on_mouse_entered() -> void:
 	pass # Replace with function body.
@@ -66,5 +73,14 @@ func _on_edit_description_pressed() -> void:
 	cdwin.editNode=self
 	cdwin.oldData=get_data("description")
 	cdwin.editData="description"
+	mainNode.add_child(cdwin)
+	pass # Replace with function body.
+
+
+func _on_edit_tags_pressed() -> void:
+	var cdwin=load("res://easyBag/windows/editItemTags.tscn").instantiate()
+	cdwin.mainNode=mainNode
+	cdwin.oldData=get_data("tags")
+	cdwin.editData=id
 	mainNode.add_child(cdwin)
 	pass # Replace with function body.

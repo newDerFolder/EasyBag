@@ -3,10 +3,16 @@
 extends Node
 class_name EasyBag
 
-
 static func get_newCodexItemDict()->Dictionary:
 	return {"name":"new","iconPath":"","kind":"int","val":0,"static":true,"fromTag":"","description":"一个新属性"}
-
+static func renameAttributesData(dataDict:Dictionary,oldName:String,newName:String):
+	for i:String in dataDict:
+		print("p:",i)
+		for b in dataDict[i]:
+			var attributes_arr:Array=b["attributes"]
+			if attributes_arr.has(oldName):
+				attributes_arr.erase(oldName)
+				attributes_arr.append(newName)
 
 static func findItemByName(dict:Dictionary,find:String)->Array:
 	var arr:Array=[]
@@ -15,19 +21,19 @@ static func findItemByName(dict:Dictionary,find:String)->Array:
 			arr.append(i)
 	return arr
 
-static func demo_tagsData()->Dictionary:
-	var dict={
-		"weapon":{"from":"","description":"this kind item always affect atk in RPG","linkAttribute":[]}
-		
-	}
-	return dict
-static func demo_attributeData()->Dictionary:
-	var dict={
-		"maxStack":{"value":99,"icon":"","description":"",},
-		"atk":{"value":5,"icon":"","description":"",},
-		"def":{"value":5,"icon":"","description":"",}
-	}
-	return dict
+#static func demo_tagsData()->Dictionary:
+	#var dict={
+		#"weapon":{"from":"","description":"this kind item always affect atk in RPG","linkAttribute":[]}
+		#
+	#}
+	#return dict
+#static func demo_attributeData()->Dictionary:
+	#var dict={
+		#"maxStack":{"value":99,"icon":"","description":"",},
+		#"atk":{"value":5,"icon":"","description":"",},
+		#"def":{"value":5,"icon":"","description":"",}
+	#}
+	#return dict
 
 static func codexItem(itemName="noName")->Dictionary:
 	var good={
@@ -35,7 +41,7 @@ static func codexItem(itemName="noName")->Dictionary:
 		"name":itemName,
 		"description":"",
 		"tags":[],
-		"more":[]
+		"attributes":[]
 		}
 	return good
 static func createCodex()->Dictionary:
@@ -52,21 +58,21 @@ static func item()->Dictionary:
 		"special":{}
 		}
 	return good
-static func dropItem()->Dictionary:
-	var good=item()
-	good["dropWeight"]=1
-	good["isOneDrop"]=false
-	return good
-static func createDropPool()->Dictionary:
-	var basicDict={
-		"itemId-A":dropItem(),
-		"itemId-B":dropItem(),
-		"itemId-C":dropItem()
-	}
-	return basicDict
-static func createBag()->Array:
-	var bag=[item(),item(),item()]
-	return bag
+#static func dropItem()->Dictionary:
+	#var good=item()
+	#good["dropWeight"]=1
+	#good["isOneDrop"]=false
+	#return good
+#static func createDropPool()->Dictionary:
+	#var basicDict={
+		#"itemId-A":dropItem(),
+		#"itemId-B":dropItem(),
+		#"itemId-C":dropItem()
+	#}
+	#return basicDict
+#static func createBag()->Array:
+	#var bag=[item(),item(),item()]
+	#return bag
 
 static func saveFile(kind:String,saveData:Dictionary,path:String):
 	print(path)

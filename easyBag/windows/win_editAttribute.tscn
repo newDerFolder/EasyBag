@@ -9,6 +9,8 @@ var mainNode
 
 func changeUi():
 	pass
+func change():
+	pass
 func _ready() -> void:
 	$AttributesEdit.mainNode=mainNode
 	$AttributesEdit.reloadItem()

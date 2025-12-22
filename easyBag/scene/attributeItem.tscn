@@ -32,14 +32,14 @@ func change():
 		tb_name.visible=false
 		ob_kind.disabled=true
 		le_val.editable=false
-		cb_static.disabled=false
+		cb_static.disabled=true
 		tb_description.visible=false
 	else:
 		tb_icon.visible=true
 		tb_name.visible=true
 		ob_kind.disabled=false
 		le_val.editable=true
-		cb_static.disabled=true
+		cb_static.disabled=false
 		tb_description.visible=true
 		
 	tr_icon.texture=load(getData(\"iconPath\"))
@@ -59,6 +59,15 @@ func change():
 		ob_kind.selected=3
 	
 	le_val.text=str(getData(\"val\"))
+
+
+func _on_texture_button_2_pressed() -> void:
+	var win=load(\"res://easyBag/windows/editAttributeName.tscn\").instantiate()
+	win.mainNode=mainNode
+	win.id=id
+	win.oldData=getData(\"name\")
+	mainNode.add_child(win)
+	pass # Replace with function body.
 "
 
 [node name="AttributeItem" type="PanelContainer"]
@@ -97,6 +106,7 @@ texture_normal = ExtResource("2_5tahs")
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="FlowContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HFlowContainer2" type="HFlowContainer" parent="FlowContainer"]
@@ -141,6 +151,7 @@ text = "basicItem"
 fit_content = true
 
 [node name="HSeparator2" type="HSeparator" parent="FlowContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HFlowContainer3" type="HFlowContainer" parent="FlowContainer"]
@@ -158,3 +169,5 @@ texture_normal = ExtResource("2_5tahs")
 
 [node name="HSeparator3" type="HSeparator" parent="FlowContainer"]
 layout_mode = 2
+
+[connection signal="pressed" from="FlowContainer/HFlowContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]

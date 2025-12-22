@@ -66,13 +66,15 @@ func _toolbar_fileIndex(index):
 			# 设置对话框的模式（例如，打开文件）
 			file_dialog.file_mode = 0
 			# 设置对话框的标题
+			file_dialog.current_path=\"res://easyBag/workFile/\"
+			
 			file_dialog.title = \"选择文件\"
 			
 			file_dialog.current_dir =mainNode.filePath.get_base_dir()
 
 			# 设置允许的文件类型（可选）
 			file_dialog.filters = [
-				\"*.json ; JSON工程文件\",]
+				\"*.json ; JSON\",]
 			# 连接信号
 			file_dialog.connect(\"file_selected\", Callable(self, \"_on_toolbar_fileOpen_selected\"))
 			# 显示对话框
@@ -84,8 +86,7 @@ func _toolbar_fileIndex(index):
 			file_dialog.file_mode = 4
 			# 设置对话框的标题
 			file_dialog.title = \"选择文件\"
-			
-			#file_dialog.current_dir = mainNode.filePath.get_basename()+mainNode.get_extension()
+			file_dialog.current_path=\"res://easyBag/workFile/\"
 			file_dialog.current_path= mainNode.filePath.get_basename()
 
 			# 设置允许的文件类型（可选）
