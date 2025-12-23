@@ -106,4 +106,5 @@ texture_normal = ExtResource("3_eqsdp")
 [connection signal="pressed" from="GridContainer/editIcon" to="." method="_on_edit_icon_pressed"]
 [connection signal="pressed" from="GridContainer/editName" to="." method="_on_edit_name_pressed"]
 [connection signal="pressed" from="GridContainer/editTags" to="." method="_on_edit_tags_pressed"]
+[connection signal="pressed" from="GridContainer/editAttributes" to="." method="_on_edit_attributes_pressed"]
 [connection signal="pressed" from="GridContainer/FoldableContainer/FlowContainer/editDescription" to="." method="_on_edit_description_pressed"]

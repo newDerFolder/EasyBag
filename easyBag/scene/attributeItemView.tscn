@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnrm6p6xln7ba"]
+
+[ext_resource type="Texture2D" uid="uid://tp2t77ckd7nq" path="res://icon.svg" id="1_uxysd"]
+
+[sub_resource type="GDScript" id="GDScript_uxysd"]
+script/source = "extends PanelContainer
+
+var id
+var mainNode
+var editNode
+var moveView=false
+var showVal=true
+var editVal=false
+
+
+func _ready() -> void:
+	change()
+
+
+func valChangUi(kind,newVal):
+	if kind==\"int\":
+		$VBoxContainer/val/intVal.visible=true
+	else:
+		$VBoxContainer/val/intVal.visible=false
+
+func change():
+	if moveView:
+		$VBoxContainer/move.visible=true
+	else:
+		$VBoxContainer/move.visible=false
+	
+	if editVal:
+		$VBoxContainer/val/intVal.editable=true
+		$VBoxContainer/val/strVal.editable=true
+		$VBoxContainer/val/boolVal.disabled=false
+		$VBoxContainer/val/floatVal.editable=true
+	else:
+		$VBoxContainer/val/intVal.editable=false
+		$VBoxContainer/val/strVal.editable=false
+		$VBoxContainer/val/boolVal.disabled=true
+		$VBoxContainer/val/floatVal.editable=false
+	
+	if showVal:
+		$VBoxContainer/val.visible=true
+	else:
+		$VBoxContainer/val.visible=false
+	
+	$VBoxContainer/info/Label.text=mainNode.attributesData[id][\"name\"]
+	$VBoxContainer/info/TextureRect.texture=load(mainNode.attributesData[id][\"iconPath\"])
+	
+	valChangUi(mainNode.attributesData[id][\"kind\"],mainNode.attributesData[id][\"val\"])
+
+func _on_button_pressed() -> void:
+	editNode.childEvent(id)
+	pass # Replace with function body.
+
+
+func _on_move_pressed() -> void:
+	editNode.childEvent(id)
+	pass # Replace with function body.
+"
+
+[node name="AttributeItemView" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 50)
+offset_right = 100.0
+offset_bottom = 93.0
+size_flags_horizontal = 3
+script = SubResource("GDScript_uxysd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="info" type="HFlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/info"]
+layout_mode = 2
+texture = ExtResource("1_uxysd")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/info"]
+layout_mode = 2
+text = "一个属性"
+
+[node name="val" type="HFlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="intVal" type="SpinBox" parent="VBoxContainer/val"]
+layout_mode = 2
+min_value = -999999999999.0
+max_value = 9999999999999.0
+rounded = true
+
+[node name="strVal" type="LineEdit" parent="VBoxContainer/val"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="boolVal" type="CheckBox" parent="VBoxContainer/val"]
+visible = false
+layout_mode = 2
+text = "bool"
+
+[node name="floatVal" type="SpinBox" parent="VBoxContainer/val"]
+visible = false
+layout_mode = 2
+min_value = -9999999.0
+max_value = 9999999.0
+step = 0.001
+value = 0.0010000002
+
+[node name="move" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "move"
+
+[connection signal="pressed" from="VBoxContainer/move" to="." method="_on_move_pressed"]
