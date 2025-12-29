@@ -1,1 +1,1 @@
-{"data":{"item0":{"attributes":[],"description":"","iconPath":"res://easyBag/sc/apple.png","name":"item0","tags":["food"]},"item1":{"attributes":[],"description":"","iconPath":"res://easyBag/sc/apple.png","name":"item1","tags":[]}},"kind":"codex"}
+{"data":{"item0":{"attributes":["atk"],"attributesVal":{"atk":{"extendVal":true,"val":""}},"description":"","iconPath":"res://easyBag/sc/apple.png","name":"item0","tags":[]}},"kind":"codex"}

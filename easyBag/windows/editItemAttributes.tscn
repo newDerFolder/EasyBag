@@ -79,8 +79,13 @@ func _on_canceled() -> void:
 
 
 func _on_confirmed() -> void:
+	print(attributesList.duplicate(true))
 	mainNode.itemData[editData][\"attributes\"]=attributesList.duplicate(true)
+	for i in mainNode.itemData[editData][\"attributes\"]:
+		if not mainNode.itemData[editData][\"attributesVal\"].has(i):
+			mainNode.itemData[editData][\"attributesVal\"][i]={\"extendVal\":true,\"val\":\"\"}
 	mainNode.change()
+	print(\"finish yes winCd\")
 	queue_free()
 	pass # Replace with function body.
 "

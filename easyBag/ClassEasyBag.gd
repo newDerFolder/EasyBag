@@ -3,16 +3,55 @@
 extends Node
 class_name EasyBag
 
+
+
+
+static func get_codexAttributeVal(codexItem:Dictionary,tagsDict:Dictionary,attributesDict:Dictionary)->Dictionary:
+	var dict:Dictionary
+	for i in codexItem["attributes"]:
+		dict[i]=null
+		if codexItem["attributesVal"][i]["extends"]==false:
+			dict[i]=codexItem["attributesVal"][i]["val"]
+		else:
+			_get_attributeExtendsVal(codexItem,i,tagsDict,attributesDict)
+	return dict
+static func _get_attributeExtendsVal(codexItem,attribute,tagsDict:Dictionary,attributesDict:Dictionary):
+	pass
+
+static func get_tagInherentAttributes(tag:String,TagDict:Dictionary)->Array:
+	var attributes_arr:Array
+	for i in TagDict[tag]["inherentAttributes"]:
+		attributes_arr.append(i)
+	return attributes_arr
+
+#子到根
+static func get_extendsTagsArray(tag:Dictionary,tagsDict)->Array:
+	var tagsArray:Array
+	tagsArray.append(tag["name"])
+	if tag["extends"].size()<1:
+		return tagsArray
+	for i in tag["extends"]:
+		for a in get_extendsTagsArray(tagsDict[i],tagsDict):
+			tagsArray.append(a)
+	return tagsArray
+
 static func get_newCodexItemDict()->Dictionary:
 	return {"name":"new","iconPath":"","kind":"int","val":0,"static":true,"fromTag":"","description":"一个新属性"}
-static func renameAttributesData(dataDict:Dictionary,oldName:String,newName:String):
-	for i:String in dataDict:
-		print("p:",i)
-		for b in dataDict[i]:
-			var attributes_arr:Array=b["attributes"]
-			if attributes_arr.has(oldName):
-				attributes_arr.erase(oldName)
-				attributes_arr.append(newName)
+static func renameCodexItemAttributesData(codex:Dictionary, oldName: String, newName: String) -> void:
+	for key: String in codex:
+		var value = codex[key]["attributes"]
+		var aVal=codex[key]["attributesVal"]
+		# 确保 value 是数组
+		if not value is Array:
+			continue
+		var array: Array = value
+		var valDict:Dictionary=aVal
+		# 遍历数组，替换 oldName
+		for i in range(array.size()):
+			if array[i] == oldName:
+				valDict[newName]=valDict[oldName]
+				valDict.erase(oldName)
+				array[i] = newName
 
 static func findItemByName(dict:Dictionary,find:String)->Array:
 	var arr:Array=[]
@@ -41,7 +80,8 @@ static func codexItem(itemName="noName")->Dictionary:
 		"name":itemName,
 		"description":"",
 		"tags":[],
-		"attributes":[]
+		"attributes":[],
+		"attributesVal":{}
 		}
 	return good
 static func createCodex()->Dictionary:

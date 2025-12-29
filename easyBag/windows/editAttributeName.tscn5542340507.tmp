@@ -24,7 +24,7 @@ func _on_confirmed() -> void:
 	mainNode.attributesData[le_newName.text][\"name\"]=le_newName.text
 	
 	EasyBag.renameCodexItemAttributesData(mainNode.itemData,oldData,le_newName.text)
-	#mainNode.change()
+	mainNode.change()
 	queue_free()
 	pass # Replace with function body.
 "

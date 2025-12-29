@@ -96,6 +96,11 @@ func _toolbar_fileIndex(index):
 			file_dialog.connect(\"file_selected\", Callable(self, \"_on_toolbar_fileSave_selected\"))
 			# 显示对话框
 			file_dialog.popup_centered()
+		3:
+			var kind=mainNode.kind
+			var saveData=mainNode.itemData
+			EasyBag.saveFile(kind,saveData,mainNode.filePath)
+			mainNode.loadFile(mainNode.filePath)
 
 func _toolbar_attributeIndex(index):
 	match index:
@@ -134,7 +139,7 @@ func change():
 	
 	for d in mainNode.itemData:
 		var good=preload(\"res://easyBag/activitys/editorViews/goodTtem.tscn\").instantiate()
-		print(d)
+		#print(d)
 		good.mainNode=mainNode
 		good.id=d
 		gc.add_child(good)
@@ -225,13 +230,15 @@ layout_mode = 2
 layout_mode = 2
 text = "文件"
 icon = ExtResource("1_0ixa7")
-item_count = 3
+item_count = 4
 popup/item_0/text = "new"
 popup/item_0/id = 0
 popup/item_1/text = "open"
 popup/item_1/id = 1
 popup/item_2/text = "save"
 popup/item_2/id = 2
+popup/item_3/text = "save and reload"
+popup/item_3/id = 3
 
 [node name="VSeparator" type="VSeparator" parent="toolbar/hb"]
 layout_mode = 2

@@ -29,7 +29,6 @@ text = "id cant empty,"
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
-button_pressed = true
 text = "change id also"
 
 [connection signal="canceled" from="." to="." method="_on_canceled"]
