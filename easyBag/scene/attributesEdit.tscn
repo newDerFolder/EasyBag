@@ -27,7 +27,7 @@ func reloadItem():
 
 func addNewItem():
 	var newName=\"attribute\"+str(mainNode.attributesData.size())
-	mainNode.attributesData[newName]=EasyBag.get_newCodexItemDict().duplicate(true)
+	mainNode.attributesData[newName]=EasyBag.get_newCodexAttributeDict().duplicate(true)
 	mainNode.attributesData[newName][\"name\"]=newName
 	var arr_item=load(\"res://easyBag/scene/attributeItem.tscn\").instantiate()
 	arr_item.mainNode=mainNode
@@ -91,6 +91,7 @@ layout_mode = 2
 text = "创建新属性"
 
 [node name="Button2" type="Button" parent="FlowContainer/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer"]
+visible = false
 layout_mode = 2
 text = "创建Tag的附属新属性"
 
@@ -119,6 +120,7 @@ text = "!请注意，请勿轻易更改已被实例到非Codex中的动态属性
 fit_content = true
 
 [node name="FoldableContainer3" type="FoldableContainer" parent="FlowContainer/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 title = "根据Tag查找"
 

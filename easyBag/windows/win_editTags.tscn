@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdbtgabbi0j17"]
+[gd_scene load_steps=3 format=3 uid="uid://boa4nmtomj14p"]
 
-[ext_resource type="PackedScene" uid="uid://do5q8q2tr6387" path="res://easyBag/scene/attributesEdit.tscn" id="1_6et83"]
+[ext_resource type="PackedScene" uid="uid://ce0tptyofekxr" path="res://easyBag/scene/tagsEdit.tscn" id="1_j613m"]
 
-[sub_resource type="GDScript" id="GDScript_6et83"]
-script/source = "extends AcceptDialog
+[sub_resource type="GDScript" id="GDScript_i4sfv"]
+script/source = "extends ConfirmationDialog
 
 var mainNode
 
@@ -12,14 +12,12 @@ func changeUi():
 func change():
 	pass
 func _ready() -> void:
-	$AttributesEdit.mainNode=mainNode
-	$AttributesEdit.reloadItem()
+	$TagsEdit.mainNode=mainNode
+	$TagsEdit.reloadItem()
 
 func _on_canceled() -> void:
 	queue_free()
 	pass # Replace with function body.
-
-
 
 
 func _on_confirmed() -> void:
@@ -28,15 +26,15 @@ func _on_confirmed() -> void:
 	pass # Replace with function body.
 "
 
-[node name="WinEditAttribute" type="ConfirmationDialog"]
+[node name="WinEditTags" type="ConfirmationDialog"]
 oversampling_override = 1.0
-title = "Edit Attributes"
+title = "Edit Tags"
 initial_position = 2
 size = Vector2i(1200, 600)
 visible = true
-script = SubResource("GDScript_6et83")
+script = SubResource("GDScript_i4sfv")
 
-[node name="AttributesEdit" parent="." instance=ExtResource("1_6et83")]
+[node name="TagsEdit" parent="." instance=ExtResource("1_j613m")]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0

@@ -35,8 +35,10 @@ static func get_extendsTagsArray(tag:Dictionary,tagsDict)->Array:
 			tagsArray.append(a)
 	return tagsArray
 
-static func get_newCodexItemDict()->Dictionary:
+static func get_newCodexAttributeDict()->Dictionary:
 	return {"name":"new","iconPath":"","kind":"int","val":0,"static":true,"fromTag":"","description":"一个新属性"}
+static func get_newCodexTagDict()->Dictionary:
+	return {"name":"newTag","iconPath":"","extends":[],"inherentAttributes":[],"inherentAttributesVal":{},"description":"一个新标签"}
 static func renameCodexItemAttributesData(codex:Dictionary, oldName: String, newName: String) -> void:
 	for key: String in codex:
 		var value = codex[key]["attributes"]

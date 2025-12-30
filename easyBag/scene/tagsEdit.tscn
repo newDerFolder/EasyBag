@@ -1,4 +1,48 @@
-[gd_scene format=3 uid="uid://ce0tptyofekxr"]
+[gd_scene load_steps=2 format=3 uid="uid://ce0tptyofekxr"]
+
+[sub_resource type="GDScript" id="GDScript_7fp3v"]
+script/source = "extends SplitContainer
+
+var mainNode
+var edit
+var canEdit:bool=false
+
+func reloadItem():
+	for i in $ScrollContainer/VBoxContainer.get_children():
+		i.queue_free()
+	for i in mainNode.tagsData:
+		var tagItem=load(\"res://easyBag/scene/tagItem.tscn\").instantiate()
+		tagItem.mainNode=mainNode
+		tagItem.editorNode=self
+		tagItem.id=i
+		$ScrollContainer/VBoxContainer.add_child(tagItem)
+	change()
+
+func change():
+	for i in $ScrollContainer/VBoxContainer.get_children():
+		i.change()
+
+func addNewItem():
+	var newName=\"tag\"+str(mainNode.tagsData.size())
+	mainNode.tagsData[newName]=EasyBag.get_newCodexTagDict().duplicate(true)
+	mainNode.tagsData[newName][\"name\"]=newName
+	var arr_item=load(\"res://easyBag/scene/tagItem.tscn\").instantiate()
+	arr_item.mainNode=mainNode
+	arr_item.editorNode=self
+	arr_item.id=newName
+	$ScrollContainer/VBoxContainer.add_child(arr_item)
+
+
+func _on_add_new_pressed() -> void:
+	addNewItem()
+	pass # Replace with function body.
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	canEdit=toggled_on
+	change()
+	pass # Replace with function body.
+"
 
 [node name="TagsEdit" type="SplitContainer"]
 anchors_preset = 15
@@ -6,10 +50,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 split_offset = 800
+script = SubResource("GDScript_7fp3v")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="ScrollContainer2" type="ScrollContainer" parent="."]
 layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer2/PanelContainer"]
+layout_mode = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="ScrollContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+title = "新建标签"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer"]
+layout_mode = 2
+
+[node name="addNew" type="Button" parent="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer"]
+layout_mode = 2
+text = "创建新标签"
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="ScrollContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+title = "编辑标签"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer2"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer"]
+layout_mode = 2
+text = "允许编辑标签"
+
+[connection signal="pressed" from="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer/HFlowContainer/addNew" to="." method="_on_add_new_pressed"]
+[connection signal="toggled" from="ScrollContainer2/PanelContainer/VBoxContainer/FoldableContainer2/HFlowContainer/CheckButton" to="." method="_on_check_button_toggled"]

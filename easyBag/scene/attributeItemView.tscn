@@ -54,7 +54,6 @@ func change():
 		$VBoxContainer/val.visible=true
 	else:
 		$VBoxContainer/val.visible=false
-	
 	$VBoxContainer/info/Label.text=mainNode.attributesData[id][\"name\"]
 	$VBoxContainer/info/TextureRect.texture=load(mainNode.attributesData[id][\"iconPath\"])
 	

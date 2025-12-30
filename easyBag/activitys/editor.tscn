@@ -104,6 +104,10 @@ func _toolbar_fileIndex(index):
 
 func _toolbar_attributeIndex(index):
 	match index:
+		0:
+			var win=load(\"res://easyBag/windows/win_editTags.tscn\").instantiate()
+			win.mainNode=mainNode
+			mainNode.add_child(win)
 		1:
 			var win=load(\"res://easyBag/windows/win_editAttribute.tscn\").instantiate()
 			win.mainNode=mainNode
@@ -228,7 +232,7 @@ layout_mode = 2
 
 [node name="file" type="MenuButton" parent="toolbar/hb"]
 layout_mode = 2
-text = "文件"
+text = "file"
 icon = ExtResource("1_0ixa7")
 item_count = 4
 popup/item_0/text = "new"
@@ -245,12 +249,12 @@ layout_mode = 2
 
 [node name="item" type="MenuButton" parent="toolbar/hb"]
 layout_mode = 2
-text = "物品"
+text = "item"
 icon = ExtResource("2_gtwr1")
 item_count = 2
-popup/item_0/text = "add item"
+popup/item_0/text = "add new item"
 popup/item_0/id = 0
-popup/item_1/text = "edit item"
+popup/item_1/text = "edit item(pass)"
 popup/item_1/id = 1
 
 [node name="VSeparator2" type="VSeparator" parent="toolbar/hb"]
@@ -258,12 +262,12 @@ layout_mode = 2
 
 [node name="attribute" type="MenuButton" parent="toolbar/hb"]
 layout_mode = 2
-text = "属性"
+text = "attribute"
 icon = ExtResource("6_4igan")
 item_count = 2
-popup/item_0/text = "tags"
+popup/item_0/text = "edit tags windows"
 popup/item_0/id = 0
-popup/item_1/text = "attributes"
+popup/item_1/text = "edit attributes windows"
 popup/item_1/id = 1
 
 [node name="VSeparator5" type="VSeparator" parent="toolbar/hb"]
@@ -286,7 +290,7 @@ layout_mode = 2
 
 [node name="cb_editMode" type="CheckButton" parent="toolbar/hb"]
 layout_mode = 2
-text = "编辑模式"
+text = "editMode"
 
 [node name="items" type="ScrollContainer" parent="."]
 layout_mode = 0
