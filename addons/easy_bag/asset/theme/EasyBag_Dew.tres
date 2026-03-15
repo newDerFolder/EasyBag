@@ -1,0 +1,53 @@
+[gd_resource type="Theme" format=3 uid="uid://x2053wv7k2j0"]
+
+[ext_resource type="StyleBox" uid="uid://v4g50n81yr7w" path="res://addons/easy_bag/asset/theme/Panel/green_box_panel.tres" id="1_yct3j"]
+[ext_resource type="StyleBox" uid="uid://dd22rh6gj2tu" path="res://addons/easy_bag/asset/theme/Panel/glass_panel.tres" id="2_4xycu"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yct3j"]
+color = Color(0.6311035, 0.91796875, 0.52352905, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yct3j"]
+bg_color = Color(0.4, 0.6627451, 0.39607844, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54509807, 0.8235294, 0.62352943, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 1
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xycu"]
+bg_color = Color(0.45925903, 0.7890625, 0.47987175, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8, 0.78125, 1)
+shadow_size = 2
+shadow_offset = Vector2(4.465, 4.385)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_kot38"]
+color = Color(0.72392476, 0.8828125, 0.66555786, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[resource]
+AcceptDialog/styles/panel = ExtResource("1_yct3j")
+Button/styles/normal = ExtResource("1_yct3j")
+Button/styles/normal_mirrored = ExtResource("1_yct3j")
+HSeparator/styles/separator = SubResource("StyleBoxLine_yct3j")
+PanelContainer/styles/panel = ExtResource("2_4xycu")
+PanelContainerGreenBox/base_type = &"PanelContainer"
+PanelContainerGreenBox/styles/panel = SubResource("StyleBoxFlat_yct3j")
+PopupMenu/styles/panel = ExtResource("1_yct3j")
+TabContainer/styles/panel = ExtResource("2_4xycu")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_4xycu")
+VSeparator/styles/separator = SubResource("StyleBoxLine_kot38")

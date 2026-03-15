@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://22gk2bmi5u8t"]
+
+[ext_resource type="Texture2D" uid="uid://d3locb7o62hy4" path="res://addons/easy_bag/asset/background/bg_easyBag.png" id="1_h4qmy"]
+
+[sub_resource type="GDScript" id="GDScript_h4qmy"]
+script/source = "extends Control
+
+func _ready() -> void:
+	if not DirAccess.dir_exists_absolute(\"res://vcder/DataCourier/\"):
+		return
+	elif not DirAccess.dir_exists_absolute(\"res://vcder/ControlPlus/\"):
+		return
+	else:
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(\"res://addons/easy_bag/activity/MainEditor.tscn\")
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_lsvk7"]
+font_size = 50
+font_color = Color(0.3318393, 0.8125, 0.17773438, 1)
+outline_size = 10
+outline_color = Color(0.88520056, 0.99609375, 0.86769104, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mt3un"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_y35b6"]
+font_size = 25
+font_color = Color(0.18039216, 0.6313726, 1, 1)
+outline_size = 5
+outline_color = Color(0.44705883, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4qmy"]
+font_color = Color(1, 1, 0.41568628, 1)
+
+[node name="EasyBag" type="Control" unique_id=1482237195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource("GDScript_h4qmy")
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=997817888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h4qmy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1679178259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=397198874]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1224578722]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=32204236]
+layout_mode = 2
+text = "EasyBag 0.2a    Loading..."
+label_settings = SubResource("LabelSettings_lsvk7")
+
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=464729499]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=1795264499]
+layout_mode = 2
+text = "vcder studio"
+label_settings = SubResource("LabelSettings_mt3un")
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer" unique_id=1468035722]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer3" unique_id=2119313814]
+layout_mode = 2
+text = "Godot Engine 4.6"
+label_settings = SubResource("LabelSettings_y35b6")
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer" unique_id=503065794]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2" unique_id=507081836]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer" unique_id=664316378]
+layout_mode = 2
+text = "	Ensure that the following necessary dependencies are installed correctly."
+label_settings = SubResource("LabelSettings_h4qmy")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer" unique_id=292148493]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer" unique_id=964381005]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1346800584]
+layout_mode = 2
+text = "ControlPlus 0.1a"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1096305209]
+layout_mode = 2
+text = "Easy access to supporting advanced UI components in the editor."
+fit_content = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1740827806]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2" unique_id=806690229]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1512671834]
+layout_mode = 2
+text = "DataCourier 0.2b"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1037356206]
+layout_mode = 2
+text = "Simple and standardized saving."
+fit_content = true

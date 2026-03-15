@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bwhndyjrptuba"]
+
+[ext_resource type="Script" uid="uid://jig6i4j7ua45" path="res://vcder/EasyBag/scene/control/EB_CodexItemNode.gd" id="1_7ixc0"]
+
+[node name="EbEasyItemNode" type="PanelContainer" unique_id=1415952006]
+offset_right = 161.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+script = ExtResource("1_7ixc0")
+
+[node name="HBoxContainer" type="HFlowContainer" parent="." unique_id=1734023741]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer" unique_id=1517500021]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1371611642]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1741326144]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "item"
+clip_text = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

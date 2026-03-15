@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bql46e4gfa3l8"]
+
+[ext_resource type="Script" uid="uid://dj5t16xfns6ov" path="res://addons/easy_bag/scene/window/create_new_file.gd" id="2_ddgwv"]
+[ext_resource type="Texture2D" uid="uid://dw0d7o5v00wdy" path="res://addons/easy_bag/asset/icon/ballTwo.png" id="2_eyks2"]
+[ext_resource type="Texture2D" uid="uid://65lwgvhknhkn" path="res://addons/easy_bag/asset/icon/book.png" id="3_eyks2"]
+[ext_resource type="Texture2D" uid="uid://3n4cr6yeibee" path="res://addons/easy_bag/asset/icon/gridTwo.png" id="4_gfp6b"]
+
+[node name="CreateNewFile" type="ConfirmationDialog" unique_id=181480771]
+oversampling_override = 1.0
+title = "Create New File"
+initial_position = 2
+size = Vector2i(500, 500)
+visible = true
+transient_to_focused = true
+script = ExtResource("2_ddgwv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1540253682]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 451.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=833169430]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoldableContainer" type="FoldableContainer" parent="ScrollContainer/VBoxContainer" unique_id=1555439220]
+layout_mode = 2
+title = "Basic"
+title_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer" unique_id=39740151]
+layout_mode = 2
+
+[node name="Codex" type="PanelContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=802039501]
+layout_mode = 2
+
+[node name="Codex" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex" unique_id=355826277]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex" unique_id=1914631653]
+layout_mode = 2
+texture = ExtResource("3_eyks2")
+stretch_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex" unique_id=2034317546]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex" unique_id=2062197652]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex/VBoxContainer" unique_id=832859933]
+layout_mode = 2
+text = "Codex"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex/VBoxContainer" unique_id=1415036837]
+layout_mode = 2
+text = "Codex是EasyBag最基本的类,几乎所有其它类都要通过访问Codex来获取静态属性"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex/VBoxContainer" unique_id=630500350]
+layout_mode = 2
+
+[node name="createCodex" type="Button" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex" unique_id=908275020]
+layout_mode = 2
+text = "create"
+
+[node name="CodexAttributeSet" type="PanelContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=113218795]
+layout_mode = 2
+
+[node name="CodexAttributeSet" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet" unique_id=1430044781]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet" unique_id=413836038]
+layout_mode = 2
+texture = ExtResource("2_eyks2")
+stretch_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet" unique_id=859925970]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet" unique_id=1337716340]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet/VBoxContainer" unique_id=1846061346]
+layout_mode = 2
+text = "AttributeSet"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet/VBoxContainer" unique_id=237439109]
+layout_mode = 2
+text = "AttributeSet通常用于为Codex提供属性集,当然也可以在代码中直接使用其中的属性
+"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet/VBoxContainer" unique_id=942562062]
+layout_mode = 2
+
+[node name="createCodexAttributeSet" type="Button" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet" unique_id=756841402]
+layout_mode = 2
+text = "create"
+
+[node name="CodexTagSet" type="PanelContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=722869264]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet" unique_id=224843589]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=1458344995]
+layout_mode = 2
+texture = ExtResource("4_gfp6b")
+stretch_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=98212445]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=413441829]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox/VBoxContainer" unique_id=450615119]
+layout_mode = 2
+text = "TagSet"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox/VBoxContainer" unique_id=2050372009]
+layout_mode = 2
+text = "TagSet通常用于为Codex和AttributeSet提供标签集
+"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox/VBoxContainer" unique_id=1192033333]
+layout_mode = 2
+
+[node name="createCodex" type="Button" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=353340368]
+layout_mode = 2
+text = "create"
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex/createCodex" to="." method="_on_create_codex_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet/createCodexAttributeSet" to="." method="_on_create_codex_attribute_set_pressed"]

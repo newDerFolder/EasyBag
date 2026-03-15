@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3locb7o62hy4"
-path="res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"
+uid="uid://b7v4pj02oc485"
+path="res://.godot/imported/icon.svg-c15c8cf9a5ae4b147e4acb1d1875253d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EasyBag/asset/background/bg_easyBag.png"
-dest_files=["res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"]
+source_file="res://addons/easy_bag/asset/icon/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-c15c8cf9a5ae4b147e4acb1d1875253d.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

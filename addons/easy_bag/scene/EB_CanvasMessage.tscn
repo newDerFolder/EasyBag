@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d2tgy6uy2gfcw"]
+
+[sub_resource type="GDScript" id="GDScript_yr6ag"]
+script/source = "extends CanvasLayer
+class_name EB_CanvasMessage
+
+# 单例实例
+static var _instance: EB_CanvasMessage = null
+var _is_initialized: bool = false
+
+# --- 静态代理方法 (改名了) ---
+# 改名为 push_message，避免与 CanvasLayer 的 show() 冲突
+static func push_message(message_text: Array[String]):
+	var instance = get_instance()
+	if instance:
+		instance._show_message(message_text)
+
+# --- 单例管理 ---
+static func get_instance() -> EB_CanvasMessage:
+	if _instance == null:
+		_instance = EB_CanvasMessage._new()
+	return _instance
+
+static func _new() -> EB_CanvasMessage:
+	var instance = EB_CanvasMessage.new()
+	instance._is_initialized = true
+	return instance
+
+# --- 构造函数修正 ---
+func _init():
+	if not _is_initialized:
+		push_warning(\"请使用 EB_CanvasMessage.push_message() 调用，不要直接 new\")
+
+# --- 核心功能 ---
+func _show_message(message_text: Array[String]):
+	var pan = HFlowContainer.new()
+	for i in message_text:
+		var lab = Label.new()
+		lab.text = i
+		pan.add_child(lab)
+	# 确保路径正确
+	if $ScrollContainer/VBoxContainer:
+		$ScrollContainer/VBoxContainer.add_child(pan)
+	else:
+		push_error(\"未找到 ScrollContainer/VBoxContainer 路径\")
+"
+
+[node name="EbCanvasMessage" type="CanvasLayer" unique_id=572000462]
+script = SubResource("GDScript_yr6ag")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2029958030]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -411.0
+offset_right = 0.91503906
+offset_bottom = 3.8649902
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1963104243]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="EB_Codex" format=3]
+
+[ext_resource type="Script" path="res://vcder/EasyBag/class/Codex/EB_CodexItem.gd" id="1_um5nq"]
+[ext_resource type="Script" path="res://vcder/EasyBag/class/Codex/EB_Codex.gd" id="2_x8yu8"]
+[ext_resource type="Script" path="res://vcder/EasyBag/class/attribute/EB_ItemBaseAttribute.gd" id="2_xtx7d"]
+[ext_resource type="Script" path="res://vcder/EasyBag/class/attribute/EB_ItemIntAttribute.gd" id="3_gagv8"]
+[ext_resource type="Script" path="res://vcder/EasyBag/class/EB_ItemTag.gd" id="3_giffn"]
+[ext_resource type="Resource" path="res://vcder/EasyBag/workfile/AttributeSet/as.tres" id="4_giffn"]
+
+[sub_resource type="Resource" id="Resource_6twsd"]
+script = ExtResource("3_gagv8")
+value = 1
+attribute_id = "2"
+
+[sub_resource type="Resource" id="Resource_3pymb"]
+script = ExtResource("3_gagv8")
+value = 64
+attribute_id = "3"
+
+[sub_resource type="Resource" id="Resource_i75fx"]
+script = ExtResource("3_gagv8")
+value = 888
+attribute_id = "4"
+
+[sub_resource type="Resource" id="Resource_gagv8"]
+script = ExtResource("1_um5nq")
+item_icon_path = "res://icon.svg"
+item_name = "gdt"
+attribute_dict = Dictionary[String, ExtResource("2_xtx7d")]({
+"2": SubResource("Resource_6twsd"),
+"3": SubResource("Resource_3pymb"),
+"4": SubResource("Resource_i75fx")
+})
+
+[sub_resource type="Resource" id="Resource_oknf4"]
+script = ExtResource("1_um5nq")
+
+[resource]
+script = ExtResource("2_x8yu8")
+linked_attribute_set = ExtResource("4_giffn")
+item_dict = Dictionary[String, ExtResource("1_um5nq")]({
+"0": SubResource("Resource_gagv8"),
+"1": SubResource("Resource_oknf4")
+})

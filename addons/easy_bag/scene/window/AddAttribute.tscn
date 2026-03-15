@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cee22uiwfa7wu"]
+
+[ext_resource type="Script" uid="uid://c6cspjgq2be5a" path="res://vcder/EasyBag/scene/window/add_attribute.gd" id="1_bp62q"]
+
+[node name="AddAttribute" type="ConfirmationDialog" unique_id=482680129]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(600, 500)
+visible = true
+script = ExtResource("1_bp62q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=889043522]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 592.0
+offset_bottom = 451.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1092307569]
+layout_mode = 2
+text = "Ctrl to Multi"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=634708938]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=2108761309]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]

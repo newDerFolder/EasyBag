@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://cn8d3esef3wta"]
+
+[ext_resource type="Theme" uid="uid://x2053wv7k2j0" path="res://vcder/EasyBag/asset/theme/EasyBag_Dew.tres" id="1_1l4x7"]
+[ext_resource type="Texture2D" uid="uid://jgjqdbffu5er" path="res://vcder/EasyBag/asset/background/bg_easyBagOneText.png" id="1_jnqfw"]
+[ext_resource type="Script" uid="uid://ciwo5gm63x0ef" path="res://vcder/EasyBag/activity/main_editor.gd" id="2_oaqg7"]
+[ext_resource type="Texture2D" uid="uid://b50jr3j14dfyd" path="res://vcder/EasyBag/asset/icon/folder.png" id="3_iqtml"]
+[ext_resource type="Texture2D" uid="uid://dw0d7o5v00wdy" path="res://vcder/EasyBag/asset/icon/ballTwo.png" id="4_2t53j"]
+[ext_resource type="Texture2D" uid="uid://boqgiorb6dm6v" path="res://vcder/EasyBag/asset/icon/editIconPan.png" id="4_erfnr"]
+[ext_resource type="Texture2D" uid="uid://ca4xc8huqylag" path="res://vcder/EasyBag/asset/icon/gridFour.png" id="5_oaqg7"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_oaqg7"]
+device = -1
+alt_pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_3q5f7"]
+events = [SubResource("InputEventKey_oaqg7")]
+
+[node name="MainEditor" type="Control" unique_id=317744891]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_1l4x7")
+script = ExtResource("2_oaqg7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=826389145]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 768.0
+texture = ExtResource("1_jnqfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2141062084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="PanelContainer" parent="VBoxContainer" unique_id=1695000252]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MenuBar" unique_id=223183825]
+layout_mode = 2
+
+[node name="MenuFile" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=337948617]
+layout_mode = 2
+shortcut = SubResource("Shortcut_3q5f7")
+text = "file"
+icon = ExtResource("3_iqtml")
+flat = false
+item_count = 3
+popup/item_0/text = "new"
+popup/item_0/id = 0
+popup/item_1/text = "open"
+popup/item_1/id = 1
+popup/item_2/text = "save"
+popup/item_2/id = 2
+
+[node name="MenuButton2" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=499942710]
+layout_mode = 2
+text = "edit"
+icon = ExtResource("4_erfnr")
+flat = false
+
+[node name="MenuButton4" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=370688340]
+layout_mode = 2
+text = "tool"
+icon = ExtResource("4_erfnr")
+flat = false
+
+[node name="MenuButton5" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=1508589224]
+layout_mode = 2
+text = "link"
+icon = ExtResource("5_oaqg7")
+flat = false
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=748635199]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=995868889]
+layout_mode = 2
+theme_type_variation = &"PanelContainerGreenBox"
+
+[node name="LabelEditingPath" type="Label" parent="VBoxContainer/MenuBar/HFlowContainer/PanelContainer" unique_id=1673741863]
+layout_mode = 2
+text = "res://vcder/EasyBag/workfile/task.tres(file path)"
+
+[node name="Control" type="Control" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=920287758]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=1485082948]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=1208690006]
+layout_mode = 2
+texture = ExtResource("4_2t53j")
+expand_mode = 3
+
+[node name="LabelAttributeSet" type="Label" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=933194075]
+layout_mode = 2
+text = "AttributeSet"
+
+[node name="LinkedAttributeButton" type="Button" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=997355299]
+layout_mode = 2
+text = "null"
+
+[node name="LabelTagSet" type="Label" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=1163830348]
+layout_mode = 2
+text = "TagSet:"
+
+[node name="LinkedTagSetButton" type="Button" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=1995955133]
+layout_mode = 2
+text = "null"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=414622721]
+layout_mode = 2
+size_flags_vertical = 3
+drag_to_rearrange_enabled = true
+
+[connection signal="pressed" from="VBoxContainer/MenuBar/HFlowContainer/LinkedAttributeButton" to="." method="_on_linked_attribute_button_pressed"]
+[connection signal="active_tab_rearranged" from="VBoxContainer/TabContainer" to="." method="_on_tab_container_active_tab_rearranged"]
+[connection signal="tab_selected" from="VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]

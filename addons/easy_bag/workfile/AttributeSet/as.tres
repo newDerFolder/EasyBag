@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="EB_AttributeSet" format=3 uid="uid://d0ko07xq7nadf"]
+
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://vcder/EasyBag/class/attribute/EB_BaseAttribute.gd" id="1_qj5te"]
+[ext_resource type="Script" uid="uid://lsv5rcd4ob0p" path="res://vcder/EasyBag/class/set/EB_AttributeSet.gd" id="2_1neh3"]
+[ext_resource type="Script" uid="uid://bt4ntkbkpdm3b" path="res://vcder/EasyBag/class/attribute/EB_IntAttribute.gd" id="2_awejg"]
+
+[sub_resource type="Resource" id="Resource_eaavx"]
+script = ExtResource("2_awejg")
+default_value = 80
+item_icon_path = "res://vcder/EasyBag/asset/icon/apple.png"
+item_name = "atk"
+
+[sub_resource type="Resource" id="Resource_ptf1g"]
+script = ExtResource("1_qj5te")
+
+[sub_resource type="Resource" id="Resource_1neh3"]
+script = ExtResource("2_awejg")
+item_icon_path = "res://vcder/EasyBag/asset/icon/iconStack.png"
+item_name = "堆叠"
+
+[sub_resource type="Resource" id="Resource_awejg"]
+script = ExtResource("2_awejg")
+default_value = 64
+item_icon_path = "res://vcder/EasyBag/asset/icon/iconStack.png"
+item_name = "堆叠上限"
+metadata/_custom_type_script = "uid://bt4ntkbkpdm3b"
+
+[sub_resource type="Resource" id="Resource_2ggpi"]
+script = ExtResource("2_awejg")
+default_value = 888
+item_icon_path = "res://icon.svg"
+item_name = "攻撃力"
+
+[resource]
+script = ExtResource("2_1neh3")
+attribute_dict = Dictionary[String, ExtResource("1_qj5te")]({
+"0": SubResource("Resource_eaavx"),
+"1": SubResource("Resource_ptf1g"),
+"2": SubResource("Resource_1neh3"),
+"3": SubResource("Resource_awejg"),
+"4": SubResource("Resource_2ggpi")
+})

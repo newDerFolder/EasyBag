@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3locb7o62hy4"
-path="res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"
+uid="uid://beauotril7jh5"
+path="res://.godot/imported/rubbishBin.png-cbd6e020017c0326d8804cc18933953d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EasyBag/asset/background/bg_easyBag.png"
-dest_files=["res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"]
+source_file="res://addons/easy_bag/asset/icon/rubbishBin.png"
+dest_files=["res://.godot/imported/rubbishBin.png-cbd6e020017c0326d8804cc18933953d.ctex"]
 
 [params]
 

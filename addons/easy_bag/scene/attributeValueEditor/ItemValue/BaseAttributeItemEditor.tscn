@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bj1bxm60feq32"]
+
+[ext_resource type="Script" uid="uid://c7cfoab0qtic" path="res://vcder/EasyBag/scene/attributeValueEditor/ItemValue/base_attribute_item_editor.gd" id="1_3vi5h"]
+[ext_resource type="Texture2D" uid="uid://beauotril7jh5" path="res://vcder/EasyBag/asset/icon/rubbishBin.png" id="2_yvkqu"]
+
+[node name="BaseAttributeItemEditor" type="PanelContainer" unique_id=857584051]
+script = ExtResource("1_3vi5h")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=26055092]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HFlowContainer" unique_id=891341862]
+layout_mode = 2
+text = "static"
+
+[node name="TextureRect" type="TextureRect" parent="HFlowContainer" unique_id=613500094]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HFlowContainer" unique_id=1814543181]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HFlowContainer" unique_id=10237100]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HFlowContainer" unique_id=2102507667]
+layout_mode = 2
+tooltip_text = "remove"
+icon = ExtResource("2_yvkqu")

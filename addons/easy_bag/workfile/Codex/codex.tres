@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://xatr313lnqpk"]
+
+[ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://vcder/EasyBag/class/Codex/EB_CodexItem.gd" id="1_l5kg5"]
+[ext_resource type="Script" uid="uid://buehk1yb17qwc" path="res://vcder/EasyBag/class/attribute/EB_ItemBaseAttribute.gd" id="2_auydf"]
+[ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://vcder/EasyBag/class/Codex/EB_Codex.gd" id="2_p3jxo"]
+[ext_resource type="Script" uid="uid://m7gc0x01x0ui" path="res://vcder/EasyBag/class/attribute/EB_ItemIntAttribute.gd" id="3_yfnml"]
+[ext_resource type="Script" uid="uid://d2p4bvpo2lyi5" path="res://vcder/EasyBag/class/EB_ItemTag.gd" id="4_t5me0"]
+[ext_resource type="Resource" uid="uid://d0ko07xq7nadf" path="res://vcder/EasyBag/workfile/AttributeSet/as.tres" id="4_ubvg1"]
+
+[sub_resource type="Resource" id="Resource_auydf"]
+script = ExtResource("3_yfnml")
+value = 80
+attribute_id = "0"
+
+[sub_resource type="Resource" id="Resource_p7yvj"]
+script = ExtResource("3_yfnml")
+value = 1
+attribute_id = "2"
+
+[sub_resource type="Resource" id="Resource_yjkla"]
+script = ExtResource("3_yfnml")
+value = 64
+attribute_id = "3"
+
+[sub_resource type="Resource" id="Resource_yfnml"]
+script = ExtResource("1_l5kg5")
+item_icon_path = "res://icon.svg"
+item_name = "树枝"
+attribute_dict = Dictionary[String, ExtResource("2_auydf")]({
+"0": SubResource("Resource_auydf"),
+"2": SubResource("Resource_p7yvj"),
+"3": SubResource("Resource_yjkla")
+})
+
+[sub_resource type="Resource" id="Resource_t5me0"]
+script = ExtResource("1_l5kg5")
+
+[sub_resource type="Resource" id="Resource_xh2sb"]
+script = ExtResource("1_l5kg5")
+
+[sub_resource type="Resource" id="Resource_jalkr"]
+script = ExtResource("1_l5kg5")
+
+[sub_resource type="Resource" id="Resource_g3h4d"]
+script = ExtResource("1_l5kg5")
+
+[sub_resource type="Resource" id="Resource_2jqgn"]
+script = ExtResource("1_l5kg5")
+item_icon_path = "res://vcder/EasyBag/asset/icon/rubbishBin.png"
+item_name = "垃圾桶"
+
+[sub_resource type="Resource" id="Resource_45i1v"]
+script = ExtResource("1_l5kg5")
+
+[resource]
+script = ExtResource("2_p3jxo")
+linked_attribute_set = ExtResource("4_ubvg1")
+item_dict = Dictionary[String, ExtResource("1_l5kg5")]({
+"0": SubResource("Resource_yfnml"),
+"1": SubResource("Resource_t5me0"),
+"2": SubResource("Resource_xh2sb"),
+"3": SubResource("Resource_jalkr"),
+"4": SubResource("Resource_g3h4d"),
+"5": SubResource("Resource_2jqgn"),
+"6": SubResource("Resource_45i1v")
+})

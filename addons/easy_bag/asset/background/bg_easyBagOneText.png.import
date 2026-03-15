@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3locb7o62hy4"
-path="res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"
+uid="uid://jgjqdbffu5er"
+path="res://.godot/imported/bg_easyBagOneText.png-17586c16c244e785ce7926c894333d1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EasyBag/asset/background/bg_easyBag.png"
-dest_files=["res://.godot/imported/bg_easyBag.png-4fefc9ef1aba13586586e560562526b6.ctex"]
+source_file="res://addons/easy_bag/asset/background/bg_easyBagOneText.png"
+dest_files=["res://.godot/imported/bg_easyBagOneText.png-17586c16c244e785ce7926c894333d1e.ctex"]
 
 [params]
 
