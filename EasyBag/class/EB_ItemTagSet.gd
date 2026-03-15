@@ -1,2 +1,0 @@
-extends Resource
-class_name EB_ItemTagSet
