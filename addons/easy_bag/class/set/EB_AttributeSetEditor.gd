@@ -16,6 +16,7 @@ func get_instantiate_item_attribute(item_res: EB_BaseAttribute,codex:EB_Codex) -
 	var id = res.attribute_dict.find_key(item_res)
 	if id != null:
 		new_ins.attribute_id = id
+		new_ins.is_static_attribute=item_res.default_static
 		#new_ins.from_codex=codex
 		
 	return new_ins

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwxwmi4dihbe5"]
 
-[ext_resource type="Script" uid="uid://bm4tpb1aya1mk" path="res://vcder/EasyBag/scene/attributeValueEditor/SetValue/int_attribute_set_editor.gd" id="1_qwj81"]
+[ext_resource type="Script" uid="uid://bm4tpb1aya1mk" path="res://addons/easy_bag/scene/attributeValueEditor/SetValue/int_attribute_set_editor.gd" id="1_qwj81"]
 
 [node name="IntAttributeValueEditor" type="VBoxContainer" unique_id=1116054156]
 size_flags_horizontal = 3
@@ -10,14 +10,22 @@ script = ExtResource("1_qwj81")
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1636895267]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=1796290161]
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer" unique_id=1626543608]
+layout_mode = 2
+text = "default static "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=606544452]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2" unique_id=1796290161]
 layout_mode = 2
 text = "default value:"
 
-[node name="DefaultValueSpinBox" type="SpinBox" parent="HBoxContainer" unique_id=157600714]
+[node name="DefaultValueSpinBox" type="SpinBox" parent="HBoxContainer2" unique_id=157600714]
 layout_mode = 2
 rounded = true
 allow_greater = true
 allow_lesser = true
 
-[connection signal="value_changed" from="HBoxContainer/DefaultValueSpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="toggled" from="HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer2/DefaultValueSpinBox" to="." method="_on_spin_box_value_changed"]
