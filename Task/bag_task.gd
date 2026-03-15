@@ -15,6 +15,9 @@ func refresh():
 		i.queue_free()
 	for i in bag.get_all_items():
 		var itemNode=EBNode_InventoryItem.new(i)
+		var stack=i.get_attribute_value(codexConfig.苹果.堆叠上限)
+		print(stack)
+		itemNode.text=itemNode.text+str(stack)
 		$ScrollContainer/GridContainer.add_child(itemNode)
 
 func _on_button_pressed() -> void:

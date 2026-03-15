@@ -48,22 +48,20 @@ func _create_item_instance(codex_id: String) -> EB_InventoryItem:
 	var new_InventoryItem: EB_InventoryItem = EB_InventoryItem.new()
 	var source_item: EB_CodexItem = item_dict[codex_id]
 	
-	# 复制属性
+	# 设置基础引用信息
+	new_InventoryItem.from_codex = self
+	new_InventoryItem.codex_item_id = codex_id
+	
+	# 核心修复：填充字典而不是数组
 	if source_item.attribute_dict:
 		for key in source_item.attribute_dict:
 			var base_attr: EB_ItemBaseAttribute = source_item.attribute_dict[key]
 			if base_attr:
-				# duplicate(true) 进行深拷贝，确保实例属性独立
-				var attribute: EB_ItemBaseAttribute = base_attr.duplicate(true)
-				attribute.is_instance_attribute = true
-				new_InventoryItem.attribute_arr.append(attribute)
-	
-	# 设置基础信息
-	new_InventoryItem.from_codex = self
-	new_InventoryItem.codex_item_id = codex_id
-	
-	# 如果有需要，也可以在这里把 name 或 icon 传给 InventoryItem
-	# new_InventoryItem.display_name = source_item.item_name 
-	# new_InventoryItem.icon_path = source_item.item_icon_path
+				# 使用 duplicate(true) 确保每个实例拥有独立的属性对象
+				var attribute_instance: EB_ItemBaseAttribute = base_attr.duplicate(true)
+				attribute_instance.is_instance_attribute = true
+				
+				# 存入 InventoryItem 的字典中
+				new_InventoryItem.attribute_dict[key] = attribute_instance
 	
 	return new_InventoryItem
