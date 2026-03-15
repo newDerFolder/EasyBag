@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dfxqd42ysu6js"]
 
-[ext_resource type="Script" uid="uid://ctsmvt3k3xwmi" path="res://vcder/EasyBag/activity/codex_editor.gd" id="1_6tkc8"]
-[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://vcder/EasyBag/asset/icon/apple.png" id="2_w2vxv"]
-[ext_resource type="Texture2D" uid="uid://cjrpfxwmluwt" path="res://vcder/DanmuStudio/sc/folder.png" id="2_wjew2"]
-[ext_resource type="Texture2D" uid="uid://ej3kla1vr3mr" path="res://vcder/EasyBag/asset/icon/iconStack.png" id="4_cseh5"]
-[ext_resource type="Texture2D" uid="uid://b7v4pj02oc485" path="res://vcder/EasyBag/asset/icon/icon.svg" id="4_h5if6"]
-[ext_resource type="Script" uid="uid://dvqh4rnv4g24d" path="res://vcder/ControlPlus/class/FileLineEdit.gd" id="5_658pj"]
+[ext_resource type="Script" uid="uid://ctsmvt3k3xwmi" path="res://addons/easy_bag/activity/codex_editor.gd" id="1_6tkc8"]
+[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://addons/easy_bag/asset/icon/apple.png" id="2_w2vxv"]
+[ext_resource type="Texture2D" uid="uid://b50jr3j14dfyd" path="res://addons/easy_bag/asset/icon/folder.png" id="2_wjew2"]
+[ext_resource type="Texture2D" uid="uid://ej3kla1vr3mr" path="res://addons/easy_bag/asset/icon/iconStack.png" id="4_cseh5"]
+[ext_resource type="Texture2D" uid="uid://b7v4pj02oc485" path="res://addons/easy_bag/asset/icon/icon.svg" id="4_h5if6"]
+[ext_resource type="Script" uid="uid://bre1ad5rjt3bd" path="res://addons/easy_bag/class/old_dependencies/FileLineEdit.gd" id="5_658pj"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_w2vxv"]
 device = -1

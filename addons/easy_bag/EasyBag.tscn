@@ -6,13 +6,13 @@
 script/source = "extends Control
 
 func _ready() -> void:
-	if not DirAccess.dir_exists_absolute(\"res://vcder/DataCourier/\"):
-		return
-	elif not DirAccess.dir_exists_absolute(\"res://vcder/ControlPlus/\"):
-		return
-	else:
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(\"res://addons/easy_bag/activity/MainEditor.tscn\")
+	#if not DirAccess.dir_exists_absolute(\"res://vcder/DataCourier/\"):
+		#return
+	#elif not DirAccess.dir_exists_absolute(\"res://vcder/ControlPlus/\"):
+		#return
+	#else:
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file(\"res://addons/easy_bag/activity/MainEditor.tscn\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_lsvk7"]
