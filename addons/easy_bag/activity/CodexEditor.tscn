@@ -180,7 +180,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("5_658pj")
 file_mode = 0
-metadata/_custom_type_script = "uid://dvqh4rnv4g24d"
 
 [node name="DescriptionTextEdit" type="TextEdit" parent="VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/info/VBoxContainer" unique_id=337783038]
 custom_minimum_size = Vector2(0, 75)

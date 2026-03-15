@@ -28,6 +28,7 @@ func change():
 	_change_edit_view()
 	_change_item_nodes()
 func reload():
+	res=load(file_path)
 	items_select_group.clean()
 	_reload_items_list()
 	change()
