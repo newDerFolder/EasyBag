@@ -26,24 +26,24 @@
   11.记得保存<br>
 ### 在代码中使用
   #### 创建Codex实例
-  var codex:EB_Codex=preload("res://addons/easy_bag/workfile/Codex/你的资源")
-  #### 创建容器实例
-  var bag:EB_Inventory
-  bag=ResourceLoader.load("user://bag.tres")
-	if bag==null:
-		bag=EB_Inventory.new()
+  var codex:EB_Codex=preload("res://addons/easy_bag/workfile/Codex/你的资源")   
+  #### 创建容器实例   
+  var bag:EB_Inventory   
+  bag=ResourceLoader.load("user://bag.tres")   
+	if bag==null:   
+		bag=EB_Inventory.new()   
   #推荐写在ready方法中
   #### 容器实例连接Codex实例
-  bag.link_codex(codex)
+  bag.link_codex(codex)   
   #### 生成新的物品
-  var item=get_attribute_value(codexConfig.苹果.堆叠)
-  #通常在EasyBag编辑器保存Codex后会在codex资源同路径下自动生成配置类
-  var item2=codex.get_instantiate_InventoryItem_by_name("垃圾桶")
-  var item3=codex.get_instantiate_InventoryItem_by_id("1")
+  var item=get_attribute_value(codexConfig.苹果.堆叠)   
+  #通常在EasyBag编辑器保存Codex后会在codex资源同路径下自动生成配置类   
+  var item2=codex.get_instantiate_InventoryItem_by_name("垃圾桶")   
+  var item3=codex.get_instantiate_InventoryItem_by_id("1")   
   #### 为容器实例添加物品
-  bag.add_item(item)
+  bag.add_item(item)   
   #### 获取物品的属性
-  for i in bag.get_all_items():
-		var stack=i.get_attribute_value(codexConfig.苹果.堆叠)
-		var stack_max=i.get_attribute_value(codexConfig.苹果.堆叠上限)
+  for i in bag.get_all_items():   
+		var stack=i.get_attribute_value(codexConfig.苹果.堆叠)   
+		var stack_max=i.get_attribute_value(codexConfig.苹果.堆叠上限)   
   
