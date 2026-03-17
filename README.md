@@ -1,4 +1,4 @@
-# EasyBag
+# EasyBag(EN)
 ## Introduction
   EasyBag is an inventory and item system framework for Godot. It enables code-free editing and automatic generation of item configuration classes through a visual editor. Subsequently, developers can use the EasyBag series of classes in GDScript for gameplay development, facilitating seamless collaboration between designers and engineers.
 
@@ -58,7 +58,7 @@
 
 
 
-# EasyBag
+# EasyBag(CN)
 ## 简介
   EasyBag是一款Godot中的库存与物品系统框架，通过可视化编辑器实现无代码编辑和自动生成物品
 配置类，随后在gds代码中使用EasyBag系列的类进行玩法开发，可轻松实现设计师与工程师的巧妙合作。
