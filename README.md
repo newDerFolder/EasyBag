@@ -1,4 +1,58 @@
 # EasyBag
+## Introduction
+  EasyBag is an inventory and item system framework for Godot. It enables code-free editing and automatic generation of item configuration classes through a visual editor. Subsequently, developers can use the EasyBag series of classes in GDScript for gameplay development, facilitating seamless collaboration between designers and engineers.
+
+## Quick Start
+### Creating Items in the Visual Editor
+  #### Creating a Codex (Item Directory)
+  1.First, download the EasyBag folder and place it under res://addons/.<br>
+  2.Run the EasyBag scene located in the EasyBag folder to launch the EB Editor. (Unlike common Godot editor plugins, the EB Editor requires significant resources and must be run as a scene rather than residing permanently in the Godot editor panel).<br>
+  3.After entering the editor, click File > New in the top toolbar to open the file creation panel.<br>
+  4.Select Codex, choose a destination, and create the file.<br>
+  5.In the editor on the left, click Add Item to add items.<br>
+  6.Remember to save.
+  #### Adding Attributes to Items
+  1.Click File > New to open the creation panel.<br>
+  2.Select EB_AttributeSet, choose a destination, and create the file.<br>
+  3.In the editor on the left, click Add Item to add attributes.<br>
+  4.Select an attribute.<br>
+  5.In the middle editing panel, you can change the attribute type, for example, to Int.<br>
+  6.Remember to save.<br>
+  7.Close the entire EasyBag Editor (to avoid referencing incorrect resources; this issue will be resolved in the future).<br>
+  8.Restart the EasyBag Editor and open the Codex.<br>
+  9.Click Attribute in the top right corner to select and connect an Attribute Set.<br>
+  10.Select an item; you can now add attributes to it in the middle editing panel.<br>
+  11.Remember to save.<br>
+### Using in Code
+  #### Creating a Codex Instance
+  var codex: EB_Codex = preload("res://addons/easy_bag/workfile/Codex/YourResource")      
+  #### Creating a Container Instance    
+  var bag:EB_Inventory   
+  bag=ResourceLoader.load("user://bag.tres")   
+	if bag==null:   
+		bag=EB_Inventory.new()   
+  #Recommended to place in the ready method   
+  #### Linking the Container Instance to the Codex Instance
+  bag.link_codex(codex)   
+  #### Generating New Items
+  #Usually, after saving the Codex in the EasyBag Editor, a configuration class is automatically generated   
+  #in the same path as the codex resource.  
+  var item = get_attribute_value(codexConfig.Apple.Stack)   
+  var item2 = codex.get_instantiate_InventoryItem_by_name("TrashCan")    
+  var item3 = codex.get_instantiate_InventoryItem_by_id("1")    
+  #### Adding Items to the Container Instance
+  bag.add_item(item)   
+  #### Getting Item Attributes
+  for i in bag.get_all_items():     
+    var stack = i.get_attribute_value(codexConfig.Apple.Stack)   
+    var stack_max = i.get_attribute_value(codexConfig.Apple.StackLimit)    
+
+
+
+
+
+
+# EasyBag
 ## 简介
   EasyBag是一款Godot中的库存与物品系统框架，通过可视化编辑器实现无代码编辑和自动生成物品
 配置类，随后在gds代码中使用EasyBag系列的类进行玩法开发，可轻松实现设计师与工程师的巧妙合作。
