@@ -1,5 +1,5 @@
 extends Control
-class_name EB_MainEditor
+class_name EB_MainEditorUi
 @onready var tab_container:TabContainer=$VBoxContainer/TabContainer
 @onready var label_editing_path:Label=$VBoxContainer/MenuBar/HFlowContainer/PanelContainer/LabelEditingPath
 @onready var file_menu:MenuButton=$VBoxContainer/MenuBar/HFlowContainer/MenuFile
@@ -9,7 +9,7 @@ class_name EB_MainEditor
 @onready var label_tagSet:Label=$VBoxContainer/MenuBar/HFlowContainer/LabelTagSet
 @onready var linked_TagSet_Btn:Button=$VBoxContainer/MenuBar/HFlowContainer/LinkedTagSetButton
 
-@onready var file_dialog: FileDialog = FileDialog.new() # 预设节点或在 _ready 中添加
+@onready var file_dialog: FileDialog = FileDialog.new()
 
 var file_popup_menu:PopupMenu
 

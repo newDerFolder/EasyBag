@@ -1,0 +1,7 @@
+extends RefCounted
+class_name EB_Context
+
+var main_editor_ui_node:EB_MainEditorUi
+var previous_editor_ui_node:Control
+var need_reload_res_on_back=false
+#是否需要在返回Codex编辑器时重新加载(用于在改完属性集合后再切换回Codex时更改)

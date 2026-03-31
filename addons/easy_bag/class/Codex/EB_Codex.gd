@@ -5,7 +5,7 @@ class_name EB_Codex
 @export var linked_attribute_set: EB_AttributeSet
 @export var item_dict: Dictionary[String, EB_CodexItem]
 
-# --- 原有方法 (已优化复用逻辑) ---
+
 
 func get_instantiate_InventoryItem(item_config: EB_CodexConfigItem) -> EB_InventoryItem:
 	if not item_dict.has(item_config.codex_id):
@@ -13,12 +13,9 @@ func get_instantiate_InventoryItem(item_config: EB_CodexConfigItem) -> EB_Invent
 		return null
 	return _create_item_instance(item_config.codex_id)
 
-# --- 新增方法 1: 通过物品名称获取 ---
 
 func get_instantiate_InventoryItem_by_name(target_name: String) -> EB_InventoryItem:
 	var found_id: String = ""
-	
-	# 遍历字典查找匹配的 item_name
 	for codex_id in item_dict:
 		var codex_item: EB_CodexItem = item_dict[codex_id]
 		if codex_item and codex_item.item_name == target_name:
@@ -31,8 +28,7 @@ func get_instantiate_InventoryItem_by_name(target_name: String) -> EB_InventoryI
 		
 	return _create_item_instance(found_id)
 
-# --- 新增方法 2: 通过物品 ID 获取 ---
-# 假设 item_dict 的 Key (String) 就是物品 ID
+
 
 func get_instantiate_InventoryItem_by_id(target_id: String) -> EB_InventoryItem:
 	if not item_dict.has(target_id):

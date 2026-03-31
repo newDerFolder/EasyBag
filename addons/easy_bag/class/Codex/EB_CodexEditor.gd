@@ -58,27 +58,7 @@ func add_new_attribute_items(item_res: EB_CodexItem, arr: Array[EB_ItemBaseAttri
 		# 4. 重新赋值触发 Resource 的更新逻辑
 		item_res.attribute_dict = typed_dict
 		item_res.emit_changed()
-#func add_new_attribute_items(item_res: EB_CodexItem, arr: Array[EB_ItemBaseAttribute]) -> void:
-	#if item_res == null: return
-	## 1. 拿到当前已有的 ID 列表
-	#var existing_ids = get_attributes_SetId_arr(item_res.attribute_arr)
-	## 2. 创建一个全新的强类型数组，而不是直接在旧数组上 append
-	#var typed_arr: Array[EB_ItemBaseAttribute] = item_res.attribute_arr.duplicate()
-	#var changed = false
-	#for attr in arr:
-		#if attr and not existing_ids.has(attr.attribute_id):
-			## 使用 true 进行深拷贝，并清除路径，强制作为本地子资源存储
-			#var new_attr = attr.duplicate(true)
-			#new_attr.resource_path = "" 
-			#typed_arr.append(new_attr)
-			#existing_ids.append(attr.attribute_id)
-			#changed = true
-	#
-	#if changed:
-		## 3. 重新赋值触发 Resource 的更新逻辑
-		#item_res.attribute_arr = typed_arr
-		#item_res.emit_changed()
-	
+
 	
 func get_attributes_SetId_arr(arr:Array[EB_ItemBaseAttribute])->Array[String]:
 	var ret_arr:Array[String]=[]
@@ -272,13 +252,7 @@ func _sanitize_identifier(raw: String) -> String:
 				# 其他 ASCII 符号 (空格, 标点等) 转为下划线
 				result += "_"
 		else:
-			# 3. 非 ASCII 字符处理 (中文, 日文, 韩文, 俄文, 阿拉伯文等)
-			# 策略：保留所有 "看起来像文字" 的字符，仅排除特定的不可见空白符和控制符
 			
-			# 需要排除的特殊空白符/控制符列表:
-			# 160: NBSP (不换行空格)
-			# 8203-8205: 零宽空格/连接符
-			# 其他 Unicode 控制字符范围 (< 32 已在上面处理，这里主要防特殊空白)
 			if code == 160 or (code >= 8203 and code <= 8205):
 				result += "_"
 			else:
