@@ -1,4 +1,4 @@
-extends Resource
+extends EasyBagResource
 class_name EB_Codex
 
 @export var linked_tag_set: EB_TagSet

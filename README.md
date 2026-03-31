@@ -49,8 +49,8 @@
   #### Getting Item Attributes
   ```
   for i in bag.get_all_items():     
-    var stack = i.get_attribute_value(codexConfig.Apple.Stack)   
-    var stack_max = i.get_attribute_value(codexConfig.Apple.StackLimit)
+	var stack = i.get_attribute_value(codexConfig.Apple.Stack)   
+	var stack_max = i.get_attribute_value(codexConfig.Apple.StackLimit)
 ```
 
 

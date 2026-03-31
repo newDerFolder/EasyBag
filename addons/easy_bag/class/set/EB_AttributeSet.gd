@@ -1,4 +1,4 @@
-extends Resource
+extends EasyBagResource
 class_name EB_AttributeSet
 
 @export var attribute_dict:Dictionary[String,EB_BaseAttribute]

@@ -1,4 +1,4 @@
-extends Resource
+extends EasyBagResource
 class_name EB_BaseAttribute
 
 @export var item_icon_path:String=""

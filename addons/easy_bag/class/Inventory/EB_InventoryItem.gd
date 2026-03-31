@@ -1,4 +1,4 @@
-extends Resource
+extends EasyBagResource
 class_name EB_InventoryItem
 
 var from_codex:EB_Codex
