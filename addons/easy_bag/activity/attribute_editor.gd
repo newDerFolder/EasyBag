@@ -17,9 +17,11 @@ var editing_attribute_item_res:EB_BaseAttribute
 
 
 var attribute_factories = {
-	"EB_IntAttribute": preload("res://addons/easy_bag/class/attribute/EB_IntAttribute.gd"),
-	"EB_BaseAttribute": preload("res://addons/easy_bag/class/attribute/EB_BaseAttribute.gd"),
+	"EB_IntAttribute": preload("res://addons/easy_bag/class/easy_bag_resource/item/EB_IntAttribute.gd"),
+	"EB_BaseAttribute": preload("res://addons/easy_bag/class/easy_bag_resource/item/EB_BaseAttribute.gd"),
 	}
+
+
 
 func _ready() -> void:
 	if not res is EB_AttributeSet:
@@ -30,6 +32,7 @@ func _ready() -> void:
 func save_file():
 	if file_path!=null and res!=null:
 		editor.save_to_file(file_path)
+		context.should_reload_on_return=true
 func close_file():
 	save_file()
 	queue_free()

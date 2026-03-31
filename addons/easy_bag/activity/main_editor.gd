@@ -82,9 +82,10 @@ func _open_file_dialog_file_selected(path: String):
 func _on_tab_container_tab_selected(tab: int) -> void:
 	if tab_container.get_children().size()<=0:
 		return
-	#now_editor=tab_container.get_child(tab)
 	context.change_editorNode(tab_container.get_child(tab))
 	label_editing_path.text=context.now_editor_ui_node.file_path
+	if context.should_reload_on_return:
+		context.now_editor_ui_node=load(context.now_editor_ui_node.file_path).instantiate()
 	if context.now_editor_ui_node is EB_CodexEditorUi:
 		context.now_editor_ui_node.refresh_context()
 	change_linked_bar(context.now_editor_ui_node.res)
