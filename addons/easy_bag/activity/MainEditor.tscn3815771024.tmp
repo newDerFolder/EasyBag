@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://ciwo5gm63x0ef" path="res://addons/easy_bag/activity/main_editor.gd" id="2_oaqg7"]
 [ext_resource type="Texture2D" uid="uid://dw0d7o5v00wdy" path="res://addons/easy_bag/asset/icon/ballTwo.png" id="4_2t53j"]
 [ext_resource type="Texture2D" uid="uid://boqgiorb6dm6v" path="res://addons/easy_bag/asset/icon/editIconPan.png" id="4_erfnr"]
-[ext_resource type="Texture2D" uid="uid://b50jr3j14dfyd" path="res://addons/easy_bag/asset/icon/folder.png" id="4_qpfyc"]
 [ext_resource type="Texture2D" uid="uid://ca4xc8huqylag" path="res://addons/easy_bag/asset/icon/gridFour.png" id="5_oaqg7"]
 
 [node name="MainEditor" type="Control" unique_id=317744891]
@@ -39,17 +38,6 @@ layout_mode = 2
 
 [node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MenuBar" unique_id=223183825]
 layout_mode = 2
-
-[node name="MenuFile" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=22820240]
-layout_mode = 2
-text = "file"
-icon = ExtResource("4_qpfyc")
-flat = false
-item_count = 2
-popup/item_0/text = "new file"
-popup/item_0/id = 0
-popup/item_1/text = "open file"
-popup/item_1/id = 1
 
 [node name="MenuButton2" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=499942710]
 layout_mode = 2

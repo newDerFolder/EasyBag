@@ -13,7 +13,7 @@ class_name EB_MainEditorUi
 
 var file_popup_menu:PopupMenu
 
-var now_editor:Container
+var context:EB_EditorNodeContext=EB_EditorNodeContext.new()
 
 func _ready() -> void:
 	file_popup_menu=file_menu.get_popup()
@@ -82,17 +82,18 @@ func _open_file_dialog_file_selected(path: String):
 func _on_tab_container_tab_selected(tab: int) -> void:
 	if tab_container.get_children().size()<=0:
 		return
-	now_editor=tab_container.get_child(tab)
-	label_editing_path.text=now_editor.file_path
-	if now_editor is EB_CodexEditorUi:
-		now_editor.refresh_context()
-	change_linked_bar(now_editor.res)
+	#now_editor=tab_container.get_child(tab)
+	context.change_editorNode(tab_container.get_child(tab))
+	label_editing_path.text=context.now_editor_ui_node.file_path
+	if context.now_editor_ui_node is EB_CodexEditorUi:
+		context.now_editor_ui_node.refresh_context()
+	change_linked_bar(context.now_editor_ui_node.res)
 
 func _on_tab_container_active_tab_rearranged(idx_to: int) -> void:
 	change()
 
 func change_linked_bar(res:Resource):
-	if now_editor==null or tab_container.get_children().size()<=0:
+	if context.now_editor_ui_node==null or tab_container.get_children().size()<=0:
 		set_linkedBar_attributeSet_visible(false)
 		set_linkedBar_tagSet_visible(false)
 	elif res is EB_Codex:
@@ -103,10 +104,10 @@ func change_linked_bar(res:Resource):
 		set_linkedBar_tagSet_visible(true)
 
 func get_now_editor_res()->Resource:
-	if now_editor==null or now_editor.res==null:
+	if context.now_editor_ui_node==null or context.now_editor_ui_node.res==null:
 		return null
 	else:
-		return now_editor.res
+		return context.now_editor_ui_node.res
 
 func set_linkedBar_attributeSet_visible(set_visible: bool):
 	label_attribute.visible = set_visible
@@ -151,7 +152,7 @@ func _on_attribute_file_selected(path: String) -> void:
 	current_res.linked_attribute_set = res
 	
 	# 获取编辑器中记录的可靠路径
-	var save_path = now_editor.file_path 
+	var save_path = context.now_editor_ui_node.file_path 
 	
 	if save_path == "" or save_path == null:
 		# 如果编辑器里没存，尝试用资源自带的
@@ -168,5 +169,5 @@ func _on_attribute_file_selected(path: String) -> void:
 	else:
 		print("关联已更新并保存至: ", save_path)
 	
-	now_editor.reload() 
+	context.now_editor_ui_node.reload() 
 	linked_AttributeSet_Btn.text = path.get_file()

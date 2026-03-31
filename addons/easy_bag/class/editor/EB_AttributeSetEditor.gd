@@ -1,8 +1,9 @@
-extends RefCounted
+extends EB_BaseEditor
 class_name EB_AttributeSetEditor
-@export var res:EB_AttributeSet
 
 
+func _ready() -> void:
+	res as EB_AttributeSet
 
 func get_instantiate_item_attribute(item_res: EB_BaseAttribute,codex:EB_Codex) -> EB_ItemBaseAttribute:
 	var new_ins: EB_ItemBaseAttribute

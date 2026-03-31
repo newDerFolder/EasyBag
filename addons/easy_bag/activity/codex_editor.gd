@@ -1,9 +1,5 @@
-extends VBoxContainer
+extends EB_BaseEditorUi
 class_name EB_CodexEditorUi
-
-var file_path:String
-var res:EB_Codex
-var editor:EB_CodexEditor=EB_CodexEditor.new()
 
 @onready var items_list=$VBoxContainer/HSplitContainer/Items/ScrollContainer/HFlowContainer
 @onready var name_label:LineEdit=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer2/NameLabel
@@ -16,7 +12,12 @@ var editor:EB_CodexEditor=EB_CodexEditor.new()
 @onready var description_TextEdit:TextEdit=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/info/VBoxContainer/DescriptionTextEdit
 @onready var attributes_list:VBoxContainer=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/attribute/VBoxContainer/VBoxContainer
 
+
+
+
+
 func _ready() -> void:
+	editor=EB_CodexEditor.new()
 	editor.res=res
 	editor.attribute_set=res.linked_attribute_set
 

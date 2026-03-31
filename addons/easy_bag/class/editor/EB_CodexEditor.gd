@@ -1,10 +1,13 @@
-extends RefCounted
+extends EB_BaseEditor
 class_name EB_CodexEditor
 
-@export var res: EB_Codex
+
 # 【新增】请在编辑器 Inspector 面板中将包含所有属性定义的 EB_AttributeSet 资源拖入此槽位
 @export var attribute_set: EB_AttributeSet 
 
+
+func _init() -> void:
+	res as EB_Codex
 
 func del_item_attribute(item_res: EB_CodexItem, attr: EB_ItemBaseAttribute) -> void:
 	if item_res == null or attr == null:

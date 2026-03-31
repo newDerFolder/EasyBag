@@ -1,8 +1,7 @@
-extends VBoxContainer
+extends EB_BaseEditorUi
 class_name EB_AttributeEditorUi
 
-var file_path:String
-var res:EB_AttributeSet
+
 
 @onready var items_list:GridContainer=$HSplitContainer/HSplitContainer/item/ScrollContainer/GridContainer
 @onready var name_lineEdit:LineEdit=$HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer/NameLineEdit
@@ -16,7 +15,6 @@ var res:EB_AttributeSet
 var items_select_group:SelectGroup=SelectGroup.new()
 var editing_attribute_item_res:EB_BaseAttribute
 
-var editor=EB_AttributeSetEditor.new()
 
 var attribute_factories = {
 	"EB_IntAttribute": preload("res://addons/easy_bag/class/attribute/EB_IntAttribute.gd"),
@@ -24,6 +22,9 @@ var attribute_factories = {
 	}
 
 func _ready() -> void:
+	if not res is EB_AttributeSet:
+		push_error("属性编辑器接受了错误的文件类型")
+	editor=EB_AttributeSetEditor.new()
 	editor.res=res
 
 func save_file():
