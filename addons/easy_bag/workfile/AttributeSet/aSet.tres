@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EB_AttributeSet" format=3]
+[gd_resource type="Resource" script_class="EB_AttributeSet" format=3 uid="uid://cdil13gun8twv"]
 
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_BaseAttribute.gd" id="1_7u61j"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_AttributeSet.gd" id="2_wl4nt"]
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_BaseAttribute.gd" id="1_7u61j"]
+[ext_resource type="Script" uid="uid://lsv5rcd4ob0p" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_AttributeSet.gd" id="2_wl4nt"]
 
 [sub_resource type="Resource" id="Resource_7u61j"]
 script = ExtResource("1_7u61j")

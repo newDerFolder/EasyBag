@@ -120,7 +120,7 @@ func save_config_to_file(path: String) -> bool:
 	if class_name_raw.contains("."):
 		class_name_raw = class_name_raw.split(".")[0]
 		
-	lines.append("class_name "+"EBConfig"+ class_name_raw+"")
+	lines.append("class_name "+"EBConfig_"+ class_name_raw+"")
 	
 	lines.append("")
 	lines.append("# 自动生成的物品配置类 (基于 Dictionary, 值为 Attribute ID)")
