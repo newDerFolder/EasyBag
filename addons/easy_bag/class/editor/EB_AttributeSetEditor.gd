@@ -2,7 +2,7 @@ extends EB_BaseEditor
 class_name EB_AttributeSetEditor
 
 
-func _ready() -> void:
+func _init() -> void:
 	res as EB_AttributeSet
 
 func get_instantiate_item_attribute(item_res: EB_BaseAttribute,codex:EB_Codex) -> EB_ItemBaseAttribute:

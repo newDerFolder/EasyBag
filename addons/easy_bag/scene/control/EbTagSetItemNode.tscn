@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://uiq4khplukgj"]
+
+[ext_resource type="Script" uid="uid://do7sd4qplywq5" path="res://addons/easy_bag/scene/control/eb_tag_set_item_node.gd" id="1_vnbrm"]
+[ext_resource type="Texture2D" uid="uid://c63cusy4arbwj" path="res://icon.svg" id="2_neo5d"]
+
+[node name="EbTagSetItemNode" type="PanelContainer" unique_id=1944186736]
+offset_right = 321.0
+offset_bottom = 30.0
+size_flags_horizontal = 3
+script = ExtResource("1_vnbrm")
+
+[node name="VBC" type="VBoxContainer" parent="." unique_id=345189152]
+layout_mode = 2
+
+[node name="HFC" type="HFlowContainer" parent="VBC" unique_id=718766000]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBC/HFC" unique_id=1739674627]
+layout_mode = 2
+texture = ExtResource("2_neo5d")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="VBC/HFC" unique_id=229463204]
+layout_mode = 2
+text = "new tag"
+
+[node name="ChildrenTagVBC" type="VBoxContainer" parent="VBC" unique_id=427260918]
+layout_mode = 2

@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://bre1ad5rjt3bd" path="res://addons/easy_bag/class/old_dependencies/FileLineEdit.gd" id="4_1u2py"]
 [ext_resource type="Texture2D" uid="uid://ej3kla1vr3mr" path="res://addons/easy_bag/asset/icon/iconStack.png" id="4_2n1vh"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_ba17n"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_c52r7"]
+events = [SubResource("InputEventKey_ba17n")]
+
 [node name="AttributeEditor" type="VBoxContainer" unique_id=1521352235]
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +40,7 @@ texture = ExtResource("2_gc3nh")
 
 [node name="SaveButton" type="Button" parent="MenuBar/HFlowContainer" unique_id=1550605092]
 layout_mode = 2
+shortcut = SubResource("Shortcut_c52r7")
 text = "save"
 
 [node name="VSeparator" type="VSeparator" parent="MenuBar/HFlowContainer" unique_id=193710091]

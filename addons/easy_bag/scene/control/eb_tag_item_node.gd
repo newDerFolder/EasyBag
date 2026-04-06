@@ -1,2 +1,0 @@
-extends PanelContainer
-class_name EB_TagItemNode
