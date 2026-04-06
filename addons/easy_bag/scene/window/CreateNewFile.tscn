@@ -139,9 +139,10 @@ fit_content = true
 [node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox/VBoxContainer" unique_id=1192033333]
 layout_mode = 2
 
-[node name="createCodex" type="Button" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=353340368]
+[node name="createTagSet" type="Button" parent="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox" unique_id=353340368]
 layout_mode = 2
 text = "create"
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/Codex/Codex/createCodex" to="." method="_on_create_codex_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexAttributeSet/CodexAttributeSet/createCodexAttributeSet" to="." method="_on_create_codex_attribute_set_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FoldableContainer/VBoxContainer/CodexTagSet/HBox/createTagSet" to="." method="_on_create_tag_set_pressed"]

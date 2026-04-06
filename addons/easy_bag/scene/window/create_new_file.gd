@@ -37,6 +37,10 @@ func _file_dialog_file_selected(path: String):
 			new_class_res=EB_AttributeSet.new()
 			new_editor.file_path=path
 			new_editor.res=new_class_res
+		"TagSet":
+			new_class_res=EB_TagSet.new()
+			new_editor.file_path=path
+			new_editor.res=new_class_res
 	ResourceSaver.save(new_class_res,path)
 	
 	scene_created.emit(new_editor)
@@ -54,4 +58,10 @@ func _on_create_codex_pressed() -> void:
 func _on_create_codex_attribute_set_pressed() -> void:
 	new_editor=preload("res://addons/easy_bag/activity/AttributeEditor.tscn").instantiate()
 	_select_path("AttributeSet")
+	pass # Replace with function body.
+
+
+func _on_create_tag_set_pressed() -> void:
+	new_editor=preload("res://addons/easy_bag/activity/TagEditorUi.tscn").instantiate()
+	_select_path("TagSet")
 	pass # Replace with function body.

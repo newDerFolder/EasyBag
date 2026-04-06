@@ -77,6 +77,13 @@ func _open_file_dialog_file_selected(path: String):
 			new_editor.name=new_editor.file_path.get_basename().get_file()
 			tab_container.add_child(new_editor)
 			new_editor.reload()
+		elif new_resource is EB_TagSet:
+			var new_editor:EB_TagEditorUi=preload("res://addons/easy_bag/activity/TagEditorUi.tscn").instantiate()
+			new_editor.file_path=path
+			new_editor.res=new_resource
+			new_editor.name=new_editor.file_path.get_basename().get_file()
+			tab_container.add_child(new_editor)
+			new_editor.reload()
 
 #切换编辑的文件(编辑器)时
 func _on_tab_container_tab_selected(tab: int) -> void:

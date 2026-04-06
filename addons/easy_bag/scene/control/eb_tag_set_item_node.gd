@@ -7,7 +7,6 @@ class_name EB_TagItemNode
 @export var extends_tag_id:String=""
 var res:EB_Tag=null
 
-
 func change():
 	if ResourceLoader.exists(res.item_icon_path):
 		tag_icon.texture=load(res.item_icon_path)
