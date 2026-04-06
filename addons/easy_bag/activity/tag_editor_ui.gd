@@ -1,0 +1,2 @@
+extends EB_BaseEditorUi
+class_name EB_TagEditorUi

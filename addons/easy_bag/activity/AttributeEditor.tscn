@@ -30,7 +30,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_gc3nh")
 
-[node name="Button2" type="Button" parent="MenuBar/HFlowContainer" unique_id=1550605092]
+[node name="SaveButton" type="Button" parent="MenuBar/HFlowContainer" unique_id=1550605092]
 layout_mode = 2
 text = "save"
 
@@ -172,6 +172,7 @@ title = "属性值"
 [node name="find" type="PanelContainer" parent="HSplitContainer" unique_id=1270103766]
 layout_mode = 2
 
+[connection signal="pressed" from="MenuBar/HFlowContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="MenuBar/HFlowContainer/ButtonAddNewItem" to="." method="_on_button_add_new_item_pressed"]
 [connection signal="pressed" from="MenuBar/HFlowContainer/ButtonClose" to="." method="_on_button_close_pressed"]
 [connection signal="editing_toggled" from="HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer/NameLineEdit" to="." method="_on_name_line_edit_editing_toggled"]

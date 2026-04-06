@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwhndyjrptuba"]
 
-[ext_resource type="Script" uid="uid://jig6i4j7ua45" path="res://vcder/EasyBag/scene/control/EB_CodexItemNode.gd" id="1_7ixc0"]
+[ext_resource type="Script" uid="uid://jig6i4j7ua45" path="res://addons/easy_bag/scene/control/EB_CodexItemNode.gd" id="1_7ixc0"]
 
 [node name="EbEasyItemNode" type="PanelContainer" unique_id=1415952006]
 offset_right = 161.0

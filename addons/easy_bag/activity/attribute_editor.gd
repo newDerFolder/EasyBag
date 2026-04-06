@@ -27,6 +27,7 @@ func _ready() -> void:
 	if not res is EB_AttributeSet:
 		push_error("属性编辑器接受了错误的文件类型")
 	editor=EB_AttributeSetEditor.new()
+	editor as EB_AttributeSetEditor
 	editor.res=res
 
 func save_file():
@@ -151,3 +152,7 @@ func _on_type_option_button_item_selected(index: int) -> void:
 	reload()
 	_reload_edit_view(new_res)
 	change()
+
+
+func _on_save_button_pressed() -> void:
+	editor.save_to_file(file_path)

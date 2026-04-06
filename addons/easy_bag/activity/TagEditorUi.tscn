@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dfuqn8d3hptjp"]
+
+[ext_resource type="Script" uid="uid://dkcjbwh1s7p11" path="res://addons/easy_bag/activity/tag_editor_ui.gd" id="1_q3jwh"]
+[ext_resource type="Texture2D" uid="uid://b50jr3j14dfyd" path="res://addons/easy_bag/asset/icon/folder.png" id="2_qw134"]
+
+[node name="TagEditorUi" type="VBoxContainer" unique_id=1885559704]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3jwh")
+metadata/_custom_type_script = "uid://qwf2augdw3rj"
+
+[node name="Control" type="Control" parent="." unique_id=1539387747]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=83697592]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer" unique_id=1574096076]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer" unique_id=909866912]
+layout_mode = 2
+texture = ExtResource("2_qw134")
+
+[node name="Button" type="Button" parent="PanelContainer/HFlowContainer" unique_id=1810884708]
+layout_mode = 2
+text = "save"
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/HFlowContainer" unique_id=67369389]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1049260688]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(800)
+split_offset = 800
+
+[node name="item" type="PanelContainer" parent="HSplitContainer" unique_id=1265130504]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/item" unique_id=1152729849]
+layout_mode = 2
+
+[node name="edit" type="PanelContainer" parent="HSplitContainer" unique_id=1936982197]
+layout_mode = 2

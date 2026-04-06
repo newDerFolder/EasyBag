@@ -1,97 +1,42 @@
-[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://biex7gvso3uc7"]
+[gd_resource type="Resource" script_class="EB_Codex" format=3]
 
-[ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_ynw6p"]
-[ext_resource type="Script" uid="uid://buehk1yb17qwc" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_1xn1q"]
-[ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_a3434"]
-[ext_resource type="Script" uid="uid://m7gc0x01x0ui" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemIntAttribute.gd" id="3_0d1t6"]
-[ext_resource type="Script" uid="uid://d2p4bvpo2lyi5" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_g0tfm"]
-[ext_resource type="Resource" uid="uid://b10aiom45pnhs" path="res://addons/easy_bag/workfile/AttributeSet/as.tres" id="4_g0tfm"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_ynw6p"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_1xn1q"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_a3434"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemIntAttribute.gd" id="3_0d1t6"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_g0tfm"]
+[ext_resource type="Resource" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="4_g0tfm"]
+
+[sub_resource type="Resource" id="Resource_34sj0"]
+script = ExtResource("3_0d1t6")
+value = 5
+attribute_id = "0"
+
+[sub_resource type="Resource" id="Resource_fxkbu"]
+script = ExtResource("3_0d1t6")
+value = 100
+attribute_id = "1"
+
+[sub_resource type="Resource" id="Resource_0d1t6"]
+script = ExtResource("1_ynw6p")
+item_icon_path = "res://icon.svg"
+item_name = "GodotIcon"
+attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
+"0": SubResource("Resource_34sj0"),
+"1": SubResource("Resource_fxkbu")
+})
 
 [sub_resource type="Resource" id="Resource_v673d"]
 script = ExtResource("3_0d1t6")
-value = 80
-attribute_id = "0"
+value = 100
+attribute_id = "1"
 
-[sub_resource type="Resource" id="Resource_wfhwh"]
-script = ExtResource("3_0d1t6")
-attribute_id = "2"
-is_static_attribute = false
-
-[sub_resource type="Resource" id="Resource_01228"]
-script = ExtResource("3_0d1t6")
-value = 64
-attribute_id = "3"
-
-[sub_resource type="Resource" id="Resource_0d1t6"]
+[sub_resource type="Resource" id="Resource_hapcj"]
 script = ExtResource("1_ynw6p")
 item_icon_path = "res://addons/easy_bag/asset/icon/apple.png"
 item_name = "苹果"
 attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
-"0": SubResource("Resource_v673d"),
-"2": SubResource("Resource_wfhwh"),
-"3": SubResource("Resource_01228")
-})
-
-[sub_resource type="Resource" id="Resource_rpv4r"]
-script = ExtResource("3_0d1t6")
-attribute_id = "2"
-is_static_attribute = false
-
-[sub_resource type="Resource" id="Resource_obev4"]
-script = ExtResource("3_0d1t6")
-value = 64
-attribute_id = "3"
-
-[sub_resource type="Resource" id="Resource_hapcj"]
-script = ExtResource("1_ynw6p")
-item_icon_path = "res://addons/easy_bag/asset/icon/find.png"
-item_name = "放大镜"
-attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
-"2": SubResource("Resource_rpv4r"),
-"3": SubResource("Resource_obev4")
-})
-
-[sub_resource type="Resource" id="Resource_0g33r"]
-script = ExtResource("3_0d1t6")
-attribute_id = "2"
-is_static_attribute = false
-
-[sub_resource type="Resource" id="Resource_b6p15"]
-script = ExtResource("3_0d1t6")
-value = 64
-attribute_id = "3"
-
-[sub_resource type="Resource" id="Resource_fxkbu"]
-script = ExtResource("1_ynw6p")
-item_icon_path = "res://addons/easy_bag/asset/icon/ballTwo.png"
-item_name = "球"
-attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
-"2": SubResource("Resource_0g33r"),
-"3": SubResource("Resource_b6p15")
-})
-
-[sub_resource type="Resource" id="Resource_r8w64"]
-script = ExtResource("3_0d1t6")
-attribute_id = "2"
-is_static_attribute = false
-
-[sub_resource type="Resource" id="Resource_8plmt"]
-script = ExtResource("3_0d1t6")
-value = 64
-attribute_id = "3"
-
-[sub_resource type="Resource" id="Resource_e524k"]
-script = ExtResource("2_1xn1q")
-attribute_id = "7"
-
-[sub_resource type="Resource" id="Resource_34sj0"]
-script = ExtResource("1_ynw6p")
-item_icon_path = "res://addons/easy_bag/asset/icon/rubbishBin.png"
-item_name = "垃圾桶"
-attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
-"2": SubResource("Resource_r8w64"),
-"3": SubResource("Resource_8plmt"),
-"7": SubResource("Resource_e524k")
+"1": SubResource("Resource_v673d")
 })
 
 [resource]
@@ -99,7 +44,5 @@ script = ExtResource("2_a3434")
 linked_attribute_set = ExtResource("4_g0tfm")
 item_dict = Dictionary[String, ExtResource("1_ynw6p")]({
 "0": SubResource("Resource_0d1t6"),
-"1": SubResource("Resource_hapcj"),
-"2": SubResource("Resource_fxkbu"),
-"3": SubResource("Resource_34sj0")
+"1": SubResource("Resource_hapcj")
 })

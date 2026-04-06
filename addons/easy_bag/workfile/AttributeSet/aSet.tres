@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EB_AttributeSet" format=3]
+
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_BaseAttribute.gd" id="1_7u61j"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_AttributeSet.gd" id="2_wl4nt"]
+
+[sub_resource type="Resource" id="Resource_7u61j"]
+script = ExtResource("1_7u61j")
+item_icon_path = "res://icon.svg"
+item_name = "a new attributeaaa"
+
+[sub_resource type="Resource" id="Resource_wl4nt"]
+script = ExtResource("1_7u61j")
+item_icon_path = "res://addons/easy_bag/asset/icon/apple.png"
+
+[resource]
+script = ExtResource("2_wl4nt")
+attribute_dict = Dictionary[String, ExtResource("1_7u61j")]({
+"0": SubResource("Resource_7u61j"),
+"1": SubResource("Resource_wl4nt")
+})
