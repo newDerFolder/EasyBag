@@ -26,3 +26,6 @@ text = "new tag"
 
 [node name="ChildrenTagVBC" type="VBoxContainer" parent="VBC" unique_id=427260918]
 layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -132,11 +132,11 @@ text = "keyid:"
 
 [node name="KeyIdLabel" type="Label" parent="HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer" unique_id=1780997769]
 layout_mode = 2
-text = "keyid:"
+text = "keyid233"
 
 [node name="Button" type="Button" parent="HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer" unique_id=571929408]
 layout_mode = 2
-text = "保险已关闭"
+text = "Lock Editing"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer" unique_id=1607337146]
 layout_mode = 2

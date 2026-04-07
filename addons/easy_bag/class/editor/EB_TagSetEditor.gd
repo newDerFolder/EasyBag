@@ -1,11 +1,10 @@
 extends EB_BaseEditor
 class_name EB_TagSetEditor
+# TODO:这个类施工中
 
 
-# 1. 将 type_res 改为私有变量，并去掉默认类型约束
 var _type_res: EB_TagSet = null
-# 2. 定义一个 getter，实现“懒加载”
-# 只要外部代码访问 type_res，就会自动触发这个检查
+
 var type_res:EB_TagSet:
 	get:
 		if _type_res == null:
@@ -21,18 +20,7 @@ var type_res:EB_TagSet:
 	set(val):
 		_type_res = val
 
-# 3. 彻底清空 _init，不要在这里做任何事！
-func _init() -> void:
-	pass
 
-# 4. 清空 _set，不要拦截赋值，让 Godot 自己把 res 设置好
-# 如果你需要刷新 UI，可以在这里调用，但不要修改 res
-func _set(property: StringName, value: Variant) -> bool:
-	if property == "res":
-		# 只是让 Godot 正常赋值，不做任何复杂的逻辑
-		# 真正的初始化会延迟到第一次访问 type_res 时发生
-		return false 
-	return false
 
 func add_new_item(id=null):
 	if id==null:

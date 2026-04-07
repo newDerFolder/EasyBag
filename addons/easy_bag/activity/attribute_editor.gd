@@ -92,22 +92,14 @@ func add_new_item_node(link_item:EB_BaseAttribute):
 	new_item_node.select_item_button_pressed.connect(_item_selected)
 	items_list.add_child(new_item_node)
 
-# 修改前的代码：
-#func _item_selected(item_res:EB_BaseAttribute,node: Control):
-	#editing_attribute_item_res=item_res
-	#items_select_group.select(node)
-	#_reload_edit_view(item_res)
-	#change()
-	#pass
-# 修改后的代码：
+
 func _item_selected(item_res: EB_BaseAttribute, node: Control, event: InputEvent):
 	editing_attribute_item_res = item_res
-	
-	# 重点：把鼠标事件传给 select 逻辑，多选才能生效
+
 	items_select_group.select(node, event.ctrl_pressed, event.shift_pressed)
 	
 	_reload_edit_view(item_res)
-	_chnange_item_node() # 调用原本的视觉更新
+	_chnange_item_node()
 
 func _on_button_add_new_item_pressed() -> void:
 	var new_item_id = editor.add_new_item()

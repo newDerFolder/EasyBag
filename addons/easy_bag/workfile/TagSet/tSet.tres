@@ -1,7 +1,21 @@
-[gd_resource type="Resource" script_class="EB_TagSet" format=3]
+[gd_resource type="Resource" script_class="EB_TagSet" format=3 uid="uid://dhbdxbmt581sh"]
 
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_TagSet.gd" id="1_l0vyq"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_Tag.gd" id="2_0cwuw"]
+[ext_resource type="Script" uid="uid://cfkk7rm85nmib" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_TagSet.gd" id="1_l0vyq"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_Tag.gd" id="2_0cwuw"]
+
+[sub_resource type="Resource" id="Resource_l0vyq"]
+script = ExtResource("2_0cwuw")
+
+[sub_resource type="Resource" id="Resource_0cwuw"]
+script = ExtResource("2_0cwuw")
+
+[sub_resource type="Resource" id="Resource_2refi"]
+script = ExtResource("2_0cwuw")
 
 [resource]
 script = ExtResource("1_l0vyq")
+tag_dict = Dictionary[String, ExtResource("2_0cwuw")]({
+"tag_0": SubResource("Resource_l0vyq"),
+"tag_1": SubResource("Resource_0cwuw"),
+"tag_2": SubResource("Resource_2refi")
+})
