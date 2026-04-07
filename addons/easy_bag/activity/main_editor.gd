@@ -116,7 +116,10 @@ func change_linked_bar(res:Resource):
 		set_linkedBar_tagSet_visible(true)
 	elif res is EB_AttributeSet:
 		set_linkedBar_attributeSet_visible(false)
-		set_linkedBar_tagSet_visible(true)
+		set_linkedBar_tagSet_visible(false)
+	elif res is EB_TagSet:
+		set_linkedBar_attributeSet_visible(false)
+		set_linkedBar_tagSet_visible(false)
 
 func get_now_editor_res()->Resource:
 	if context.now_editor_ui_node==null or context.now_editor_ui_node.res==null:

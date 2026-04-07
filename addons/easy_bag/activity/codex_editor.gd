@@ -204,3 +204,10 @@ func refresh_context():
 		var main_editor = get_tree().get_first_node_in_group("MainEditor") # 建议给主编辑器加个组
 		if main_editor:
 			main_editor.change_linked_bar(res)
+
+
+func _on_add_tag_pressed() -> void:
+	if editing_codex_item_res==null or res.linked_tag_set==null:
+		return
+	var new_win=EB_WindowFactory.create_add_tag_window_for_codex(self)
+	add_child(new_win)

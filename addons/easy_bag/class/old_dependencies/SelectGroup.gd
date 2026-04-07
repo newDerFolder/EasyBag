@@ -8,7 +8,7 @@ enum Select_Mode {
 }
 
 var selected_nodes = []  # 存储所有当前选中的节点
-var select_mode = Select_Mode.SINGLE  # 默认多选模式
+var select_mode = Select_Mode.SINGLE
 var last_selected_node = null  # 用于连续选择（Shift）记录上一个点击的节点
 
 func clean():

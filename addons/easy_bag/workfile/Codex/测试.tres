@@ -1,11 +1,23 @@
-[gd_resource type="Resource" script_class="EB_Codex" format=3]
+[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://bv2gxka5a01s8"]
 
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_4wjie"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_37pmc"]
-[ext_resource type="Resource" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="2_fmigg"]
-[ext_resource type="Resource" path="res://addons/easy_bag/workfile/TagSet/tSet.tres" id="3_fmigg"]
+[ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_4wjie"]
+[ext_resource type="Script" uid="uid://buehk1yb17qwc" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_2nm21"]
+[ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_37pmc"]
+[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="2_fmigg"]
+[ext_resource type="Script" uid="uid://d2p4bvpo2lyi5" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_fegv8"]
+[ext_resource type="Resource" uid="uid://crw2d86fvjwrs" path="res://addons/easy_bag/workfile/TagSet/tSet.tres" id="3_fmigg"]
+
+[sub_resource type="Resource" id="Resource_xgas5"]
+script = ExtResource("1_4wjie")
+
+[sub_resource type="Resource" id="Resource_g8auy"]
+script = ExtResource("1_4wjie")
 
 [resource]
 script = ExtResource("2_37pmc")
 linked_tag_set = ExtResource("3_fmigg")
 linked_attribute_set = ExtResource("2_fmigg")
+item_dict = Dictionary[String, ExtResource("1_4wjie")]({
+"0": SubResource("Resource_xgas5"),
+"1": SubResource("Resource_g8auy")
+})

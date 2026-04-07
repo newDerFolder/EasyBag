@@ -22,7 +22,13 @@ expand_mode = 3
 layout_mode = 2
 text = "new tag"
 
-[node name="ChildrenTagVBC" type="VBoxContainer" parent="VBC" unique_id=427260918]
+[node name="FoldableContainer" type="FoldableContainer" parent="VBC" unique_id=1603809354]
+layout_mode = 2
+folded = true
+title = "children tags"
+
+[node name="VBC" type="VBoxContainer" parent="VBC/FoldableContainer" unique_id=427260918]
+visible = false
 layout_mode = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

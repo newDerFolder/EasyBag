@@ -1,10 +1,8 @@
 extends ConfirmationDialog
+class_name EB_CodexAddAttributeWindow
 
 var attribute_set:EB_AttributeSet
-
-
 @onready var attributes_list:GridContainer=$VBoxContainer/ScrollContainer/GridContainer
-
 var items_select_group:SelectGroup=SelectGroup.new()
 var codex_editor:EB_CodexEditor
 var editor:EB_AttributeSetEditor=EB_AttributeSetEditor.new()
