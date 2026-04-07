@@ -1,7 +1,11 @@
 extends EB_BaseEditorUi
-class_name EB_TagEditorUi
+class_name EB_TagEditorUi 
 
 @onready var item_VBC:=$HSplitContainer/item/ScrollContainer/VBoxContainer
+@onready var icon_TextureRect:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/TextureRect
+@onready var icon_FileLineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/FileLineEdit
+@onready var name_lineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/NameLineEdit
+@onready var keyid_label:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/KeyIDLabel
 
 var type_res:EB_TagSet
 var type_editor:EB_TagSetEditor
@@ -46,16 +50,49 @@ func _item_selected(item_res: EB_Tag, node: Control, event: InputEvent):
 	_change_item_node()
 
 func _reload_edit_view(item_res:EB_Tag):
-	pass
+	if item_res==null:
+		push_error("item_res:EB_Tag为null")
+		return
+	name_lineEdit.text=item_res.tag_name
+	keyid_label.text=type_res.tag_dict.find_key(item_res)
+	if item_res.item_icon_path!=null and FileAccess.file_exists(item_res.item_icon_path):
+		icon_TextureRect.texture=load(item_res.item_icon_path)
+		icon_FileLineEdit.file_path=item_res.item_icon_path
+	else:
+		icon_TextureRect.texture=null
+		icon_FileLineEdit.file_path=""
+	
 func _change_item_node():
 	for i in item_VBC.get_children():
 		i.change()
 
 
 func _on_save_button_pressed() -> void:
-	type_editor.save_to_file(file_path)
+	save_file()
 
+func save_file():
+	type_editor.save_to_file(file_path)
+	context.should_reload_on_return=true
 
 func _on_add_root_tag_button_pressed() -> void:
 	type_editor.add_new_item()
 	reload()
+
+
+func _on_name_line_edit_text_changed(new_text: String) -> void:
+	editing_tag_res.tag_name=new_text
+	_change_item_node()
+
+
+func _on_file_line_edit_file_path_changed(new_path: String) -> void:
+	editing_tag_res.item_icon_path=new_path
+	_change_item_node()
+	_reload_edit_view(editing_tag_res)
+
+
+func _on_close_button_pressed() -> void:
+	close_file()
+
+func close_file():
+	save_file()
+	queue_free()

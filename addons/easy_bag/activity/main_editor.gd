@@ -68,6 +68,7 @@ func _open_file_dialog_file_selected(path: String):
 			new_editor.file_path = path # 这是你 UI 逻辑用的
 			new_editor.res = new_resource
 			new_editor.name=new_editor.file_path.get_basename().get_file()
+			new_editor.context=context
 			tab_container.add_child(new_editor)
 			new_editor.reload()
 		elif new_resource is EB_AttributeSet:
@@ -75,6 +76,7 @@ func _open_file_dialog_file_selected(path: String):
 			new_editor.file_path=path
 			new_editor.res=new_resource
 			new_editor.name=new_editor.file_path.get_basename().get_file()
+			new_editor.context=context
 			tab_container.add_child(new_editor)
 			new_editor.reload()
 		elif new_resource is EB_TagSet:
@@ -82,6 +84,7 @@ func _open_file_dialog_file_selected(path: String):
 			new_editor.file_path=path
 			new_editor.res=new_resource
 			new_editor.name=new_editor.file_path.get_basename().get_file()
+			new_editor.context=context
 			tab_container.add_child(new_editor)
 			new_editor.reload()
 
@@ -92,6 +95,7 @@ func _on_tab_container_tab_selected(tab: int) -> void:
 	context.change_editorNode(tab_container.get_child(tab))
 	label_editing_path.text=context.now_editor_ui_node.file_path
 	if context.should_reload_on_return:
+		#HACK:功能将迁移至工厂
 		context.now_editor_ui_node=load(context.now_editor_ui_node.file_path).instantiate()
 	if context.now_editor_ui_node is EB_CodexEditorUi:
 		context.now_editor_ui_node.refresh_context()

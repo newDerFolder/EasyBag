@@ -8,7 +8,7 @@ class_name EB_TagItemNode
 var res:EB_Tag=null
 
 
-# 修改信号定义，增加一个 event 参数
+
 signal select_item_button_pressed(res: EB_Tag, node: Control, event: InputEvent)
 
 func change():
@@ -19,6 +19,7 @@ func change():
 		tag_icon.texture=load(res.item_icon_path)
 	tag_name_lab.text=res.tag_name
 	extends_tag_id=res.extends_tag_id
+	tooltip_text=res.tag_description
 
 func _ready() -> void:
 	change()
