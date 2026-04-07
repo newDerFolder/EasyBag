@@ -7,6 +7,7 @@ class_name EB_TagSetEditorUi
 @onready var name_lineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/NameLineEdit
 @onready var keyid_label:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/KeyIDLabel
 @onready var edit_VBC:=$HSplitContainer/edit/ScrollContainer/VBoxContainer
+@onready var des_te:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/TextEdit
 
 var type_res:EB_TagSet
 var type_editor:EB_TagSetEditor
@@ -106,3 +107,8 @@ func _on_close_button_pressed() -> void:
 func close_file():
 	save_file()
 	queue_free()
+
+
+func _on_text_edit_text_changed() -> void:
+	editing_tag_res.tag_description=des_te.text
+	_change_item_node()

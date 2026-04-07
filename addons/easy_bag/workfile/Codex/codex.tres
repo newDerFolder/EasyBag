@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="EB_Codex" format=3]
+[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://da874ergjkxyq"]
 
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_ynw6p"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_1xn1q"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_a3434"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemIntAttribute.gd" id="3_0d1t6"]
-[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_g0tfm"]
-[ext_resource type="Resource" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="4_g0tfm"]
+[ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_ynw6p"]
+[ext_resource type="Script" uid="uid://buehk1yb17qwc" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_1xn1q"]
+[ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_a3434"]
+[ext_resource type="Script" uid="uid://m7gc0x01x0ui" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemIntAttribute.gd" id="3_0d1t6"]
+[ext_resource type="Script" uid="uid://d2p4bvpo2lyi5" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_g0tfm"]
+[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="4_g0tfm"]
 
 [sub_resource type="Resource" id="Resource_34sj0"]
 script = ExtResource("3_0d1t6")

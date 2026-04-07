@@ -158,3 +158,4 @@ placeholder_text = "no description"
 [connection signal="pressed" from="PanelContainer/HFlowContainer/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="text_changed" from="HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/NameLineEdit" to="." method="_on_name_line_edit_text_changed"]
 [connection signal="file_path_changed" from="HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/FileLineEdit" to="." method="_on_file_line_edit_file_path_changed"]
+[connection signal="text_changed" from="HSplitContainer/edit/ScrollContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
