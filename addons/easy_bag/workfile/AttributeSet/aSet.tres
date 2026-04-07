@@ -1,25 +1,28 @@
 [gd_resource type="Resource" script_class="EB_AttributeSet" format=3]
 
 [ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_BaseAttribute.gd" id="1_7u61j"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_IntAttribute.gd" id="2_gi10r"]
 [ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_AttributeSet.gd" id="2_wl4nt"]
 
-[sub_resource type="Resource" id="Resource_7u61j"]
-script = ExtResource("1_7u61j")
+[sub_resource type="Resource" id="Resource_j8woy"]
+script = ExtResource("2_gi10r")
 item_icon_path = "res://icon.svg"
-item_name = "a new attributeaaa"
+item_name = "攻击力"
 
 [sub_resource type="Resource" id="Resource_wl4nt"]
-script = ExtResource("1_7u61j")
+script = ExtResource("2_gi10r")
+default_value = 100
 item_icon_path = "res://addons/easy_bag/asset/icon/apple.png"
+item_name = "生命值"
 
 [sub_resource type="Resource" id="Resource_gi10r"]
-script = ExtResource("1_7u61j")
-item_name = "a new attribute2"
+script = ExtResource("2_gi10r")
+item_name = "防御力"
 
 [resource]
 script = ExtResource("2_wl4nt")
 attribute_dict = Dictionary[String, ExtResource("1_7u61j")]({
-"0": SubResource("Resource_7u61j"),
+"0": SubResource("Resource_j8woy"),
 "1": SubResource("Resource_wl4nt"),
 "2": SubResource("Resource_gi10r")
 })

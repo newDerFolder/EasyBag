@@ -11,6 +11,7 @@ class_name EB_AttributeSetEditorUi
 @onready var keyid_label:Label=$HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/HBoxContainer/KeyIdLabel
 @onready var description_TextEdit:TextEdit=$HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/info/VBoxContainer/DescriptionTextEdit
 @onready var value_fold:FoldableContainer=$HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer/value
+@onready var edit_VBC:=$HSplitContainer/HSplitContainer/edit/ScrollContainer/VBoxContainer
 
 var items_select_group:SelectGroup=SelectGroup.new()
 var editing_attribute_item_res:EB_BaseAttribute
@@ -39,6 +40,10 @@ func close_file():
 	queue_free()
 
 func change():
+	if editing_attribute_item_res==null:
+		edit_VBC.visible=false
+	else:
+		edit_VBC.visible=true
 	_chnange_item_node()
 
 func _chnange_item_node():
@@ -63,6 +68,7 @@ func _reload_edit_view(item_res:EB_BaseAttribute):
 		icon_FileLineEdit.file_path=""
 	_reload_attribute_value_editor(item_res)
 	_reload_type_opBtn(item_res)
+	change()
 func _reload_type_opBtn(item_res:EB_BaseAttribute):
 	if item_res is EB_IntAttribute:
 		type_OptionButtoon.selected=1

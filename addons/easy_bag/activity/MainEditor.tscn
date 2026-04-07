@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://b50jr3j14dfyd" path="res://addons/easy_bag/asset/icon/folder.png" id="4_qpfyc"]
 [ext_resource type="Texture2D" uid="uid://ca4xc8huqylag" path="res://addons/easy_bag/asset/icon/gridFour.png" id="5_oaqg7"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_qpfyc"]
+device = -1
+ctrl_pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_5uba3"]
+events = [SubResource("InputEventKey_qpfyc")]
+
 [node name="MainEditor" type="Control" unique_id=317744891]
 layout_mode = 3
 anchors_preset = 15
@@ -45,6 +53,7 @@ layout_mode = 2
 
 [node name="MenuFile" type="MenuButton" parent="VBoxContainer/MenuBar/HFlowContainer" unique_id=22820240]
 layout_mode = 2
+shortcut = SubResource("Shortcut_5uba3")
 text = "file"
 icon = ExtResource("4_qpfyc")
 flat = false

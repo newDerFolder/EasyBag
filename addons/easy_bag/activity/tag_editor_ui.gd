@@ -6,6 +6,7 @@ class_name EB_TagSetEditorUi
 @onready var icon_FileLineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/FileLineEdit
 @onready var name_lineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/NameLineEdit
 @onready var keyid_label:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer/KeyIDLabel
+@onready var edit_VBC:=$HSplitContainer/edit/ScrollContainer/VBoxContainer
 
 var type_res:EB_TagSet
 var type_editor:EB_TagSetEditor
@@ -25,6 +26,7 @@ func _ready() -> void:
 
 func reload():
 	_reload_items()
+	change()
 
 
 func _reload_items():
@@ -61,7 +63,15 @@ func _reload_edit_view(item_res:EB_Tag):
 	else:
 		icon_TextureRect.texture=null
 		icon_FileLineEdit.file_path=""
-	
+	change()
+
+func change():
+	if editing_tag_res==null:
+		edit_VBC.visible=false
+	else:
+		edit_VBC.visible=true
+	_change_item_node()
+
 func _change_item_node():
 	for i in item_VBC.get_children():
 		i.change()

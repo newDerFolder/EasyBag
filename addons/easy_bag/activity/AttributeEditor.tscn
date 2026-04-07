@@ -14,6 +14,14 @@ keycode = 83
 [sub_resource type="Shortcut" id="Shortcut_c52r7"]
 events = [SubResource("InputEventKey_ba17n")]
 
+[sub_resource type="InputEventKey" id="InputEventKey_c52r7"]
+device = -1
+ctrl_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_kfnqd"]
+events = [SubResource("InputEventKey_c52r7")]
+
 [node name="AttributeEditor" type="VBoxContainer" unique_id=1521352235]
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +69,7 @@ size_flags_horizontal = 3
 [node name="ButtonClose" type="Button" parent="MenuBar/HFlowContainer" unique_id=71748250]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
+shortcut = SubResource("Shortcut_kfnqd")
 text = "close"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=379967209]

@@ -6,6 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://c63cusy4arbwj" path="res://icon.svg" id="4_s8cxi"]
 [ext_resource type="Script" uid="uid://bre1ad5rjt3bd" path="res://addons/easy_bag/class/old_dependencies/FileLineEdit.gd" id="5_qin4c"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_s8cxi"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_qin4c"]
+events = [SubResource("InputEventKey_s8cxi")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_uyufa"]
+device = -1
+ctrl_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_hpji3"]
+events = [SubResource("InputEventKey_uyufa")]
+
 [node name="TagEditorUi" type="VBoxContainer" unique_id=1885559704]
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +47,7 @@ texture = ExtResource("2_qw134")
 
 [node name="SaveButton" type="Button" parent="PanelContainer/HFlowContainer" unique_id=1810884708]
 layout_mode = 2
+shortcut = SubResource("Shortcut_qin4c")
 text = "save"
 
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/HFlowContainer" unique_id=67369389]
@@ -51,6 +68,7 @@ size_flags_horizontal = 3
 [node name="CloseButton" type="Button" parent="PanelContainer/HFlowContainer" unique_id=2021977011]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
+shortcut = SubResource("Shortcut_hpji3")
 text = "close"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1049260688]
