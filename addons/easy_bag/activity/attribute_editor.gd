@@ -1,5 +1,5 @@
 extends EB_BaseEditorUi
-class_name EB_AttributeEditorUi
+class_name EB_AttributeSetEditorUi
 
 
 
@@ -31,9 +31,9 @@ func _ready() -> void:
 	editor.res=res
 
 func save_file():
-	if file_path!=null and res!=null:
-		editor.save_to_file(file_path)
-		context.should_reload_on_return=true
+	#if file_path!=null and res!=null:
+	editor.save_to_file(file_path)
+	context.should_reload_on_return=true
 func close_file():
 	save_file()
 	queue_free()

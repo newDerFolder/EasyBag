@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EB_TagSet" format=3 uid="uid://73r1conh7sns"]
+[gd_resource type="Resource" script_class="EB_TagSet" format=3 uid="uid://kpgcghh7nckw"]
 
 [ext_resource type="Script" uid="uid://cfkk7rm85nmib" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_TagSet.gd" id="1_l0vyq"]
 [ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_Tag.gd" id="2_0cwuw"]

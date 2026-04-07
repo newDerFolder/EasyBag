@@ -19,10 +19,9 @@ func get_value(codex:EB_Codex,codex_item_id:String):
 	else:
 		return _get_self_value()
 
-
 func _get_self_value():
 	push_error("请勿直接使用EB_ItemBaseAttribute的get_value方法")
 func _get_codex_item_attribute_value(codex:EB_Codex,codex_item_id:String):
 	#codex.item_dict[codex_item_id].attribute_dict[attribute_id]
-	#写法类似上面一行
+	#子类的写法类似上面一行
 	push_error("请勿直接使用EB_ItemBaseAttribute的get_value方法")

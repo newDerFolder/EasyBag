@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://uiq4khplukgj"]
 
 [ext_resource type="Script" uid="uid://do7sd4qplywq5" path="res://addons/easy_bag/scene/control/eb_tag_set_item_node.gd" id="1_vnbrm"]
-[ext_resource type="Texture2D" uid="uid://c63cusy4arbwj" path="res://icon.svg" id="2_neo5d"]
 
 [node name="EbTagSetItemNode" type="PanelContainer" unique_id=1944186736]
 offset_right = 321.0
@@ -17,7 +16,6 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBC/HFC" unique_id=1739674627]
 layout_mode = 2
-texture = ExtResource("2_neo5d")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="VBC/HFC" unique_id=229463204]

@@ -72,7 +72,7 @@ func _open_file_dialog_file_selected(path: String):
 			tab_container.add_child(new_editor)
 			new_editor.reload()
 		elif new_resource is EB_AttributeSet:
-			var new_editor:EB_AttributeEditorUi=preload("res://addons/easy_bag/activity/AttributeEditor.tscn").instantiate()
+			var new_editor:EB_AttributeSetEditorUi=preload("res://addons/easy_bag/activity/AttributeEditor.tscn").instantiate()
 			new_editor.file_path=path
 			new_editor.res=new_resource
 			new_editor.name=new_editor.file_path.get_basename().get_file()
@@ -80,7 +80,7 @@ func _open_file_dialog_file_selected(path: String):
 			tab_container.add_child(new_editor)
 			new_editor.reload()
 		elif new_resource is EB_TagSet:
-			var new_editor:EB_TagEditorUi=preload("res://addons/easy_bag/activity/TagEditorUi.tscn").instantiate()
+			var new_editor:EB_TagSetEditorUi=preload("res://addons/easy_bag/activity/TagEditorUi.tscn").instantiate()
 			new_editor.file_path=path
 			new_editor.res=new_resource
 			new_editor.name=new_editor.file_path.get_basename().get_file()
@@ -94,10 +94,13 @@ func _on_tab_container_tab_selected(tab: int) -> void:
 		return
 	context.change_editorNode(tab_container.get_child(tab))
 	label_editing_path.text=context.now_editor_ui_node.file_path
-	if context.should_reload_on_return:
-		#HACK:功能将迁移至工厂
-		context.now_editor_ui_node=load(context.now_editor_ui_node.file_path).instantiate()
-	if context.now_editor_ui_node is EB_CodexEditorUi:
+	if context.should_reload_on_return and context.now_editor_ui_node is EB_CodexEditorUi:
+		print("即将自动重载和保存资源")
+		context.previous_editor_ui_node.save_file()
+		#FIXME:功能将迁移至工厂,现在保存更改的标签集和属性集再切换编辑的东西会出错
+		context.now_editor_ui_node.save_file()
+		context.now_editor_ui_node.res=load(context.now_editor_ui_node.file_path)
+		print("资源重载和保存完成 done")
 		context.now_editor_ui_node.refresh_context()
 	change_linked_bar(context.now_editor_ui_node.res)
 

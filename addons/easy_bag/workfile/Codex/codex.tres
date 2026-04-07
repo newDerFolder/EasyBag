@@ -17,13 +17,18 @@ script = ExtResource("3_0d1t6")
 value = 100
 attribute_id = "1"
 
+[sub_resource type="Resource" id="Resource_wfhwh"]
+script = ExtResource("2_1xn1q")
+attribute_id = "2"
+
 [sub_resource type="Resource" id="Resource_0d1t6"]
 script = ExtResource("1_ynw6p")
 item_icon_path = "res://icon.svg"
 item_name = "GodotIcon"
 attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
 "0": SubResource("Resource_34sj0"),
-"1": SubResource("Resource_fxkbu")
+"1": SubResource("Resource_fxkbu"),
+"2": SubResource("Resource_wfhwh")
 })
 
 [sub_resource type="Resource" id="Resource_v673d"]

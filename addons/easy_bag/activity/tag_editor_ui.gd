@@ -1,5 +1,5 @@
 extends EB_BaseEditorUi
-class_name EB_TagEditorUi 
+class_name EB_TagSetEditorUi 
 
 @onready var item_VBC:=$HSplitContainer/item/ScrollContainer/VBoxContainer
 @onready var icon_TextureRect:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/TextureRect
