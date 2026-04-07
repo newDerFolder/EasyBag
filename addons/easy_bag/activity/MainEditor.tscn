@@ -126,5 +126,6 @@ size_flags_vertical = 3
 drag_to_rearrange_enabled = true
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/HFlowContainer/LinkedAttributeButton" to="." method="_on_linked_attribute_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/HFlowContainer/LinkedTagSetButton" to="." method="_on_linked_tag_set_button_pressed"]
 [connection signal="active_tab_rearranged" from="VBoxContainer/TabContainer" to="." method="_on_tab_container_active_tab_rearranged"]
 [connection signal="tab_selected" from="VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EB_Codex" format=3]
+
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_4wjie"]
+[ext_resource type="Script" path="res://addons/easy_bag/class/easy_bag_resource/bag/EB_Codex.gd" id="2_37pmc"]
+[ext_resource type="Resource" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="2_fmigg"]
+[ext_resource type="Resource" path="res://addons/easy_bag/workfile/TagSet/tSet.tres" id="3_fmigg"]
+
+[resource]
+script = ExtResource("2_37pmc")
+linked_tag_set = ExtResource("3_fmigg")
+linked_attribute_set = ExtResource("2_fmigg")

@@ -186,3 +186,59 @@ func _on_attribute_file_selected(path: String) -> void:
 	
 	context.now_editor_ui_node.reload() 
 	linked_AttributeSet_Btn.text = path.get_file()
+
+
+func _on_linked_tag_set_button_pressed() -> void:
+	var default_dir = "res://addons/easy_bag/workfile/TagSet/"
+	if DirAccess.dir_exists_absolute(default_dir):
+		file_dialog.current_dir = default_dir
+	
+	# 1. 清空过滤器
+	file_dialog.clear_filters()
+	file_dialog.add_filter("*.tres", "TagSet Resource")
+	
+	# 2. 【关键步骤】断开旧的连接，连上新的处理函数
+	# 先断开 Attribute 的（防止重复触发）
+	if file_dialog.file_selected.is_connected(_on_attribute_file_selected):
+		file_dialog.file_selected.disconnect(_on_attribute_file_selected)
+	
+	# 再连接 Tag 的专用函数
+	if not file_dialog.file_selected.is_connected(_on_tag_file_selected):
+		file_dialog.file_selected.connect(_on_tag_file_selected)
+		
+	file_dialog.popup()
+# 专门处理 TagSet 文件选择的回调
+func _on_tag_file_selected(path: String) -> void:
+	var res = ResourceLoader.load(path)
+	if res == null: return
+	
+	var current_res = get_now_editor_res()
+	if current_res == null: return
+
+	# 这里必须用 linked_tag_set，不能用 linked_attribute_set
+	if "linked_tag_set" in current_res:
+		current_res.linked_tag_set = res
+	else:
+		push_error("当前资源不支持链接 TagSet")
+		return
+
+	# 保存逻辑（和 Attribute 的一样）
+	var save_path = context.now_editor_ui_node.file_path 
+	if save_path == "" or save_path == null:
+		save_path = current_res.resource_path
+	
+	if save_path == "":
+		push_error("无法保存：找不到有效的保存路径！")
+		return
+
+	var error = ResourceSaver.save(current_res, save_path)
+	if error != OK:
+		push_error("保存资源失败，错误代码: ", error)
+	else:
+		print("TagSet 关联已更新并保存至: ", save_path)
+	
+	context.now_editor_ui_node.reload() 
+	
+	# 更新按钮文字
+	linked_TagSet_Btn.text = path.get_file()
+	linked_TagSet_Btn.set_tooltip_text(path)
