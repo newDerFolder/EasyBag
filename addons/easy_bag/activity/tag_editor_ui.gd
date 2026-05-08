@@ -1,6 +1,8 @@
 extends EB_BaseEditorUi
 class_name EB_TagSetEditorUi 
 
+#TODO:做标签编辑器界面中
+
 @onready var item_VBC:=$HSplitContainer/item/ScrollContainer/VBoxContainer
 @onready var icon_TextureRect:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/TextureRect
 @onready var icon_FileLineEdit:=$HSplitContainer/edit/ScrollContainer/VBoxContainer/HBoxContainer2/FileLineEdit
