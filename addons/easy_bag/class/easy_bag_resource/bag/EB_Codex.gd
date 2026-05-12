@@ -1,3 +1,4 @@
+@icon("res://addons/easy_bag/asset/icon/book.png")
 extends EasyBagResource
 class_name EB_Codex
 

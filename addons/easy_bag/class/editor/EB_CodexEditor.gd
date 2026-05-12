@@ -9,6 +9,55 @@ class_name EB_CodexEditor
 func _init() -> void:
 	res as EB_Codex
 
+func add_new_tag_items(item_res: EB_CodexItem, arr: Array[EB_ItemTag]) -> void:
+	if item_res == null: 
+		return
+	
+	# 【优化1】增加空值安全检查，防止 tag_dict 未初始化导致崩溃
+	if item_res.tag_dict == null:
+		item_res.tag_dict = {}
+
+	# 拿到当前已有的字典副本
+	var typed_dict: Dictionary = item_res.tag_dict.duplicate(true)
+	
+	var changed = false
+	for attr in arr:
+		if attr:
+			var id_key = attr.tag_id
+			# 只有当字典中不存在该 Key 时才添加
+			if not typed_dict.has(id_key):
+				var new_attr = attr.duplicate(true)
+				new_attr.resource_path = "" 
+				typed_dict[id_key] = new_attr
+				changed = true
+	
+	if changed:
+		item_res.tag_dict = typed_dict
+		item_res.emit_changed()
+
+func del_item_tag(item_res: EB_CodexItem, tag: EB_Tag) -> void:
+	if item_res == null or tag == null:
+		return
+
+	# 【健壮性检查】防止 tag_dict 未初始化导致后续操作报错
+	if item_res.tag_dict == null:
+		item_res.tag_dict = {}
+		return
+
+	# 1. 获取标签的唯一标识 Key (与添加时保持一致，使用 attribute_id)
+	var id_key = tag.attribute_id
+	
+	# 2. 检查字典中是否存在该 Key，存在则删除
+	if item_res.tag_dict.has(id_key):
+		item_res.tag_dict.erase(id_key)
+		
+		# 3. 触发资源更新，确保编辑器或 Inspector 面板同步刷新
+		item_res.emit_changed()
+		print("成功删除标签 ID: ", id_key)
+	else:
+		push_warning("尝试删除不存在的标签 ID: ", id_key)
+
+
 func del_item_attribute(item_res: EB_CodexItem, attr: EB_ItemBaseAttribute) -> void:
 	if item_res == null or attr == null:
 		return
@@ -26,7 +75,6 @@ func del_item_attribute(item_res: EB_CodexItem, attr: EB_ItemBaseAttribute) -> v
 		print("成功删除属性 ID: ", id_key)
 	else:
 		push_warning("尝试删除不存在的属性 ID: ", id_key)
-	
 
 func add_new_attribute_items(item_res: EB_CodexItem, arr: Array[EB_ItemBaseAttribute]) -> void:
 	if item_res == null: return
@@ -62,7 +110,6 @@ func add_new_attribute_items(item_res: EB_CodexItem, arr: Array[EB_ItemBaseAttri
 		item_res.attribute_dict = typed_dict
 		item_res.emit_changed()
 
-	
 func get_attributes_SetId_arr(arr:Array[EB_ItemBaseAttribute])->Array[String]:
 	var ret_arr:Array[String]=[]
 	for i:EB_ItemBaseAttribute in arr:

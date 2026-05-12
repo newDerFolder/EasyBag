@@ -1,7 +1,5 @@
 extends EB_BaseFactory
 class_name EB_EditorNodeFactory
-#TODO:工厂建造中
-
 
 func create(editor: EB_BaseEditor) -> EB_BaseEditorUi:
 	if editor == null:

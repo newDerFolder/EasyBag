@@ -14,4 +14,5 @@ static func create_add_tag_window_for_codex(editor_ui:EB_CodexEditorUi)->EB_Code
 	new_win.codex_editor=editor_ui.editor
 	new_win.codex=new_win.codex_editor.res
 	new_win.tag_set=new_win.codex.linked_tag_set
+	new_win.codex_item_res=editor_ui.editing_codex_item_res
 	return new_win

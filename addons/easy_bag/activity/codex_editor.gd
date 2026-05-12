@@ -11,19 +11,16 @@ class_name EB_CodexEditorUi
 @onready var edit_item_scrollContainer:ScrollContainer=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer
 @onready var description_TextEdit:TextEdit=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/info/VBoxContainer/DescriptionTextEdit
 @onready var attributes_list:VBoxContainer=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/attribute/VBoxContainer/VBoxContainer
+@onready var tags_list:VBoxContainer=$VBoxContainer/HSplitContainer/EditItem/ScrollContainer/VBoxContainer/tag/VBoxContainer/VBC
 
 
-
-
+var items_select_group:SelectGroup=SelectGroup.new()
+var editing_codex_item_res:EB_CodexItem=null
 
 func _ready() -> void:
 	editor=EB_CodexEditor.new()
 	editor.res=res
 	editor.attribute_set=res.linked_attribute_set
-
-var items_select_group:SelectGroup=SelectGroup.new()
-var editing_codex_item_res:EB_CodexItem=null
-
 
 func change():
 	_change_edit_view()
@@ -126,7 +123,22 @@ func _reload_edit_view(codex_item_res: EB_CodexItem):
 	else:
 		icon_texture_rect.texture=null
 		icon_fileLineEdit.file_path=""
+	_reload_attribute_value_editor(codex_item_res)
+	_reload_tags(codex_item_res)
+func _reload_tags(item_res:EB_CodexItem):
+	for i in tags_list.get_children():
+		i.queue_free()
+	for i in item_res.get_all_item_tag():
+		add_tag_editor(i,res.linked_tag_set)
 
+func add_tag_editor(item_res:EB_ItemTag,set_res:EB_TagSet):
+	if set_res == null:
+		push_error("CodexEditorUi:add_tag_editor传入的set_res为null")
+		return
+	var new_tag=preload("res://addons/easy_bag/scene/item_view/codex/tag/CodexItemTagItemNode.tscn").instantiate()
+	new_tag.res=item_res
+	new_tag.set_res=set_res
+	tags_list.add_child(new_tag)
 func _reload_attribute_value_editor(item_res:EB_CodexItem):
 	for i in attributes_list.get_children():
 		i.queue_free()
@@ -157,7 +169,7 @@ func _item_selected(codex_item_res:EB_CodexItem,node: Control):
 	editing_codex_item_res=codex_item_res
 	items_select_group.select(node)
 	_reload_edit_view(codex_item_res)
-	_reload_attribute_value_editor(codex_item_res)
+	
 	change()
 
 func _on_name_label_editing_toggled(toggled_on: bool) -> void:
@@ -197,6 +209,7 @@ func refresh_context():
 		# 重新加载当前选中项的详情界面
 		_reload_edit_view(editing_codex_item_res)
 		_reload_attribute_value_editor(editing_codex_item_res)
+		_reload_tags(editing_codex_item_res)
 	
 	# 如果你的顶部关联栏信息也可能变（比如 LinkedAttributeSet 变了），
 	# 这里可以通知 MainEditor 刷新顶部条

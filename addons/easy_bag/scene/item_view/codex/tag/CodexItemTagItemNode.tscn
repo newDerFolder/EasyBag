@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://blktgadk2ueb8"]
+
+[ext_resource type="Script" uid="uid://cnlilg7l1xang" path="res://addons/easy_bag/scene/item_view/codex/tag/codex_item_tag_item_node.gd" id="1_xapp2"]
+[ext_resource type="Texture2D" uid="uid://b7v4pj02oc485" path="res://addons/easy_bag/asset/icon/icon.svg" id="2_olctn"]
+[ext_resource type="Texture2D" uid="uid://beauotril7jh5" path="res://addons/easy_bag/asset/icon/rubbishBin.png" id="3_sjvwq"]
+
+[node name="CodexItemTagItemNode" type="PanelContainer" unique_id=921550510]
+offset_right = 193.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+script = ExtResource("1_xapp2")
+
+[node name="HFC" type="HFlowContainer" parent="." unique_id=1850617534]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HFC" unique_id=288071806]
+layout_mode = 2
+texture = ExtResource("2_olctn")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HFC" unique_id=331745222]
+layout_mode = 2
+text = "tag_name"
+
+[node name="Control" type="Control" parent="HFC" unique_id=872591009]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HFC" unique_id=546792755]
+layout_mode = 2
+icon = ExtResource("3_sjvwq")

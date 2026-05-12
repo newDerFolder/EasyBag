@@ -1,7 +1,6 @@
 extends EB_BaseFactory
 class_name EB_EditorFactory
 
-#TODO:工厂建造中
 func create(res:EasyBagResource)->EB_BaseEditor:
 	if res==null:
 		push_error("EB_EditorFactory的方法收到的res为null")

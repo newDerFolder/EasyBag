@@ -1,4 +1,4 @@
-extends EasyBagResource
+extends EB_BaseItem
 class_name EB_Tag
 
 

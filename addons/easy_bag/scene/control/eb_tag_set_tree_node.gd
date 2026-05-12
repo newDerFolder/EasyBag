@@ -10,6 +10,11 @@ func _ready() -> void:
 	items_select_group.select_mode=items_select_group.Select_Mode.MULTIPLE
 	reload()
 
+func get_selected_tags()->Array[EB_Tag]:
+	var tag_arr:Array[EB_Tag]=[]
+	for i in items_select_group.get_selected_nodes():
+		tag_arr.append(i.res)
+	return tag_arr
 func reload():
 	for i in item_VBC.get_children():
 		i.queue_free()

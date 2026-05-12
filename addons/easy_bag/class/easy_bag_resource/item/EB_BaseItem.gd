@@ -1,0 +1,1 @@
+class_name EB_BaseItem extends EasyBagResource
