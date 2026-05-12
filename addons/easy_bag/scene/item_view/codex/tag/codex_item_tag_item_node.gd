@@ -15,7 +15,10 @@ func change():
 	if set_res==null:
 		push_error("set_res 为null")
 	var icon_path=res.get_tag_icon_path(set_res)
-	if icon_path!="" or icon_path!=null:
+	if icon_path=="" or icon_path==null:
+		tag_icon.visible=false
+	else:
+		tag_icon.visible=true
 		tag_icon.texture=load(res.get_tag_icon_path(set_res))
 	tag_name.text=res.get_tag_name(set_res)
 	tooltip_text=res.get_tag_description(set_res)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://dieq40ieufwgd"]
+[gd_resource type="Resource" script_class="EB_Codex" format=3 uid="uid://gxlnjgef6i1y"]
 
 [ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_CodexItem.gd" id="1_ynw6p"]
 [ext_resource type="Script" uid="uid://buehk1yb17qwc" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemBaseAttribute.gd" id="2_1xn1q"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://m7gc0x01x0ui" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemIntAttribute.gd" id="3_0d1t6"]
 [ext_resource type="Script" uid="uid://d2p4bvpo2lyi5" path="res://addons/easy_bag/class/easy_bag_resource/item/EB_ItemTag.gd" id="3_g0tfm"]
 [ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://addons/easy_bag/workfile/AttributeSet/aSet.tres" id="4_g0tfm"]
-[ext_resource type="Resource" uid="uid://crw2d86fvjwrs" path="res://addons/easy_bag/workfile/TagSet/tSet.tres" id="6_hapcj"]
+[ext_resource type="Resource" uid="uid://dffb1u27rqsrf" path="res://addons/easy_bag/workfile/TagSet/tSet.tres" id="6_hapcj"]
 
 [sub_resource type="Resource" id="Resource_34sj0"]
 script = ExtResource("3_0d1t6")
@@ -56,13 +56,18 @@ tag_id = "tag_0"
 script = ExtResource("3_g0tfm")
 tag_id = "tag_1"
 
+[sub_resource type="Resource" id="Resource_0g33r"]
+script = ExtResource("3_g0tfm")
+tag_id = "tag_3"
+
 [sub_resource type="Resource" id="Resource_hapcj"]
 script = ExtResource("1_ynw6p")
 item_icon_path = "res://addons/easy_bag/asset/icon/apple.png"
 item_name = "苹果"
 tag_dict = Dictionary[String, ExtResource("3_g0tfm")]({
 "tag_0": SubResource("Resource_b6p15"),
-"tag_1": SubResource("Resource_01228")
+"tag_1": SubResource("Resource_01228"),
+"tag_3": SubResource("Resource_0g33r")
 })
 attribute_dict = Dictionary[String, ExtResource("2_1xn1q")]({
 "0": SubResource("Resource_rpv4r"),

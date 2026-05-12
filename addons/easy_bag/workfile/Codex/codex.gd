@@ -3,7 +3,7 @@ class_name EBConfig_codex
 
 # 自动生成的物品配置类 (基于 Dictionary, 值为 Attribute ID)
 # 源数据来自: res://addons/easy_bag/workfile/Codex/codex.tres
-# 生成时间: 2026-05-12T14:58:40
+# 生成时间: 2026-05-12T15:23:50
 
 class GodotIcon extends EB_CodexConfigItem:
 	const codex_id="0"
