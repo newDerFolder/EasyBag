@@ -1,3 +1,4 @@
+## @deprecated
 extends EB_ItemBaseAttribute
 class_name EB_ItemIntAttribute
 

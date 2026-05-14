@@ -1,3 +1,4 @@
+## @deprecated
 @icon("res://addons/easy_bag/asset/icon/TagIcon.png")
 class_name EB_ItemTag extends EB_BaseItem
 

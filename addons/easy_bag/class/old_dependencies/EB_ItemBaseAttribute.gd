@@ -1,3 +1,4 @@
+## @deprecated
 @icon("res://addons/easy_bag/asset/icon/ballTwo.png")
 class_name EB_ItemBaseAttribute extends EB_BaseItem
 

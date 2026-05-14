@@ -1,3 +1,4 @@
+## @deprecated
 extends EasyBagResource
 class_name EB_TagSet
 
