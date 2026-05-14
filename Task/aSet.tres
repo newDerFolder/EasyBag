@@ -19,10 +19,22 @@ item_name = "生命值"
 script = ExtResource("2_gi10r")
 item_name = "防御力"
 
+[sub_resource type="Resource" id="Resource_3ujtt"]
+script = ExtResource("2_gi10r")
+item_name = "堆叠"
+default_static = false
+
+[sub_resource type="Resource" id="Resource_ebign"]
+script = ExtResource("2_gi10r")
+default_value = 64
+item_name = "堆叠上限"
+
 [resource]
 script = ExtResource("2_wl4nt")
 attribute_dict = Dictionary[String, ExtResource("1_7u61j")]({
 "0": SubResource("Resource_j8woy"),
 "1": SubResource("Resource_wl4nt"),
-"2": SubResource("Resource_gi10r")
+"2": SubResource("Resource_gi10r"),
+"3": SubResource("Resource_3ujtt"),
+"4": SubResource("Resource_ebign")
 })

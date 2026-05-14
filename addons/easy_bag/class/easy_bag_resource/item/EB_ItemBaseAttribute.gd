@@ -1,5 +1,6 @@
-extends EB_BaseItem
-class_name EB_ItemBaseAttribute
+@icon("res://addons/easy_bag/asset/icon/ballTwo.png")
+class_name EB_ItemBaseAttribute extends EB_BaseItem
+
 
 @export var attribute_id:String
 @export var is_static_attribute=true

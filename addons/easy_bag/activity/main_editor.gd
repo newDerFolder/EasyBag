@@ -148,11 +148,11 @@ func set_linkedBar_tagSet_visible(set_visible:bool):
 	label_tagSet.visible=set_visible
 	linked_TagSet_Btn.visible=set_visible
 	var current_res = get_now_editor_res()
-	if current_res == null or current_res.linked_tag_set == null:
+	if current_res == null:
 		linked_TagSet_Btn.text = "null"
 		linked_TagSet_Btn.set_tooltip_text("path")
 	else:
-		var path = current_res.linked_tag_set.resource_path  
+		var path = current_res.resource_path
 		var file_name = path.get_file()
 		linked_TagSet_Btn.text = file_name
 		linked_TagSet_Btn.set_tooltip_text(path)

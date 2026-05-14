@@ -1,3 +1,4 @@
+@icon("res://addons/easy_bag/asset/icon/TagIcon.png")
 extends EB_BaseItem
 class_name EB_Tag
 

@@ -5,6 +5,9 @@ var from_codex:EB_Codex
 @export var codex_item_id:String
 @export var attribute_dict:Dictionary[String,EB_ItemBaseAttribute]
 
+
+
+
 func get_codex_item()->EB_CodexItem:
 	if not from_codex.item_dict.has(codex_item_id):
 		push_error("EB_InventoryItem:from_codex中没有该id的物品")
@@ -21,6 +24,13 @@ func get_item_icon_path()->String:
 func get_all_tag()->Array[EB_ItemTag]:
 	var codex_item:=get_codex_item()
 	return codex_item.get_all_item_tag()
+
+func has_tag_by_id(tag_id: String) -> bool:
+	var tags = get_all_tag()
+	for t in tags:
+		if t.tag_id == tag_id:
+			return true
+	return false
 
 func get_attribute(item_attribute_id:String)->EB_ItemBaseAttribute:
 	item_attribute_id=str(item_attribute_id)
