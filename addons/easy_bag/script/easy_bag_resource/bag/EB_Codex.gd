@@ -2,8 +2,7 @@
 extends EasyBagResource
 class_name EB_Codex
 
-@export var linked_tag_set: EB_TagSet
-@export var linked_attribute_set: EB_AttributeSet
+
 @export var item_dict: Dictionary[String, EB_CodexItem]
 
 
