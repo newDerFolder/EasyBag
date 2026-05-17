@@ -1,5 +1,5 @@
 @icon("res://addons/easy_bag/asset/icon/TagIcon.png")
-extends EB_BaseItem
+extends EasyBagResource
 class_name EB_Tag
 
 
