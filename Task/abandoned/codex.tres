@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/script/bag/EB_Codex.gd" id="2_a3434"]
 [ext_resource type="Script" path="res://addons/easy_bag/class/old_dependencies/EB_ItemIntAttribute.gd" id="3_0d1t6"]
 [ext_resource type="Script" path="res://addons/easy_bag/class/old_dependencies/EB_ItemTag.gd" id="3_g0tfm"]
-[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://Task/aSet.tres" id="4_g0tfm"]
-[ext_resource type="Resource" uid="uid://dffb1u27rqsrf" path="res://Task/tSet.tres" id="6_hapcj"]
+[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://Task/abandoned/aSet.tres" id="4_g0tfm"]
+[ext_resource type="Resource" uid="uid://dffb1u27rqsrf" path="res://Task/abandoned/tSet.tres" id="6_hapcj"]
 
 [sub_resource type="Resource" id="Resource_34sj0"]
 script = ExtResource("3_0d1t6")

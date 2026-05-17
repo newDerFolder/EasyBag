@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EB_Tag" format=3 uid="uid://cod0tfw8e36ev"]
+
+[ext_resource type="Texture2D" uid="uid://c63cusy4arbwj" path="res://icon.svg" id="1_86cuq"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/item/EB_Tag.gd" id="1_purps"]
+
+[resource]
+script = ExtResource("1_purps")
+item_icon = ExtResource("1_86cuq")
+metadata/_custom_type_script = "uid://dqa7ynna1qfkj"

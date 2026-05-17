@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dms0g3lmi1yq2" path="res://addons/easy_bag/script/item/EB_CodexItem.gd" id="1_4wjie"]
 [ext_resource type="Script" path="res://addons/easy_bag/class/old_dependencies/EB_ItemBaseAttribute.gd" id="2_2nm21"]
 [ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/script/bag/EB_Codex.gd" id="2_37pmc"]
-[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://Task/aSet.tres" id="2_fmigg"]
+[ext_resource type="Resource" uid="uid://duhyltukrr711" path="res://Task/abandoned/aSet.tres" id="2_fmigg"]
 [ext_resource type="Script" path="res://addons/easy_bag/class/old_dependencies/EB_ItemTag.gd" id="3_fegv8"]
-[ext_resource type="Resource" uid="uid://dffb1u27rqsrf" path="res://Task/tSet.tres" id="3_fmigg"]
+[ext_resource type="Resource" uid="uid://dffb1u27rqsrf" path="res://Task/abandoned/tSet.tres" id="3_fmigg"]
 
 [sub_resource type="Resource" id="Resource_xgas5"]
 script = ExtResource("1_4wjie")
