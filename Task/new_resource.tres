@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="EB_Tag" format=3 uid="uid://cod0tfw8e36ev"]
+[gd_resource type="Resource" script_class="EB_ArrayCodex" format=3 uid="uid://cod0tfw8e36ev"]
 
-[ext_resource type="Texture2D" uid="uid://c63cusy4arbwj" path="res://icon.svg" id="1_86cuq"]
-[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/item/EB_Tag.gd" id="1_purps"]
+[ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="1_86cuq"]
+[ext_resource type="Script" uid="uid://cvqkltvcjmeh1" path="res://addons/easy_bag/script/bag/EB_ArrayCodex.gd" id="2_q0dk5"]
+
+[sub_resource type="Resource" id="Resource_86cuq"]
+script = ExtResource("1_86cuq")
+metadata/_custom_type_script = "uid://cc30h31dhdh85"
 
 [resource]
-script = ExtResource("1_purps")
-item_icon = ExtResource("1_86cuq")
-metadata/_custom_type_script = "uid://dqa7ynna1qfkj"
+script = ExtResource("2_q0dk5")
+item_arr = Array[ExtResource("1_86cuq")]([SubResource("Resource_86cuq")])
+metadata/_custom_type_script = "uid://cvqkltvcjmeh1"
