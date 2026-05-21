@@ -3,16 +3,16 @@ class_name EB_DictionaryCodex
 
 
 @export var item_dict: Dictionary[String,EB_InventoryItem]
-
+@export var use_id_as_item_name=true
 
 var _name_to_id_cache: Dictionary[String, String] = {}
 
-func get_InventoryItem_by_id(target_id: String) -> EB_InventoryItem:
+func get_InventoryItem_by_id(target_id:String="") -> EB_InventoryItem:
 	if not item_dict.has(target_id):
 		push_error("EB_Codex: No item found with ID '%s'" % target_id)
 		return null
 	else:
-		return item_dict[target_id].duplicate(true)
+		return item_dict[target_id].clone_with_id(target_id)
 
 func get_InventoryItem_by_name(target_name: String) -> EB_InventoryItem:
 	if _name_to_id_cache.has(target_name):

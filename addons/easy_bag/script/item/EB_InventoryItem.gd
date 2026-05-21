@@ -5,6 +5,12 @@ class_name EB_InventoryItem extends EB_BaseItem
 @export var tag_arr:Array[EB_BaseTag]
 
 
+func clone_with_id(item_id: String="") -> EB_InventoryItem:
+	var ins:=self.duplicate(true)
+	if item_id!="":
+		ins.item_name=item_id
+	return ins
+
 func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
 	for i in attribute_arr:
 		if i.attribute==target_name:
