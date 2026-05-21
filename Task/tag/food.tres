@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EB_BaseTag" format=3 uid="uid://kc5yvmo87v8j"]
+
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/item/EB_BaseTag.gd" id="1_58jlk"]
+
+[resource]
+script = ExtResource("1_58jlk")
+tag_name = "food"
+metadata/_custom_type_script = "uid://dqa7ynna1qfkj"

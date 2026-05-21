@@ -1,3 +1,23 @@
 class_name EB_InventoryItem extends EB_BaseItem
 
-var attribute_arr:Array[EB_BaseAttribute]
+@export var item_name:String="new InventoryItem"
+@export var attribute_arr:Array[EB_BaseAttribute]
+@export var tag_arr:Array[EB_BaseTag]
+
+
+func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
+	for i in attribute_arr:
+		if i.attribute==target_name:
+			return i
+	push_error("EB_InventoryItem的get_attribute_by_name未找到该名称的物品")
+	return
+
+func get_attribute_value_by_name(target_name:String):
+	var attribute=get_attribute_by_name(target_name)
+	return attribute.get_value()
+
+func has_tag_by_name(target_name:String)->bool:
+	for i in tag_arr:
+		if i.tag_name==target_name:
+			return true
+	return false

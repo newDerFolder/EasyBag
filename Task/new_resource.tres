@@ -1,10 +1,20 @@
 [gd_resource type="Resource" script_class="EB_ArrayCodex" format=3 uid="uid://cod0tfw8e36ev"]
 
 [ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="1_86cuq"]
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/item/EB_BaseAttribute.gd" id="2_7wmr0"]
 [ext_resource type="Script" uid="uid://cvqkltvcjmeh1" path="res://addons/easy_bag/script/bag/EB_ArrayCodex.gd" id="2_q0dk5"]
+[ext_resource type="Script" uid="uid://bt4ntkbkpdm3b" path="res://addons/easy_bag/script/item/EB_IntAttribute.gd" id="3_be2ev"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/item/EB_BaseTag.gd" id="4_be2ev"]
+[ext_resource type="Resource" uid="uid://kc5yvmo87v8j" path="res://Task/tag/food.tres" id="5_djpwm"]
+
+[sub_resource type="Resource" id="Resource_7wmr0"]
+script = ExtResource("3_be2ev")
+metadata/_custom_type_script = "uid://bt4ntkbkpdm3b"
 
 [sub_resource type="Resource" id="Resource_86cuq"]
 script = ExtResource("1_86cuq")
+attribute_arr = Array[ExtResource("2_7wmr0")]([SubResource("Resource_7wmr0")])
+tag_arr = Array[ExtResource("4_be2ev")]([ExtResource("5_djpwm")])
 metadata/_custom_type_script = "uid://cc30h31dhdh85"
 
 [resource]
