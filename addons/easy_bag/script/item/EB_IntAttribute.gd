@@ -6,3 +6,5 @@ class_name EB_IntAttribute
 
 func get_value()->int:
 	return value
+func set_value(new_value:int):
+	value=new_value
