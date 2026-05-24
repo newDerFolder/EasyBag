@@ -1,4 +1,5 @@
-class_name EB_InventoryItem extends EB_BaseItem
+@icon("res://addons/easy_bag/asset/icon/GreenApple.png")
+class_name EB_InventoryItem extends EasyBagResource
 
 @export var item_name:String="new InventoryItem"
 @export var attribute_arr:Array[EB_BaseAttribute]
