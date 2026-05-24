@@ -3,7 +3,6 @@ class_name EB_RandomInt extends EB_BaseAttribute
 @export var min_value:int
 @export var max_value:int
 
-
 func get_value()->int:
 	return randi_range(min_value,max_value)
 
