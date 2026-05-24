@@ -1,7 +1,7 @@
 extends EB_BaseAttribute
 class_name EB_IntAttribute
 
-@export var value:int=1
+@export var value:int=0
 
 
 func get_value()->int:
