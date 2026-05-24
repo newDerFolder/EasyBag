@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EB_DropPool" format=3 uid="uid://dmq00fqtfb614"]
+
+[ext_resource type="Script" uid="uid://gc4vf0bshm8f" path="res://addons/easy_bag/script/item/EB_DropItem.gd" id="1_7fpa0"]
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="2_ppw7g"]
+[ext_resource type="Resource" uid="uid://1f8tguqaa8r3" path="res://resource/eb/itmes/apple.tres" id="3_m42q0"]
+[ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="4_bof6l"]
+
+[sub_resource type="Resource" id="Resource_biwy3"]
+script = ExtResource("1_7fpa0")
+item = ExtResource("3_m42q0")
+attribute_arr = Array[ExtResource("2_ppw7g")]([null])
+metadata/_custom_type_script = "uid://gc4vf0bshm8f"
+
+[resource]
+script = ExtResource("4_bof6l")
+dorp_items = Array[ExtResource("1_7fpa0")]([SubResource("Resource_biwy3")])
+metadata/_custom_type_script = "uid://ds8mr4dixckhb"
