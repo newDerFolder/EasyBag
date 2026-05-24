@@ -4,7 +4,7 @@
 
 @export var is_static:bool=true
 @export var attribute_name:String="a new attribute"
-@export_multiline() var item_description:String=""
+#@export_multiline() var item_description:String=""
 
 
 @abstract func get_value()
