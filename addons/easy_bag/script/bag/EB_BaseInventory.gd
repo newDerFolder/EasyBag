@@ -1,0 +1,1 @@
+class_name EB_BaseInventory extends EasyBagResource
