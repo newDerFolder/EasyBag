@@ -23,6 +23,13 @@ func get_item_by_name(target_name:String)->EB_InventoryItem:
 			return i
 	return null
 
+func get_items_array_by_name(target_name:String)->Array[EB_InventoryItem]:
+	var arr:Array[EB_InventoryItem]=[]
+	for i in item_array:
+		if i.item_name==target_name:
+			arr.append(i)
+	return arr
+
 func take_item_by_name(target_name:String)->EB_InventoryItem:
 	var item=get_item_by_name(target_name)
 	if item==null:

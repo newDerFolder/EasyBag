@@ -4,15 +4,20 @@
 [ext_resource type="Script" uid="uid://mj51dhqwlo4t" path="res://resource/eb/late_attribute/stack.gd" id="2_cey6w"]
 [ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="2_fp0nh"]
 [ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="3_cey6w"]
+[ext_resource type="Script" uid="uid://cyuau8hk28qe6" path="res://resource/eb/static_attribute/max_stack.gd" id="3_ujas0"]
 [ext_resource type="Resource" uid="uid://kc5yvmo87v8j" path="res://resource/eb/tag/food.tres" id="5_cey6w"]
 
 [sub_resource type="Resource" id="Resource_ujas0"]
 script = ExtResource("2_cey6w")
 metadata/_custom_type_script = "uid://mj51dhqwlo4t"
 
+[sub_resource type="Resource" id="Resource_vree1"]
+script = ExtResource("3_ujas0")
+metadata/_custom_type_script = "uid://cyuau8hk28qe6"
+
 [resource]
 script = ExtResource("2_fp0nh")
 item_name = "苹果"
-attribute_arr = Array[ExtResource("1_qtb4k")]([SubResource("Resource_ujas0"), null])
+attribute_arr = Array[ExtResource("1_qtb4k")]([SubResource("Resource_ujas0"), SubResource("Resource_vree1")])
 tag_arr = Array[ExtResource("3_cey6w")]([ExtResource("5_cey6w")])
 metadata/_custom_type_script = "uid://cc30h31dhdh85"

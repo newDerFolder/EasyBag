@@ -14,6 +14,10 @@ func clone_with_id(item_id: String="") -> EB_InventoryItem:
 		ins.item_name=item_id
 	return ins
 
+func set_attribute_value_by_name(target_name:String,new_value):
+	var attribute=get_attribute_by_name(target_name)
+	attribute.set_value(new_value)
+
 func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
 	for i in attribute_arr:
 		if i.attribute_name==target_name:
@@ -21,6 +25,11 @@ func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
 	push_error("EB_InventoryItem的get_attribute_by_name未找到该名称的物品")
 	return
 
+func has_attribute_by_name(target_name:String)->bool:
+	for i in attribute_arr:
+		if i.attribute_name==target_name:
+			return true
+	return false
 func get_attribute_value_by_name(target_name:String):
 	var attribute=get_attribute_by_name(target_name)
 	return attribute.get_value()
