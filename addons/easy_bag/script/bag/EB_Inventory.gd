@@ -1,4 +1,4 @@
-extends EasyBagResource
+extends EB_BaseInventory
 class_name EB_Inventory
 
 
