@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="1_clg42"]
 [ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/script/bag/EB_DictionaryCodex.gd" id="2_h7br2"]
 [ext_resource type="Resource" uid="uid://1f8tguqaa8r3" path="res://resource/eb/itmes/apple.tres" id="2_s5tuc"]
+[ext_resource type="Resource" uid="uid://cajtii30imsrk" path="res://resource/eb/itmes/香蕉.tres" id="3_b2i3m"]
 
 [resource]
 script = ExtResource("2_h7br2")
 item_dict = Dictionary[String, ExtResource("1_clg42")]({
-"苹果": ExtResource("2_s5tuc")
+"苹果": ExtResource("2_s5tuc"),
+"香蕉": ExtResource("3_b2i3m")
 })
 metadata/_custom_type_script = "uid://cyiac7h0q686"

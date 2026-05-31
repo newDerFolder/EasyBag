@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://1f8tguqaa8r3" path="res://resource/eb/itmes/apple.tres" id="3_m42q0"]
 [ext_resource type="Script" uid="uid://b2b0ea4ids71l" path="res://addons/easy_bag/script/attribute/EB_RandomInt.gd" id="3_ppw7g"]
 [ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="4_bof6l"]
+[ext_resource type="Resource" uid="uid://cajtii30imsrk" path="res://resource/eb/itmes/香蕉.tres" id="5_m42q0"]
 
 [sub_resource type="Resource" id="Resource_m42q0"]
 script = ExtResource("3_ppw7g")
@@ -19,7 +20,20 @@ item = ExtResource("3_m42q0")
 attribute_arr = Array[ExtResource("2_ppw7g")]([SubResource("Resource_m42q0")])
 metadata/_custom_type_script = "uid://gc4vf0bshm8f"
 
+[sub_resource type="Resource" id="Resource_biwy3"]
+script = ExtResource("3_ppw7g")
+min_value = 1
+max_value = 3
+attribute_name = "stack"
+metadata/_custom_type_script = "uid://b2b0ea4ids71l"
+
+[sub_resource type="Resource" id="Resource_lwt2a"]
+script = ExtResource("1_7fpa0")
+item = ExtResource("5_m42q0")
+attribute_arr = Array[ExtResource("2_ppw7g")]([SubResource("Resource_biwy3")])
+metadata/_custom_type_script = "uid://gc4vf0bshm8f"
+
 [resource]
 script = ExtResource("4_bof6l")
-drop_items = Array[ExtResource("1_7fpa0")]([SubResource("Resource_bof6l")])
+drop_items = Array[ExtResource("1_7fpa0")]([SubResource("Resource_bof6l"), SubResource("Resource_lwt2a")])
 metadata/_custom_type_script = "uid://ds8mr4dixckhb"

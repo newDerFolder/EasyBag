@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EB_DictionaryCodex" format=3 uid="uid://hxvvsdwofvdx"]
+
+[ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="1_wncty"]
+[ext_resource type="Script" uid="uid://cyiac7h0q686" path="res://addons/easy_bag/script/bag/EB_DictionaryCodex.gd" id="2_efobi"]
+
+[resource]
+script = ExtResource("2_efobi")
+metadata/_custom_type_script = "uid://cyiac7h0q686"

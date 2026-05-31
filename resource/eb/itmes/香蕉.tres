@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EB_InventoryItem" format=3 uid="uid://cajtii30imsrk"]
+
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="1_hsakf"]
+[ext_resource type="Script" uid="uid://mj51dhqwlo4t" path="res://resource/eb/late_attribute/stack.gd" id="2_1aohk"]
+[ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="2_mvonr"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="3_7llqf"]
+[ext_resource type="Script" uid="uid://cyuau8hk28qe6" path="res://resource/eb/static_attribute/max_stack.gd" id="3_ncp3v"]
+[ext_resource type="Script" uid="uid://c2ae8xplb7yh1" path="res://resource/eb/late_attribute/price.gd" id="4_ncp3v"]
+[ext_resource type="Resource" uid="uid://kc5yvmo87v8j" path="res://resource/eb/tag/food.tres" id="6_lucxn"]
+
+[sub_resource type="Resource" id="Resource_iircs"]
+script = ExtResource("2_1aohk")
+is_static = false
+metadata/_custom_type_script = "uid://mj51dhqwlo4t"
+
+[sub_resource type="Resource" id="Resource_41mjl"]
+script = ExtResource("3_ncp3v")
+metadata/_custom_type_script = "uid://cyuau8hk28qe6"
+
+[sub_resource type="Resource" id="Resource_lucxn"]
+script = ExtResource("4_ncp3v")
+value = 10
+metadata/_custom_type_script = "uid://c2ae8xplb7yh1"
+
+[resource]
+script = ExtResource("2_mvonr")
+item_name = "香蕉"
+attribute_arr = Array[ExtResource("1_hsakf")]([SubResource("Resource_iircs"), SubResource("Resource_41mjl"), SubResource("Resource_lucxn")])
+tag_arr = Array[ExtResource("3_7llqf")]([ExtResource("6_lucxn")])
+metadata/_custom_type_script = "uid://cc30h31dhdh85"
