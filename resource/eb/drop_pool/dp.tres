@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="2_0rnwg"]
 [ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="2_a7seg"]
 [ext_resource type="Script" uid="uid://b2b0ea4ids71l" path="res://addons/easy_bag/script/attribute/EB_RandomInt.gd" id="3_gytw4"]
-[ext_resource type="Resource" uid="uid://2vb2xe321qrg" path="res://Task/蘑菇.tres" id="4_uqhnu"]
-[ext_resource type="Resource" uid="uid://c2j3ajmiqgdv3" path="res://Task/剑.tres" id="5_gytw4"]
+[ext_resource type="Resource" uid="uid://2vb2xe321qrg" path="res://resource/eb/itmes/蘑菇.tres" id="4_uqhnu"]
+[ext_resource type="Resource" uid="uid://c2j3ajmiqgdv3" path="res://resource/eb/itmes/剑.tres" id="5_gytw4"]
 
 [sub_resource type="Resource" id="Resource_oknow"]
 script = ExtResource("3_gytw4")

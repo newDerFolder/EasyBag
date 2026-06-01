@@ -1,36 +1,30 @@
 [gd_resource type="Resource" script_class="EB_DropPool" format=3 uid="uid://dmq00fqtfb614"]
 
 [ext_resource type="Script" uid="uid://gc4vf0bshm8f" path="res://addons/easy_bag/script/item/EB_DropItem.gd" id="1_7fpa0"]
-[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="2_ppw7g"]
+[ext_resource type="Script" uid="uid://dyimly80elqea" path="res://addons/easy_bag/script/attribute/EB_BaseAttributeOverride.gd" id="3_biwy3"]
 [ext_resource type="Resource" uid="uid://1f8tguqaa8r3" path="res://resource/eb/itmes/apple.tres" id="3_m42q0"]
-[ext_resource type="Script" uid="uid://b2b0ea4ids71l" path="res://addons/easy_bag/script/attribute/EB_RandomInt.gd" id="3_ppw7g"]
 [ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="4_bof6l"]
+[ext_resource type="Script" uid="uid://dtcdigdcp72jj" path="res://addons/easy_bag/script/item/EB_InventoryItemOverride.gd" id="4_lwt2a"]
 [ext_resource type="Resource" uid="uid://cajtii30imsrk" path="res://resource/eb/itmes/香蕉.tres" id="5_m42q0"]
 
-[sub_resource type="Resource" id="Resource_m42q0"]
-script = ExtResource("3_ppw7g")
-min_value = 1
-max_value = 100
-attribute_name = "stack"
-metadata/_custom_type_script = "uid://b2b0ea4ids71l"
+[sub_resource type="Resource" id="Resource_cutd8"]
+script = ExtResource("4_lwt2a")
+item = ExtResource("5_m42q0")
+metadata/_custom_type_script = "uid://dtcdigdcp72jj"
 
 [sub_resource type="Resource" id="Resource_bof6l"]
 script = ExtResource("1_7fpa0")
-item = ExtResource("3_m42q0")
-attribute_arr = Array[ExtResource("2_ppw7g")]([SubResource("Resource_m42q0")])
+item = SubResource("Resource_cutd8")
 metadata/_custom_type_script = "uid://gc4vf0bshm8f"
 
-[sub_resource type="Resource" id="Resource_biwy3"]
-script = ExtResource("3_ppw7g")
-min_value = 1
-max_value = 3
-attribute_name = "stack"
-metadata/_custom_type_script = "uid://b2b0ea4ids71l"
+[sub_resource type="Resource" id="Resource_qysxg"]
+script = ExtResource("4_lwt2a")
+item = ExtResource("3_m42q0")
+metadata/_custom_type_script = "uid://dtcdigdcp72jj"
 
 [sub_resource type="Resource" id="Resource_lwt2a"]
 script = ExtResource("1_7fpa0")
-item = ExtResource("5_m42q0")
-attribute_arr = Array[ExtResource("2_ppw7g")]([SubResource("Resource_biwy3")])
+item = SubResource("Resource_qysxg")
 metadata/_custom_type_script = "uid://gc4vf0bshm8f"
 
 [resource]

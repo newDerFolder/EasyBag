@@ -7,3 +7,8 @@ func get_value()->String:
 
 func set_value(new_value:String):
 	value=new_value
+func compare_value(new_value:String)->bool:
+	if value==new_value:
+		return true
+	else:
+		return false

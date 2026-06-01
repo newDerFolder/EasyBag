@@ -22,7 +22,7 @@ func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
 	for i in attribute_arr:
 		if i.attribute_name==target_name:
 			return i
-	push_error("EB_InventoryItem的get_attribute_by_name未找到该名称的物品")
+	push_error("EB_InventoryItem的get_attribute_by_name未找到该名称的属性:",target_name)
 	return
 
 func has_attribute_by_name(target_name:String)->bool:

@@ -12,3 +12,8 @@ func set_value(new_value:Array[int]):
 		return
 	self.min_value=new_value[0]
 	self.max_value=new_value[1]
+func compare_value(new_value:int)->bool:
+	if get_value()==new_value:
+		return true
+	else:
+		return false
