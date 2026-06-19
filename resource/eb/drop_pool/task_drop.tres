@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EB_DropPool" format=3 uid="uid://dmq00fqtfb614"]
 
 [ext_resource type="Script" uid="uid://gc4vf0bshm8f" path="res://addons/easy_bag/script/item/EB_DropItem.gd" id="1_7fpa0"]
-[ext_resource type="Script" uid="uid://dyimly80elqea" path="res://addons/easy_bag/script/attribute/EB_BaseAttributeOverride.gd" id="3_biwy3"]
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="3_bof6l"]
 [ext_resource type="Resource" uid="uid://1f8tguqaa8r3" path="res://resource/eb/itmes/apple.tres" id="3_m42q0"]
 [ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="4_bof6l"]
 [ext_resource type="Script" uid="uid://dtcdigdcp72jj" path="res://addons/easy_bag/script/item/EB_InventoryItemOverride.gd" id="4_lwt2a"]
