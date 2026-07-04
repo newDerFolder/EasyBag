@@ -1,7 +1,7 @@
 ## @experimental
 class_name EB_TagAttribute extends EB_BaseAttribute
 
-
+	
 @export var value:EB_BaseTag=EB_BaseTag.new()
 
 func get_value()->EB_BaseTag:
