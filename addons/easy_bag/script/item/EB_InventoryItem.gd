@@ -1,8 +1,11 @@
 class_name EB_InventoryItem extends EB_BaseItem
 
+## 库存容器中的物品,可拥有属性和标签
+
 @export var item_name:String="new InventoryItem"
 @export var attribute_arr:Array[EB_BaseAttribute]
 @export var tag_arr:Array[EB_BaseTag]
+
 
 
 func clone_self()->EB_InventoryItem:
@@ -13,6 +16,7 @@ func clone_with_id(item_id: String="") -> EB_InventoryItem:
 	if item_id!="":
 		ins.item_name=item_id
 	return ins
+
 
 func set_attribute_value_by_name(target_name:String,new_value):
 	var attribute=get_attribute_by_name(target_name)
@@ -34,6 +38,7 @@ func get_attribute_value_by_name(target_name:String):
 	var attribute=get_attribute_by_name(target_name)
 	return attribute.get_value()
 
+## 通过传入的字符串判断是否拥有此标签
 func has_tag_by_name(target_name:String)->bool:
 	for i in tag_arr:
 		if i.tag_name==target_name:
