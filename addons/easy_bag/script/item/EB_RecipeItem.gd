@@ -5,5 +5,5 @@ class_name EB_RecipeItem extends EB_BaseItem
 @export var output_item_arr:Array[EB_InventoryItemOverride]
 
 
-func craft(items:Array[EB_InventoryItem])->EB_InventoryItem:
+func craft(items:Array[EB_InventoryItem])->Array[EB_InventoryItem]:
 	pass
