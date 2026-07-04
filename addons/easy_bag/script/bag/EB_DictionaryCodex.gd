@@ -12,7 +12,10 @@ func get_InventoryItem_by_id(target_id:String="") -> EB_InventoryItem:
 		push_error("EB_Codex: No item found with ID '%s'" % target_id)
 		return null
 	else:
-		return item_dict[target_id].clone_with_id(target_id)
+		if use_id_as_item_name:
+			return item_dict[target_id].clone_with_id(target_id)
+		else:
+			return item_dict[target_id].clone_self()
 
 func get_InventoryItem_by_name(target_name: String) -> EB_InventoryItem:
 	if _name_to_id_cache.has(target_name):
