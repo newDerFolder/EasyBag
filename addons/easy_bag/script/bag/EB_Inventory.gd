@@ -8,7 +8,7 @@ class_name EB_Inventory
 func get_inventory_size():
 	return item_array.size()
 
-func add_item(item:EB_InventoryItem):
+func add_item(item:EB_InventoryItem)->void:
 	item_array.append(item)
 
 func has_item_by_name(target_name:String)->bool:
