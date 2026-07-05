@@ -19,7 +19,7 @@ EasyBag是Godot中的一个库存系统插件，着力于高度解耦和数据�
 ### 加载物品到库存
 创建一个场景并且编辑其脚本
 在```_ready```函数中
-```
+```gdscript
 #加载物品
 var my_item:=load("res://resource/你的文件路径.tres")
 #创建库存容器
@@ -33,7 +33,7 @@ my_inventory.add_item(my_item)
 1. 创建一个```EB_DictionaryCodex```的资源文件
 2. 为其添加键值对，注意值应该快速加载你创建过的物品项
 3. 加载物品到库存
-```
+```gdscript
 #你可以选择用键或者是物品名称获取物品
 codex.get_InventoryItem_by_name("")
 codex.get_InventoryItem_by_id("")
