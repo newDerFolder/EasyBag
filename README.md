@@ -4,6 +4,7 @@ EasyBag是Godot中的一个库存系统插件，着力于高度解耦和数据�
 配合Godot的资源类，使其可以在Godot编辑器面板中比较物品的属性或标签。实现程序员与策划人员的有序合作。
 同时EasyBag也提供了些类快速实现如物品随机掉落，物品配方合成等功能。当然你也可以自己自由扩展。
 ## 快速入门
+
 ### 创建资源文件
 1. EasyBag基于Godot的资源文件，以此请先创建一个```EB_InventoryItem```类型的资源文件
 2. 双击你创建的资源文件，可以看到右侧的属性面板
@@ -14,3 +15,15 @@ EasyBag是Godot中的一个库存系统插件，着力于高度解耦和数据�
 7. 添加一个标签吧，你得先创建一个标签
 8. 新建```EB_BaseTag```类型的资源文件，记得保存文件名称和```tag_name```属性一致
 9. 重写点回你之前创建的```EB_InventoryItem```类型资源文件，为其```tag_arr```添加tag，点击快速加载选择刚刚创建的tag
+
+### 加载物品到库存
+1. 创建一个场景并且编辑其脚本
+2. 在```_ready```函数中
+   ```
+   #加载物品
+   var my_item:=load("res://resource/你的文件路径.tres")
+   #创建库存容器
+   var my_inventory:=EB_Inventory.new()
+   #将物品添加进去
+   my_inventory.add_item(my_item)
+   ```
