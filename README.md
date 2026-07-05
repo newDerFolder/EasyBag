@@ -1,4 +1,7 @@
 # EasyBag
-⚠️ Note: The underlying architecture is in flux right now. We plan to rewrite the Quick Start guide in the upcoming v0.5 release.
-# EasyBag
-目前底层架构处于变动中,预计于0.5版本重写新版本的快速入门.
+## 简介
+EasyBag是Godot中的一个库存系统插件，着力于高度解耦和数据化，和可扩展性，致力于加速和稳固中大型角色扮演游戏亦或者是需要高度定制化库存系统的项目。
+配合Godot的资源类，使其可以在Godot编辑器面板中比较物品的属性或标签。实现程序员与策划人员的有序合作。
+同时EasyBag也提供了些类快速实现如物品随机掉落，物品配方合成等功能。当然你也可以自己自由扩展。
+## 快速入门
+EasyBag基于Godot的资源文件，以此请先创建一个```EB_InventoryItem```类型的资源文件
