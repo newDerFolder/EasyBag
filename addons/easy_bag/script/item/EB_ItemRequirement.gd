@@ -3,9 +3,9 @@ class_name EB_ItemRequirement extends EB_BaseItem
 
 
 enum CompareType {
-	EQUAL,          # 相等
-	GREATER_EQUAL,  # 大于等于
-	LESS            # 小于
+	EQUAL,          
+	GREATER_EQUAL,  
+	LESS           
 }
 @export var require_item:EB_InventoryItem
 @export var compare_type: CompareType = CompareType.GREATER_EQUAL

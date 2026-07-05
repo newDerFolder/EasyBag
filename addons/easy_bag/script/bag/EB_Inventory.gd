@@ -5,7 +5,7 @@ class_name EB_Inventory
 @export var item_array:Array[EB_InventoryItem]
 
 
-func get_inventory_size():
+func get_inventory_size()->int:
 	return item_array.size()
 
 func add_item(item:EB_InventoryItem)->void:
