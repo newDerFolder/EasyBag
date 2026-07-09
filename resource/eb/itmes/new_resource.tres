@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EB_InventoryItem" format=3 uid="uid://c8bb75fejwhhn"]
+
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="1_akhn5"]
+[ext_resource type="Script" uid="uid://bt4ntkbkpdm3b" path="res://addons/easy_bag/script/attribute/EB_IntAttribute.gd" id="2_mkqfq"]
+[ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="2_p4300"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="3_mkqfq"]
+
+[sub_resource type="Resource" id="Resource_ykuwg"]
+script = ExtResource("2_mkqfq")
+metadata/_custom_type_script = "uid://bt4ntkbkpdm3b"
+
+[resource]
+script = ExtResource("2_p4300")
+attribute_arr = Array[ExtResource("1_akhn5")]([SubResource("Resource_ykuwg")])
+metadata/_custom_type_script = "uid://cc30h31dhdh85"
