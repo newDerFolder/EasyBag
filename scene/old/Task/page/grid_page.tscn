@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bywy28p0m81xm"]
 
-[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://addons/easy_bag/asset/icon/apple.png" id="1_2k051"]
-[ext_resource type="Texture2D" uid="uid://bwp5ku0hu00q8" path="res://addons/easy_bag/asset/icon/EasyBagResource.png" id="2_1x1f4"]
-[ext_resource type="Texture2D" uid="uid://pdqc3qr88h6b" path="res://addons/easy_bag/asset/icon/hpIcon.png" id="3_3ulxc"]
-[ext_resource type="Texture2D" uid="uid://d202aoymh587g" path="res://addons/easy_bag/asset/icon/GreenApple.png" id="4_3ulxc"]
-[ext_resource type="Texture2D" uid="uid://65lwgvhknhkn" path="res://addons/easy_bag/asset/icon/book.png" id="5_ek0ie"]
+[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://addons/easy_bag/asset/icon/apple.png" id="1_203kl"]
+[ext_resource type="Texture2D" uid="uid://bwp5ku0hu00q8" path="res://addons/easy_bag/asset/icon/EasyBagResource.png" id="2_ixa3l"]
+[ext_resource type="Texture2D" uid="uid://pdqc3qr88h6b" path="res://addons/easy_bag/asset/icon/hpIcon.png" id="3_7fufv"]
+[ext_resource type="Texture2D" uid="uid://d202aoymh587g" path="res://addons/easy_bag/asset/icon/GreenApple.png" id="4_o0opp"]
+[ext_resource type="Texture2D" uid="uid://65lwgvhknhkn" path="res://addons/easy_bag/asset/icon/book.png" id="5_x2mkr"]
 
 [node name="GridPage" type="Control" unique_id=873143751]
 layout_mode = 3
@@ -30,7 +30,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer/PanelContainer" unique_id=1220313199]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_2k051")
+texture = ExtResource("1_203kl")
 expand_mode = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HFlowContainer" unique_id=180352666]
@@ -39,7 +39,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer/PanelContainer2" unique_id=50591591]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_1x1f4")
+texture = ExtResource("2_ixa3l")
 expand_mode = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HFlowContainer" unique_id=593770944]
@@ -48,7 +48,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer/PanelContainer3" unique_id=12606192]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("3_3ulxc")
+texture = ExtResource("3_7fufv")
 expand_mode = 1
 
 [node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HFlowContainer" unique_id=1420462990]
@@ -169,7 +169,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1112973318]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_3ulxc")
+texture = ExtResource("4_o0opp")
 
 [node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1112073964]
 layout_mode = 2
@@ -185,7 +185,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer2/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1177668137]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_1x1f4")
+texture = ExtResource("2_ixa3l")
 
 [node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=264481604]
 layout_mode = 2
@@ -201,7 +201,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer" unique_id=1546825021]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("5_ek0ie")
+texture = ExtResource("5_x2mkr")
 
 [node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer" unique_id=1888740149]
 layout_mode = 2
