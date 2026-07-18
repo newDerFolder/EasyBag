@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cghmqwqunimj4"]
+
+[ext_resource type="Script" uid="uid://bk4umvso2ieme" path="res://addons/easy_bag/script/control/EB_InventoryNode.gd" id="1_24dom"]
+[ext_resource type="Script" uid="uid://c76kwwoxjhxhd" path="res://scene/task_page_1.gd" id="1_eb5di"]
+
+[node name="TaskPage1" type="Control" unique_id=473435083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eb5di")
+
+[node name="EB_InventoryNode" type="HFlowContainer" parent="." unique_id=1590005758]
+layout_mode = 0
+offset_right = 695.0
+offset_bottom = 480.0
+script = ExtResource("1_24dom")
+metadata/_custom_type_script = "uid://bk4umvso2ieme"

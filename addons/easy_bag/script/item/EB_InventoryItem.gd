@@ -7,6 +7,7 @@ class_name EB_InventoryItem extends EB_BaseItem
 @export var attribute_arr:Array[EB_BaseAttribute]
 @export var tag_arr:Array[EB_BaseTag]
 
+signal item_change()
 
 ## @experimental
 ## 允许您通过重写这个方法为物品项添加额外属性,重写的标签会在获取属性等涉及属性的方法中被检查
@@ -32,6 +33,7 @@ func clone_with_id(item_id: String="") -> EB_InventoryItem:
 func set_attribute_value_by_name(target_name:String,new_value):
 	var attribute=get_attribute_by_name(target_name)
 	attribute.set_value(new_value)
+	item_change.emit()
 
 func get_attribute_by_name(target_name:String)->EB_BaseAttribute:
 	for i in attribute_arr:

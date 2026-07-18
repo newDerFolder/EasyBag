@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EB_InventoryItem" format=3 uid="uid://dtd8c6pe02pc5"]
+
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="1_tpqn7"]
+[ext_resource type="Script" uid="uid://cc30h31dhdh85" path="res://addons/easy_bag/script/item/EB_InventoryItem.gd" id="2_8lcgn"]
+[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://addons/easy_bag/asset/icon/apple.png" id="2_p61rw"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="3_p61rw"]
+
+[resource]
+script = ExtResource("2_8lcgn")
+icon = ExtResource("2_p61rw")
+item_name = "apple"
+metadata/_custom_type_script = "uid://cc30h31dhdh85"
