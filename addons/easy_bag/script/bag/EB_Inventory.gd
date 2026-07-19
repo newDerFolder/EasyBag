@@ -36,9 +36,10 @@ func receive_item_from_inventory(item:EB_InventoryItem) -> bool:
 func get_inventory_size()->int:
 	return item_array.size()
 
-func add_item(item:EB_InventoryItem)->void:
+func add_item(item:EB_InventoryItem)->bool:
 	item_array.append(item)
 	inventory_change.emit()
+	return true
 
 func has_item_by_name(target_name:String)->bool:
 	if get_item_by_name(target_name)==null:
