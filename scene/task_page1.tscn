@@ -12,9 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eb5di")
 
-[node name="EB_InventoryNode" type="HFlowContainer" parent="." unique_id=1590005758]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=138788362]
 layout_mode = 0
-offset_right = 695.0
-offset_bottom = 480.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EB_InventoryNode" type="HFlowContainer" parent="PanelContainer" unique_id=1590005758]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
 script = ExtResource("1_24dom")
 metadata/_custom_type_script = "uid://bk4umvso2ieme"

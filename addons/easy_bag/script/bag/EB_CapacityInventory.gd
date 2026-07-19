@@ -11,7 +11,7 @@ func add_item(item:EB_InventoryItem):
 		else:
 			_add_item_when_use_stack_rule(item)
 	else:
-		return null
+		return false
 
 
 func _add_item_when_use_stack_rule(new_item: EB_InventoryItem) -> EB_InventoryItem:

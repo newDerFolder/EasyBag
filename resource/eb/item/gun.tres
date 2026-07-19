@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EB_DurabilityItem" format=3 uid="uid://culgbsjox5nv2"]
+
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="1_myncf"]
+[ext_resource type="Script" uid="uid://dedaue265hj5j" path="res://addons/easy_bag/script/item/EB_DurabilityItem.gd" id="2_8qfsp"]
+[ext_resource type="Texture2D" uid="uid://cguqcpuqc7d1q" path="res://addons/easy_bag/asset/icon/centerIcon.png" id="2_y13op"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="3_y13op"]
+
+[resource]
+script = ExtResource("2_8qfsp")
+icon = ExtResource("2_y13op")
+item_name = "gun"
+metadata/_custom_type_script = "uid://dedaue265hj5j"

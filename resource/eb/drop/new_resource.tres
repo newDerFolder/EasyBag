@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EB_RecipeItem" format=3 uid="uid://fkcqcqlo6fcf"]
+
+[ext_resource type="Script" uid="uid://dnbwl8wiajyke" path="res://addons/easy_bag/script/item/EB_ItemRequirement.gd" id="1_00f3x"]
+[ext_resource type="Resource" uid="uid://culgbsjox5nv2" path="res://resource/eb/item/gun.tres" id="2_vin4h"]
+[ext_resource type="Script" uid="uid://du70gfrc2svxt" path="res://addons/easy_bag/script/item/EB_RecipeItem.gd" id="3_71rq4"]
+[ext_resource type="Script" uid="uid://cjywwcriyr5sh" path="res://addons/easy_bag/script/attribute/EB_BaseAttribute.gd" id="3_u01yp"]
+[ext_resource type="Script" uid="uid://dtcdigdcp72jj" path="res://addons/easy_bag/script/item/EB_InventoryItemOverride.gd" id="4_iducp"]
+
+[sub_resource type="Resource" id="Resource_vin4h"]
+script = ExtResource("1_00f3x")
+require_item = ExtResource("2_vin4h")
+metadata/_custom_type_script = "uid://dnbwl8wiajyke"
+
+[resource]
+script = ExtResource("3_71rq4")
+input_item_arr = Array[ExtResource("1_00f3x")]([SubResource("Resource_vin4h")])
+metadata/_custom_type_script = "uid://du70gfrc2svxt"
