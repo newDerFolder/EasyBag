@@ -1,3 +1,4 @@
+## @experimental
 class_name EB_InventoryItemOverride extends EB_BaseItem
 
 @export var item:EB_InventoryItem
