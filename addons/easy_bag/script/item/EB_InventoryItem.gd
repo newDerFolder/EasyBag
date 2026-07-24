@@ -15,6 +15,9 @@ func _init() -> void:
 			push_error("tag_arr[" + str(i) + "] is null")
 
 
+func get_item_stack() -> int:
+	return 1
+
 ## @experimental
 ## 允许您通过重写这个方法为物品项添加额外属性,重写的标签会在获取属性等涉及属性的方法中被检查
 func add_extra_attributes()->Array[EB_BaseAttribute]:
