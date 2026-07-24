@@ -7,6 +7,12 @@ class_name EB_Inventory
 signal inventory_change()
 
 
+func check_items() -> void:
+	for i in range(item_array.size() - 1, -1, -1):
+		if item_array[i].get_item_stack() <= 0:
+			item_array.remove_at(i)
+	inventory_change.emit()
+
 func had_item(item:EB_InventoryItem)->bool:
 	if item_array.has(item):
 		return true
