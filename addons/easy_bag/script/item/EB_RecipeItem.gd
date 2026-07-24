@@ -1,3 +1,4 @@
+## @experimental
 class_name EB_RecipeItem extends EB_BaseItem
 
 

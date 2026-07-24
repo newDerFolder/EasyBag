@@ -1,3 +1,4 @@
+## @experimental
 @icon("res://addons/easy_bag/asset/icon/ballTwo.png")
 @abstract class_name EB_BaseAttribute extends EasyBagResource
 

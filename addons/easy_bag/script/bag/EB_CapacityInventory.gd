@@ -1,3 +1,4 @@
+## @experimental
 class_name EB_CapacityInventory extends EB_Inventory
 #HACK:做容量库存中...（ai生成的请谨慎）
 @export var max_size:int=100
