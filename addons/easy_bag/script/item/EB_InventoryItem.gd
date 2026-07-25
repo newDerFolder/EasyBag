@@ -14,6 +14,9 @@ func _init() -> void:
 		if tag_arr[i] == null:
 			push_error("tag_arr[" + str(i) + "] is null")
 
+func set_item_stack(value:int):
+	pass
+
 func get_item_max_stack() -> int:
 	return 1
 
