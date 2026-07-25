@@ -13,6 +13,30 @@ func check_items() -> void:
 			item_array.remove_at(i)
 	inventory_change.emit()
 
+func stack_processing(new_item: EB_StackItem) -> bool:
+	# 先查找是否有相同名称的堆叠
+	for i in range(item_array.size()):
+		if item_array[i].item_name == new_item.item_name:
+			var current_stack = item_array[i].get_item_stack()
+			var new_stack = new_item.get_item_stack()
+			var max_stack = item_array[i].get_item_max_stack()
+			var total = current_stack + new_stack
+			
+			if total > max_stack:
+				# 填满现有堆叠，剩余部分作为新项
+				item_array[i].set_item_stack(max_stack)
+				new_item.set_item_stack(total - max_stack)
+				item_array.append(new_item)
+				return false  # 添加了新物品
+			else:
+				# 完全合并
+				item_array[i].set_item_stack(total)
+				return true  # 没有添加新物品，完全合并
+	
+	# 没有找到匹配，直接添加为新项
+	item_array.append(new_item)
+	return false  # 添加了新物品
+
 func had_item(item:EB_InventoryItem)->bool:
 	if item_array.has(item):
 		return true
@@ -43,9 +67,13 @@ func get_inventory_size()->int:
 	return item_array.size()
 
 func add_item(item:EB_InventoryItem)->bool:
-	item_array.append(item)
-	inventory_change.emit()
-	return true
+	if item is EB_StackItem:
+		stack_processing(item)
+		return true
+	else:
+		item_array.append(item)
+		inventory_change.emit()
+		return true
 
 func has_item_by_name(target_name:String)->bool:
 	if get_item_by_name(target_name)==null:
