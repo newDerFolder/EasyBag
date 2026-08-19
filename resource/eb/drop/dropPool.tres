@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EB_DropPool" format=3 uid="uid://cx1lqn8hl6ry"]
+
+[ext_resource type="Script" uid="uid://gc4vf0bshm8f" path="res://addons/easy_bag/script/item/EB_DropItem.gd" id="1_f374b"]
+[ext_resource type="Texture2D" uid="uid://c7o37ili224i7" path="res://addons/easy_bag/asset/icon/apple.png" id="2_ae3bb"]
+[ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="2_en01q"]
+[ext_resource type="Script" uid="uid://bvcwplmfdoal8" path="res://addons/easy_bag/script/item/EB_StackItem.gd" id="3_wfsi7"]
+[ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="4_1ch3s"]
+
+[sub_resource type="Resource" id="Resource_fmcwy"]
+script = ExtResource("3_wfsi7")
+stack = 38
+icon = ExtResource("2_ae3bb")
+item_name = "apple"
+metadata/_custom_type_script = "uid://bvcwplmfdoal8"
+
+[sub_resource type="Resource" id="Resource_aroh7"]
+script = ExtResource("1_f374b")
+item = SubResource("Resource_fmcwy")
+metadata/_custom_type_script = "uid://gc4vf0bshm8f"
+
+[resource]
+script = ExtResource("2_en01q")
+drop_items = Array[ExtResource("1_f374b")]([SubResource("Resource_aroh7")])
+metadata/_custom_type_script = "uid://ds8mr4dixckhb"
