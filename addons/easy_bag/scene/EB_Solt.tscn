@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dvp5bv068tvv3"]
+
+[ext_resource type="Script" uid="uid://r4mpmefa2bm0" path="res://addons/easy_bag/scene/EB_SlotNode.gd" id="1_543n4"]
+[ext_resource type="Script" uid="uid://o6ex3p23cgcx" path="res://addons/easy_bag/script/control/EB_InventoryItemButtonNode.gd" id="2_msiq5"]
+
+[node name="EbSolt" type="Control" unique_id=277893265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_543n4")
+
+[node name="EB_InventoryItemButtonNode" type="Button" parent="." unique_id=2147464066]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_msiq5")
+metadata/_custom_type_script = "uid://o6ex3p23cgcx"

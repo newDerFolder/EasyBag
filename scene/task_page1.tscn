@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk4umvso2ieme" path="res://addons/easy_bag/script/control/EB_InventoryNode.gd" id="1_24dom"]
 [ext_resource type="Script" uid="uid://c76kwwoxjhxhd" path="res://scene/task_page_1.gd" id="1_eb5di"]
+[ext_resource type="Script" uid="uid://r4mpmefa2bm0" path="res://addons/easy_bag/scene/EB_SlotNode.gd" id="3_sofcu"]
 
 [node name="TaskPage1" type="Control" unique_id=473435083]
 layout_mode = 3
@@ -30,5 +31,14 @@ offset_top = 412.0
 offset_right = 59.0
 offset_bottom = 443.0
 text = "drop"
+
+[node name="EB_SoltNode" type="Control" parent="." unique_id=1792183357]
+anchors_preset = 0
+offset_left = 620.0
+offset_top = 10.0
+offset_right = 660.0
+offset_bottom = 50.0
+script = ExtResource("3_sofcu")
+metadata/_custom_type_script = "uid://r4mpmefa2bm0"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

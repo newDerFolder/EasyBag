@@ -1,13 +1,13 @@
 class_name EB_InventoryNode extends HFlowContainer
 
-@export var inventory: EB_Inventory:
-	set(value):
-		if inventory:
-			inventory.inventory_change.disconnect(_on_inventory_change)
-		inventory = value
-		if inventory and is_inside_tree():
-			inventory.inventory_change.connect(_on_inventory_change)
-			refresh()
+@export var inventory: EB_Inventory
+	#set(value):
+		#if inventory:
+			#inventory.inventory_change.disconnect(_on_inventory_change)
+		#inventory = value
+		#if inventory and is_inside_tree():
+			#inventory.inventory_change.connect(_on_inventory_change)
+			#refresh()
 
 func _ready() -> void:
 	if inventory:
