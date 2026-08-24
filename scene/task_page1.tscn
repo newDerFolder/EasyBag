@@ -22,3 +22,13 @@ custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 script = ExtResource("1_24dom")
 metadata/_custom_type_script = "uid://bk4umvso2ieme"
+
+[node name="Button" type="Button" parent="." unique_id=19665674]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 412.0
+offset_right = 59.0
+offset_bottom = 443.0
+text = "drop"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

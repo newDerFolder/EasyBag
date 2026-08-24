@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_tpqn7")
+stack = 5
 icon = ExtResource("2_p61rw")
 item_name = "apple"
 metadata/_custom_type_script = "uid://bvcwplmfdoal8"

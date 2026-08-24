@@ -5,20 +5,26 @@
 [ext_resource type="Script" uid="uid://ds8mr4dixckhb" path="res://addons/easy_bag/script/bag/EB_DropPool.gd" id="2_en01q"]
 [ext_resource type="Script" uid="uid://bvcwplmfdoal8" path="res://addons/easy_bag/script/item/EB_StackItem.gd" id="3_wfsi7"]
 [ext_resource type="Script" uid="uid://dqa7ynna1qfkj" path="res://addons/easy_bag/script/attribute/EB_BaseTag.gd" id="4_1ch3s"]
+[ext_resource type="Resource" uid="uid://dtd8c6pe02pc5" path="res://resource/eb/item/apple.tres" id="5_wfsi7"]
 
 [sub_resource type="Resource" id="Resource_fmcwy"]
 script = ExtResource("3_wfsi7")
-stack = 38
 icon = ExtResource("2_ae3bb")
 item_name = "apple"
 metadata/_custom_type_script = "uid://bvcwplmfdoal8"
 
 [sub_resource type="Resource" id="Resource_aroh7"]
 script = ExtResource("1_f374b")
+drop_weight = 5
 item = SubResource("Resource_fmcwy")
+metadata/_custom_type_script = "uid://gc4vf0bshm8f"
+
+[sub_resource type="Resource" id="Resource_1ch3s"]
+script = ExtResource("1_f374b")
+item = ExtResource("5_wfsi7")
 metadata/_custom_type_script = "uid://gc4vf0bshm8f"
 
 [resource]
 script = ExtResource("2_en01q")
-drop_items = Array[ExtResource("1_f374b")]([SubResource("Resource_aroh7")])
+drop_items = Array[ExtResource("1_f374b")]([SubResource("Resource_aroh7"), SubResource("Resource_1ch3s")])
 metadata/_custom_type_script = "uid://ds8mr4dixckhb"
