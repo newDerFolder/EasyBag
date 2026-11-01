@@ -12,6 +12,13 @@ var item: EB_InventoryItem:
 var stack_lab = Label.new()
 var durability_ProgressBar=ProgressBar.new()
 
+
+signal item_selected(item:EB_InventoryItem)
+
+func _pressed() -> void:
+	item_selected.emit(item)
+
+
 func _on_item_change() -> void:
 	refresh()
 
