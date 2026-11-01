@@ -6,6 +6,7 @@ class_name EB_InventoryItem extends EB_BaseItem
 @export var item_name:String="new InventoryItem"
 #@export var attribute_arr:Array[EB_BaseAttribute]
 @export var tag_arr:Array[EB_BaseTag]
+@export_multiline() var description:String="no description"
 
 signal item_change()
 
